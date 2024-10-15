@@ -1778,7 +1778,7 @@
             <div class="icon-container">
                 <svg viewBox="0 0 24 24" stroke="currentColor">
                     <path fill="currentColor" d="M7 2h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3l-3 3-3-3H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/>
-                    <path d="M3 6h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3l-3 3-3-3H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/>
+                    <path stroke="currentColor" d="M3 6h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3l-3 3-3-3H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/>
                   </svg>
             </div>
             <span class="icon-name">chats</span>
@@ -1788,9 +1788,9 @@
             <div class="icon-container">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="4" y1="20" x2="20" y2="20"/>
-                    <path d="M12 4L7 20"/>
-                    <path d="M12 4L17 20"/>
-                    <line x1="8" y1="14" x2="16" y2="14"/>
+                    <path d="M12 4L7 20" stroke-width="3"/>
+                    <path d="M12 4L17 20" stroke-width="3"/>
+                    <line x1="8" y1="14" x2="16" y2="14" stroke-width="3"/>
                   </svg>
             </div>
             <span class="icon-name">font</span>
@@ -1933,10 +1933,10 @@
         const iconsWithDetails = [
             'camera', 'video camera', 'bell', 'microphone', 'heart', 'image', 'video', 'audio', 'presentation', 'pdf', 'send', 'happy', 'share', 'book-open',
             'save', 'folder', 'open folder', 'play', 'pause', 'rewind', 'fast forward', 'sun', 'rain', 'snow', 'wind', 'thunder and lightning', 'shopping cart', 'tag', 'question mark',
-            'star', 'lock', 'unlock', 'tools', 'cloud', 'volume', 'display', 'paste', 'alert', 'history', 'bookmark',
-            'bolt', 'paint bucket', 'hard drive', 'database', 'paperclip', 'download', 'upload', 'save', 'print',
+            'star', 'lock', 'unlock', 'tools', 'cloud', 'volume', 'display', 'paste', 'alert', 'history', 'bookmark','gift', 'area chart', 'avatar',
+            'bolt', 'paint bucket', 'hard drive', 'database', 'paperclip', 'download', 'upload', 'save', 'print', 'lightbulb', 'portfolio',
             'bookmark', 'delete', 'camera', 'paint bucket', 'microphone', 'info', 'grid', 'copy', 'heart', 'happy', 'share', 'hard drive', 'database', 'info', 'book-open',
-            'thumbs down', 'thumbs up', 'zoom in', 'zoom out', 'pin', 'flag', 'calendar', 'user profile', 'laptop',
+            'thumbs down', 'thumbs up', 'zoom in', 'zoom out', 'pin', 'flag', 'calendar', 'user profile', 'laptop', 'chats', 'research',
             'volume down', 'volume up', 'skip backward', 'battery', 'skip forward', 'eye-slash', 'eye', 'settings', 'mute', 'contacts', 'compass', 'lifesaver'
         ];
 
@@ -2022,6 +2022,10 @@
                                 // Special handling for video camera lens
                                 path.setAttribute('fill', secondaryColor);
                                 path.setAttribute('stroke', primaryColor);
+                            } else if (iconName === 'lightbulb') {
+                                // Special handling for video camera lens
+                                path.setAttribute('fill', primaryColor);
+                                path.setAttribute('stroke', primaryColor);
                             } else if (iconName === 'open folder' && index === 0) {
                                 // Special handling for video camera lens
                                 path.setAttribute('fill', secondaryColor);
@@ -2029,6 +2033,10 @@
                             } else if (iconName === 'calendar' && index === 0) {
                                 // Special handling for video camera lens
                                 path.setAttribute('fill', primaryColor);
+                                path.setAttribute('stroke', primaryColor);
+                            } else if (iconName === 'chats' && index === 0) {
+                                // Special handling for video camera lens
+                                path.setAttribute('fill', 'none');
                                 path.setAttribute('stroke', primaryColor);
                             } else if (iconName === 'contacts') {
                                 // Special handling for video camera lens
@@ -2042,10 +2050,22 @@
                                 // Special handling for video camera lens
                                 path.setAttribute('fill', primaryColor);
                                 path.setAttribute('stroke', primaryColor);
+                            } else if (iconName === 'research' && index === 1) {
+                                // Special handling for video camera lens
+                                path.setAttribute('fill', 'none');
+                                path.setAttribute('stroke', primaryColor);
+                            } else if (iconName === 'portfolio' && index === 1) {
+                                // Special handling for video camera lens
+                                path.setAttribute('fill', primaryColor);
+                                path.setAttribute('stroke', secondaryColor);
                             } else if (iconName === 'compass' && index === 1) {
                                 // Special handling for video camera lens
                                 path.setAttribute('fill', primaryColor);
                                 path.setAttribute('stroke', secondaryColor);
+                            } else if (iconName === 'area chart' && index === 1) {
+                                // Special handling for video camera lens
+                                path.setAttribute('fill', 'none');
+                                path.setAttribute('stroke', primaryColor);
                             } else if (iconName === 'lifesaver' && index === 1) {
                                 // Special handling for video camera lens
                                 path.setAttribute('fill', primaryColor);
@@ -2062,6 +2082,10 @@
                                 // Special handling for video camera lens
                                 path.setAttribute('fill', 'none');
                                 path.setAttribute('stroke', primaryColor);
+                            } else if (iconName === 'avatar' && ((index === 1) || (index === 2))) {
+                                // Special handling for video camera lens
+                                path.setAttribute('fill', secondaryColor);
+                                path.setAttribute('stroke', secondaryColor);
                             } else if (iconName === 'zoom out' && index === 1) {
                                 // Special handling for video camera lens
                                 path.setAttribute('fill', primaryColor);
@@ -2107,7 +2131,19 @@
                                     path.setAttribute('fill', 'none');
                                     path.setAttribute('stroke', primaryColor);
                                 }
-                            } else if (iconName === 'snow') {
+                            } else if (iconName === 'gift') {
+                                // Special handling for video camera lens
+                                if (index === 0) {
+                                    path.setAttribute('fill', primaryColor);
+                                    path.setAttribute('stroke', primaryColor);
+                                } else if (index === 1) {
+                                    path.setAttribute('fill', primaryColor);
+                                    path.setAttribute('stroke', secondaryColor);
+                                } else if (index === 2) {
+                                    path.setAttribute('fill', primaryColor);
+                                    path.setAttribute('stroke', secondaryColor);
+                                }
+                            }else if (iconName === 'snow') {
                                 // Special handling for video camera lens
                                 if (index === 0) {
                                     path.setAttribute('fill', primaryColor);
@@ -2151,7 +2187,7 @@
                             } else if (iconName === 'volume up' && ((index === 1) || (index == 2))) {
                                 path.setAttribute('fill', 'none');
                                 path.setAttribute('stroke', primaryColor);
-                            } else if (iconName === 'shopping cart' && ((index === 1) || (index == 2))) {
+                            } else if (iconName === 'shopping cart' && ((index === 0) ||(index === 1) || (index == 2))) {
                                 path.setAttribute('fill', primaryColor);
                                 path.setAttribute('stroke', primaryColor);
                             } else if (iconName === 'volume down' && ((index === 1) || (index == 2))) {
