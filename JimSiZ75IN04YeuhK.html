@@ -1,0 +1,456 @@
+<html><head><base href="https://iconforge.app/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Forge | Forge your perfect icon pack</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+        :root {
+            --primary-color: #0066FF;
+            --secondary-color: #E6F0FF;
+            --text-color: #1A1A2E;
+            --background-start: #F0F8FF;
+            --background-end: #E6F0FF;
+            --gradient-middle: #EAF4FF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--background-start) 0%, var(--gradient-middle) 50%, var(--background-end) 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: -1px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 2.5rem;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 8rem;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            letter-spacing: -2px;
+        }
+
+        .tagline {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .description {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: #4A4A6A;
+            line-height: 1.8;
+        }
+
+        .icon-customizer {
+            flex: 1;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 3.5rem;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+            margin-left: 6rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .icon-customizer:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.15);
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            color: #2A2A3E;
+            font-size: 1.1rem;
+        }
+
+        .control-group select,
+        .control-group input[type="color"] {
+            width: 100%;
+            padding: 1.2rem;
+            border: 2px solid #D0D0E0;
+            border-radius: 16px;
+            font-size: 1.2rem;
+            background-color: white;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .control-group select:focus,
+        .control-group input[type="color"]:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.2);
+        }
+
+        .control-group input[type="range"] {
+            width: 100%;
+            margin-top: 0.5rem;
+            -webkit-appearance: none;
+            background: transparent;
+        }
+
+        .control-group input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 18px;
+            width: 18px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            cursor: pointer;
+            margin-top: -7px;
+            box-shadow: 0 2px 6px rgba(0, 102, 255, 0.3);
+        }
+
+        .control-group input[type="range"]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            background: #E0E0E0;
+            border-radius: 2px;
+        }
+
+        .icon-categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .category-button {
+            background-color: var(--secondary-color);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 600;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-button:hover,
+        .category-button.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .icon-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            background-color: rgba(230, 240, 255, 0.7);
+            padding: 2rem;
+            border-radius: 24px;
+        }
+
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .icon-item svg {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .icon-item:hover svg {
+            transform: scale(1.1);
+        }
+
+        .icon-name {
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+
+        .features {
+            margin-top: 12rem;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 4rem;
+            margin-top: 5rem;
+        }
+
+        .feature-item {
+            background-color: white;
+            padding: 3.5rem;
+            border-radius: 24px;
+            text-align: left;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-item h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .feature-item p {
+            color: #4A4A6A;
+            font-size: 1.2rem;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.4rem 3.5rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            margin-top: 3rem;
+            box-shadow: 0 10px 25px rgba(0, 102, 255, 0.4);
+        }
+
+        .cta-button:hover {
+            background-color: #0052CC;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 102, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="#" class="logo">Icon Forge</a>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <div class="hero-text">
+                <h1>Forge Your Perfect Icon Pack</h1>
+                <p class="tagline">AI-Powered Icon Customization</p>
+                <p class="description">Elevate your brand with custom icon packs tailored to your unique style. Our AI-driven platform makes it easy to create, customize, and implement stunning icons across your digital presence.</p>
+                <a href="https://app.iconforge.com/register" class="cta-button">Start Creating</a>
+            </div>
+
+            <div class="icon-customizer">
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="icon-style">Icon Style</label>
+                        <select id="icon-style">
+                            <option>Outlined</option>
+                            <option>Filled</option>
+                            <option>Duo-tone</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="icon-color">Primary Color</label>
+                        <input type="color" id="icon-color" value="#0066FF">
+                    </div>
+                    <div class="control-group">
+                        <label for="icon-size">Size</label>
+                        <input type="range" id="icon-size" min="16" max="64" value="32">
+                    </div>
+                    <div class="control-group">
+                        <label for="icon-weight">Weight</label>
+                        <input type="range" id="icon-weight" min="1" max="5" value="2">
+                    </div>
+                </div>
+                <div class="icon-categories">
+                    <button class="category-button active" data-category="all">All Icons</button>
+                    <button class="category-button" data-category="navigation">Navigation</button>
+                    <button class="category-button" data-category="actions">Actions</button>
+                    <button class="category-button" data-category="communication">Communication</button>
+                </div>
+                <div class="icon-preview">
+                    <div class="icon-item" data-category="navigation">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                        <span class="icon-name">Map</span>
+                    </div>
+                    <div class="icon-item" data-category="actions">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zm0-4H7V7h10v2z"></path></svg>
+                        <span class="icon-name">List</span>
+                    </div>
+                    <div class="icon-item" data-category="navigation">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>
+                        <span class="icon-name">Home</span>
+                    </div>
+                    <div class="icon-item" data-category="actions">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+                        <span class="icon-name">Search</span>
+                    </div>
+                    <div class="icon-item" data-category="actions">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"></path></svg>
+                        <span class="icon-name">Add</span>
+                    </div>
+                    <div class="icon-item" data-category="communication">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"></path></svg>
+                        <span class="icon-name">Message</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <section id="features" class="features">
+            <h2>Key Features</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h3>Vast Icon Library</h3>
+                    <p>Explore our extensive collection of pre-designed icons to find the perfect starting point for your brand.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Advanced Customization</h3>
+                    <p>Tailor icons to your exact specifications, including color, shape, size, and style with our intuitive tools.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Flexible Export Options</h3>
+                    <p>Download your finished icon packs in various formats, including SVG, PNG, and icon fonts for seamless integration.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>AI-Powered Suggestions</h3>
+                    <p>Receive intelligent recommendations for icon styles and combinations based on your brand identity and preferences.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const iconStyle = document.getElementById('icon-style');
+        const iconColor = document.getElementById('icon-color');
+        const iconSize = document.getElementById('icon-size');
+        const iconWeight = document.getElementById('icon-weight');
+        const iconPreview = document.querySelector('.icon-preview');
+        const categoryButtons = document.querySelectorAll('.category-button');
+
+        function updateIcons() {
+            const style = iconStyle.value;
+            const color = iconColor.value;
+            const size = iconSize.value;
+            const weight = iconWeight.value;
+
+            iconPreview.querySelectorAll('.icon-item svg').forEach(icon => {
+                icon.style.fill = color;
+                icon.style.width = `${size}px`;
+                icon.style.height = `${size}px`;
+                
+                if (style === 'Outlined') {
+                    icon.style.stroke = color;
+                    icon.style.fill = 'none';
+                    icon.style.strokeWidth = weight;
+                } else if (style === 'Filled') {
+                    icon.style.fill = color;
+                    icon.style.stroke = 'none';
+                } else if (style === 'Duo-tone') {
+                    icon.style.fill = color;
+                    icon.style.opacity = '0.7';
+                    icon.style.filter = `drop-shadow(0 0 ${weight}px ${color})`;
+                }
+            });
+        }
+
+        function filterIcons(category) {
+            const icons = iconPreview.querySelectorAll('.icon-item');
+            icons.forEach(icon => {
+                if (category === 'all' || icon.dataset.category === category) {
+                    icon.style.display = 'flex';
+                } else {
+                    icon.style.display = 'none';
+                }
+            });
+        }
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                filterIcons(button.dataset.category);
+            });
+        });
+
+        iconStyle.addEventListener('change', updateIcons);
+        iconColor.addEventListener('input', updateIcons);
+        iconSize.addEventListener('input', updateIcons);
+        iconWeight.addEventListener('input', updateIcons);
+
+        // Initial update
+        updateIcons();
+        filterIcons('all');
+    </script>
+</body></html>

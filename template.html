@@ -203,9 +203,15 @@
 
         .icon-item {
             display: flex;
-            flex-direction: column
+            flex-direction: column;
             align-items: center;
             text-align: center;
+        }
+
+        .icon {
+            stroke: var(--primary-color);
+            width: 48px;
+            fill: none;
         }
 
         .left-block {
@@ -536,15 +542,79 @@
             </div>
             <div class="icon-categories">
                 <button class="category-button active" data-category="all">All Icons</button>
-                <button class="category-button" data-category="navigation">Navigation</button>
                 <button class="category-button" data-category="actions">Actions</button>
-                <button class="category-button" data-category="communication">Communication</button>
+                <button class="category-button" data-category="business">Business</button>
+                <button class="category-button" data-category="chartsAndGraphs">Charts and Graphs</button>
+                <button class="category-button" data-category="communications">Communications</button>
+                <button class="category-button" data-category="content">Content</button>
+                <button class="category-button" data-category="device">Device</button>
+                <button class="category-button" data-category="eCommerce">e-Commerce</button>
+                <button class="category-button" data-category="editAndDesign">Edit and Design</button>
+                <button class="category-button" data-category="files">files</button>
+                <button class="category-button" data-category="media">media</button>
+                <button class="category-button" data-category="miscellaneous">Miscellaneous</button>
+                <button class="category-button" data-category="navigation">Navigation</button>
+                <button class="category-button" data-category="security">Security</button>
+                <button class="category-button" data-category="social">Social</button>
+                <button class="category-button" data-category="status">Status</button>
+                <button class="category-button" data-category="system">System</button>
+                <button class="category-button" data-category="uiElements">UI Elements</button>
+                <button class="category-button" data-category="user">User</button>              
+                <button class="category-button" data-category="weather">Weather</button>
             </div>
 
             <div class="icon-preview">
-                <div class="icon-item" data-category="navigation" style="display: flex;">
-                    
+               
+                    <!-- Add Icon -->
+            <div class="icon-item">
+                <div class="icon-container">
+                    <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
                 </div>
+                <span class="icon-name">add</span>
+            </div>
+
+            <!-- Delete Icon -->
+
+            <div class="icon-item">
+                <div class="icon-container">
+                    <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+                        <polyline points="3 6 5 6 21 6"></polyline>
+                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                        <line x1="10" y1="11" x2="10" y2="17"></line>
+                        <line x1="14" y1="11" x2="14" y2="17"></line>
+                    </svg>
+                </div>
+                <span class="icon-name">delete</span>
+            </div>
+
+            <!-- Save Icon -->
+
+            <div class="icon-item">
+                <div class="icon-container">
+                    <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+                        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v13a2 2 0 0 1-2 2z"></path>
+                        <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                        <polyline points="7 3 7 8 15 8"></polyline>
+                    </svg>
+                </div>
+                <span class="icon-name">save</span>
+            </div>
+
+            <!-- Copy Icon -->
+
+            <div class="icon-item">
+                <div class="icon-container">
+                    <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                </div>
+                <span class="icon-name">copy</span>
+            </div>
+                
             
             </div>
         </section>
@@ -556,25 +626,26 @@
     </a></div>
     <section class="key-features">
         <div class="feature-card">
-            <h2>Vast Application Icon Library</h2>
+            <h2>Vast Icon Collection</h2>
             <p>
-                Explore our extensive collection of pre-designed icons to find the perfect starting point for
-                applications or development work within your brand.
+                Access our extensive library of pre-designed application icons, offering the ideal starting point for your brand's development projects. Choose from a wide range of styles and categories to suit your needs.
             </p>
         </div>
         <div class="feature-card">
-            <h2>Advanced Customization</h2>
+            <h2>Intuitive Icon Editing</h2>
             <p>
-                Tailor icons to your exact specifications, including color, shape, size, and style with our
-                intuitive tools
+                Transform icons to match your exact requirements using our intuitive tools. Adjust colors, shapes, sizes, and styles with ease, ensuring perfect alignment with your brand identity and design preferences.
             </p>
         </div>
         <div class="feature-card">
-            <h2>Flexible Export Options</h2>
+            <h2>Versatile Export Tools</h2>
             <p>
-                Download the full library of customized icon packs in SVG format, or download individual SVG icons for
-                specific use cases.
+                Effortlessly download your customized icons in SVG format, either as complete icon packs or individual files. Our flexible export options streamline your workflow and support various use cases and platforms.
             </p>
     </section>
 
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Icon Forge - Christopher R McGuire. All rights reserved.</p>
+    </footer>
 </body>
