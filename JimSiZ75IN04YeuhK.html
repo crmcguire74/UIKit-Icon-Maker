@@ -177,17 +177,25 @@
 
         .icon-categories {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: flex-start;
             gap: 1rem;
             margin-bottom: 2rem;
         }
 
+        .category-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
         .category-button {
             background-color: var(--secondary-color);
-            border: none;
-            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--primary-color);
+            padding: 0.5rem 1rem;
             border-radius: 20px;
             font-weight: 600;
+            font-size: 0.9rem;
             color: var(--text-color);
             cursor: pointer;
             transition: all 0.3s ease;
@@ -197,6 +205,13 @@
         .category-button.active {
             background-color: var(--primary-color);
             color: white;
+        }
+
+        .category-button[data-category="all"] {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 700;
+            padding: 0.75rem 1.5rem;
         }
 
         .icon-preview {
@@ -335,9 +350,26 @@
                 </div>
                 <div class="icon-categories">
                     <button class="category-button active" data-category="all">All Icons</button>
-                    <button class="category-button" data-category="navigation">Navigation</button>
-                    <button class="category-button" data-category="actions">Actions</button>
-                    <button class="category-button" data-category="communication">Communication</button>
+                    <div class="category-group">
+                        <button class="category-button" data-category="actions">Actions</button>
+                        <button class="category-button" data-category="navigation">Navigation</button>
+                        <button class="category-button" data-category="communications">Communications</button>
+                        <button class="category-button" data-category="business">Business</button>
+                        <button class="category-button" data-category="chartsAndGraphs">Charts & Graphs</button>
+                        <button class="category-button" data-category="device">Device</button>
+                        <button class="category-button" data-category="eCommerce">e-Commerce</button>
+                        <button class="category-button" data-category="editAndDesign">Edit & Design</button>
+                        <button class="category-button" data-category="files">Files</button>
+                        <button class="category-button" data-category="media">Media</button>
+                        <button class="category-button" data-category="security">Security</button>
+                        <button class="category-button" data-category="social">Social</button>
+                        <button class="category-button" data-category="status">Status</button>
+                        <button class="category-button" data-category="system">System</button>
+                        <button class="category-button" data-category="uiElements">UI Elements</button>
+                        <button class="category-button" data-category="user">User</button>
+                        <button class="category-button" data-category="weather">Weather</button>
+                        <button class="category-button" data-category="miscellaneous">Miscellaneous</button>
+                    </div>
                 </div>
                 <div class="icon-preview">
                     <div class="icon-item" data-category="navigation">
@@ -360,9 +392,25 @@
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"></path></svg>
                         <span class="icon-name">Add</span>
                     </div>
-                    <div class="icon-item" data-category="communication">
+                    <div class="icon-item" data-category="communications">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"></path></svg>
                         <span class="icon-name">Message</span>
+                    </div>
+                    <div class="icon-item" data-category="business">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"></path></svg>
+                        <span class="icon-name">Briefcase</span>
+                    </div>
+                    <div class="icon-item" data-category="chartsAndGraphs">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path></svg>
+                        <span class="icon-name">Bar Chart</span>
+                    </div>
+                    <div class="icon-item" data-category="device">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 1h-8C6.12 1 5 2.12 5 3.5v17C5 21.88 6.12 23 7.5 23h8c1.38 0 2.5-1.12 2.5-2.5v-17C18 2.12 16.88 1 15.5 1zm-4 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5-4H7V4h9v14z"></path></svg>
+                        <span class="icon-name">Smartphone</span>
+                    </div>
+                    <div class="icon-item" data-category="eCommerce">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+                        <span class="icon-name">Shopping Cart</span>
                     </div>
                 </div>
             </div>
@@ -398,6 +446,7 @@
         const iconWeight = document.getElementById('icon-weight');
         const iconPreview = document.querySelector('.icon-preview');
         const categoryButtons = document.querySelectorAll('.category-button');
+        let selectedCategories = ['all'];
 
         function updateIcons() {
             const style = iconStyle.value;
@@ -425,10 +474,20 @@
             });
         }
 
-        function filterIcons(category) {
+        function updateCategoryButtons() {
+            categoryButtons.forEach(button => {
+                if (selectedCategories.includes(button.dataset.category)) {
+                    button.classList.add('active');
+                } else {
+                    button.classList.remove('active');
+                }
+            });
+        }
+
+        function filterIcons() {
             const icons = iconPreview.querySelectorAll('.icon-item');
             icons.forEach(icon => {
-                if (category === 'all' || icon.dataset.category === category) {
+                if (selectedCategories.includes('all') || selectedCategories.includes(icon.dataset.category)) {
                     icon.style.display = 'flex';
                 } else {
                     icon.style.display = 'none';
@@ -438,9 +497,22 @@
 
         categoryButtons.forEach(button => {
             button.addEventListener('click', () => {
-                categoryButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                filterIcons(button.dataset.category);
+                const category = button.dataset.category;
+                if (category === 'all') {
+                    selectedCategories = ['all'];
+                } else {
+                    selectedCategories = selectedCategories.filter(cat => cat !== 'all');
+                    if (selectedCategories.includes(category)) {
+                        selectedCategories = selectedCategories.filter(cat => cat !== category);
+                    } else {
+                        selectedCategories.push(category);
+                    }
+                    if (selectedCategories.length === 0) {
+                        selectedCategories = ['all'];
+                    }
+                }
+                updateCategoryButtons();
+                filterIcons();
             });
         });
 
@@ -451,6 +523,7 @@
 
         // Initial update
         updateIcons();
-        filterIcons('all');
+        updateCategoryButtons();
+        filterIcons();
     </script>
 </body></html>
