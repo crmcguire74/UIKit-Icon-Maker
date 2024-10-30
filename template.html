@@ -73,6 +73,11 @@
         padding-left: 5%;
       }
 
+      body.dark-mode {
+        background: #1a1a2e !important;
+        color: #f1f1f1 !important;
+      }
+
       .logo {
         /* font-size: 24px; */
         font-size: 40px;
@@ -511,6 +516,7 @@
     </style>
   </head>
 
+  <!-- <body class="loaded dark-mode"> -->
   <body>
     <!-- Header Section -->
     <header class="header">
@@ -601,7 +607,17 @@
             <label for="secondary-color">Secondary Color:</label>
             <input id="secondary-color" type="color" />
           </div>
+
+          <!-- Secondary Color Control -->
+          <div class="control-group">
+            <label for="theme-switch">Theme:</label>
+            <select id="theme-switch" placeholder="Light Theme">
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </div>
         </div>
+
         <div class="icon-categories" style="justify-content: left">
           <div class="category-group">
             <button class="category-button active" data-category="all">
@@ -681,26 +697,236 @@
             <span class="icon-name">add</span>
           </div>
 
-          <!-- Delete Icon -->
+          <!-- Alert Icon -->
+          <div class="icon-item" data-category="status">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+              <path d="M2 8c0-2.2.7-4.3 2-6"></path>
+              <path d="M22 8a10 10 0 0 0-2-6"></path>
+            </svg>
+            <span class="icon-name">alert</span>
+          </div>
 
-          <div class="icon-item" data-category="actions">
+          <!-- Align-Center Icon -->
+          <div class="icon-item" data-category="editAndDesign">
             <svg
               class="icon"
               viewBox="0 0 24 24"
               stroke-width="2"
               data-icon-fill="false"
             >
-              <polyline points="3 6 5 6 21 6"></polyline>
-              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
-              <line x1="10" y1="11" x2="10" y2="17"></line>
-              <line x1="14" y1="11" x2="14" y2="17"></line>
+              <line x1="17" y1="10" x2="6" y2="10"></line>
+              <line x1="21" y1="6" x2="3" y2="6"></line>
+              <line x1="21" y1="14" x2="3" y2="14"></line>
+              <line x1="17" y1="18" x2="6" y2="18"></line>
             </svg>
-            <span class="icon-name">delete</span>
+            <span class="icon-name">align-center</span>
           </div>
 
-          <!-- Save Icon -->
+          <!-- Align-Justify Icon -->
+          <div class="icon-item" data-category="editAndDesign">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <line x1="21" y1="10" x2="3" y2="10"></line>
+              <line x1="21" y1="6" x2="3" y2="6"></line>
+              <line x1="21" y1="14" x2="3" y2="14"></line>
+              <line x1="21" y1="18" x2="3" y2="18"></line>
+            </svg>
+            <span class="icon-name">align-justify</span>
+          </div>
 
-          <div class="icon-item" data-category="actions">
+          <!-- Align-Left Icon -->
+          <div class="icon-item" data-category="editAndDesign">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <line x1="17" y1="10" x2="3" y2="10"></line>
+              <line x1="21" y1="6" x2="3" y2="6"></line>
+              <line x1="21" y1="14" x2="3" y2="14"></line>
+              <line x1="17" y1="18" x2="3" y2="18"></line>
+            </svg>
+            <span class="icon-name">align-left</span>
+          </div>
+
+          <!-- Align-Right Icon -->
+          <div class="icon-item" data-category="editAndDesign">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <line x1="21" y1="10" x2="7" y2="10"></line>
+              <line x1="21" y1="6" x2="3" y2="6"></line>
+              <line x1="21" y1="14" x2="3" y2="14"></line>
+              <line x1="21" y1="18" x2="7" y2="18"></line>
+            </svg>
+            <span class="icon-name">align-right</span>
+          </div>
+
+          <!-- Area Chart Icon -->
+          <div class="icon-item" data-category="chartsAndGraphs">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M4 19L8 13 12 15 16 10 20 14 20 19 4 19z" />
+              <path d="M4 12L8 6 12 8 16 3 20 7" />
+            </svg>
+            <span class="icon-name">area chart</span>
+          </div>
+
+          <!-- Area Chart Icon -->
+          <div class="icon-item" data-category="business">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M4 19L8 13 12 15 16 10 20 14 20 19 4 19z" />
+              <path d="M4 12L8 6 12 8 16 3 20 7" />
+            </svg>
+            <span class="icon-name">area chart</span>
+          </div>
+
+          <!-- Audio Icon -->
+          <div class="icon-item" data-category="content">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+              <path
+                d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"
+              />
+            </svg>
+            <span class="icon-name">audio</span>
+          </div>
+
+          <!-- Avatar Icon -->
+          <div class="icon-item" data-category="user">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <circle cx="12" cy="10" r="3" />
+              <path d="M7 21v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2" />
+            </svg>
+            <span class="icon-name">avatar</span>
+          </div>
+
+          <!-- Back Arrow Icon -->
+          <div class="icon-item">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <path d="M19 12H5"></path>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span class="icon-name">back arrow</span>
+          </div>
+
+          <!-- Back Arrow Icon -->
+          <div class="icon-item" data-category="navigation">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M19 12H5"></path>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span class="icon-name">back arrow</span>
+          </div>
+
+          <!-- Bar Chart Icon -->
+          <div class="icon-item" data-category="chartsAndGraphs">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <line x1="12" y1="20" x2="12" y2="10" />
+              <line x1="18" y1="20" x2="18" y2="4" />
+              <line x1="6" y1="20" x2="6" y2="16" />
+            </svg>
+            <span class="icon-name">bar chart</span>
+          </div>
+
+          <!-- Bar Chart Icon -->
+          <div class="icon-item" data-category="business">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <line x1="12" y1="20" x2="12" y2="10" />
+              <line x1="18" y1="20" x2="18" y2="4" />
+              <line x1="6" y1="20" x2="6" y2="16" />
+            </svg>
+            <span class="icon-name">bar chart</span>
+          </div>
+
+          <!-- Battery Icon -->
+          <div class="icon-item" data-category="status">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <rect x="1" y="6" width="18" height="12" rx="2" ry="2" />
+              <line x1="23" y1="13" x2="23" y2="11" />
+            </svg>
+            <span class="icon-name">battery</span>
+          </div>
+
+          <!-- Bluetooth Icon -->
+          <div class="icon-item" data-category="system">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <path d="M6.5 6.5l11 11L12 23V1l5.5 5.5-11 11" />
+            </svg>
+            <span class="icon-name">bluetooth</span>
+          </div>
+
+          <!-- Bookmark Icon -->
+          <div class="icon-item" data-category="content">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path
+                d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
+              ></path>
+            </svg>
+            <span class="icon-name">bookmark</span>
+          </div>
+
+          <!-- Bullet List Icon -->
+          <div class="icon-item" data-category="uiElements">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <line x1="9" y1="6" x2="20" y2="6" />
+              <line x1="9" y1="12" x2="20" y2="12" />
+              <line x1="9" y1="18" x2="20" y2="18" />
+              <circle cx="4" cy="6" r="1" />
+              <circle cx="4" cy="12" r="1" />
+              <circle cx="4" cy="18" r="1" />
+            </svg>
+            <span class="icon-name">bullet list</span>
+          </div>
+
+          <!-- Calendar Icon -->
+          <div class="icon-item" data-category="communications">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+            <span class="icon-name">calendar</span>
+          </div>
+
+          <!-- Camera Icon -->
+          <div class="icon-item" data-category="media">
             <svg
               class="icon"
               viewBox="0 0 24 24"
@@ -708,16 +934,138 @@
               data-icon-detailed="true"
             >
               <path
-                d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v13a2 2 0 0 1-2 2z"
+                d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
               ></path>
-              <polyline points="17 21 17 13 7 13 7 21"></polyline>
-              <polyline points="7 3 7 8 15 8"></polyline>
+              <circle cx="12" cy="13" r="4"></circle>
             </svg>
-            <span class="icon-name">save</span>
+            <span class="icon-name">camera</span>
+          </div>
+
+          <!-- Chat Icon -->
+          <div class="icon-item" data-category="communications">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path
+                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+              />
+            </svg>
+            <span class="icon-name">chat</span>
+          </div>
+
+          <!-- Chats Icon -->
+          <div class="icon-item" data-category="social">
+            <svg class="icon" viewBox="0 0 24 24">
+              <path
+                d="M7 2h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3l-3 3-3-3H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"
+              />
+              <path
+                d="M3 6h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3l-3 3-3-3H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"
+              />
+            </svg>
+            <span class="icon-name">chats</span>
+          </div>
+
+          <!-- Check Icon -->
+          <div class="icon-item" data-category="uiElements">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span class="icon-name">check</span>
+          </div>
+
+          <!-- Close Icon -->
+          <div class="icon-item" data-category="actions">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            <span class="icon-name">close</span>
+          </div>
+
+          <!-- Closed Captions -->
+          <div class="icon-item" data-category="communications">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <rect x="2" y="4" width="20" height="16" rx="2" ry="2" />
+              <path d="M8 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2" />
+              <path d="M16 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2" />
+            </svg>
+            <span class="icon-name">closed captions</span>
+          </div>
+
+          <!-- Closed Captions -->
+          <div class="icon-item" data-category="media">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <rect x="2" y="4" width="20" height="16" rx="2" ry="2" />
+              <path d="M8 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2" />
+              <path d="M16 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2" />
+            </svg>
+            <span class="icon-name">closed captions</span>
+          </div>
+
+          <!-- Cloud Icon -->
+          <div class="icon-item" data-category="system">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+            </svg>
+            <span class="icon-name">cloud</span>
+          </div>
+
+          <!-- Code Icon -->
+          <div class="icon-item" data-category="files">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+            <span class="icon-name">code</span>
+          </div>
+
+          <!-- Compass Icon -->
+          <div class="icon-item" data-category="navigation">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <polygon
+                points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"
+              />
+            </svg>
+            <span class="icon-name">compass</span>
+          </div>
+
+          <!-- Contacts Icon -->
+          <div class="icon-item" data-category="communications">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+            <span class="icon-name">contacts</span>
           </div>
 
           <!-- Copy Icon -->
-
           <div class="icon-item" data-category="actions">
             <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
               <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -728,25 +1076,25 @@
             <span class="icon-name">copy</span>
           </div>
 
-          <!-- Paste Icon -->
-
-          <div class="icon-item" data-category="actions">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <path
-                d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
-              ></path>
-              <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+          <!-- Credit Card Icon -->
+          <div class="icon-item" data-category="eCommerce">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+              <line x1="1" y1="10" x2="23" y2="10" />
             </svg>
-            <span class="icon-name">paste</span>
+            <span class="icon-name">credit card</span>
+          </div>
+
+          <!-- Credit Card Icon -->
+          <div class="icon-item" data-category="business">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+              <line x1="1" y1="10" x2="23" y2="10" />
+            </svg>
+            <span class="icon-name">credit card</span>
           </div>
 
           <!-- Cut Icon -->
-
           <div class="icon-item" data-category="actions">
             <svg
               class="icon"
@@ -763,8 +1111,50 @@
             <span class="icon-name">cut</span>
           </div>
 
-          <!-- Upload Icon -->
+          <!-- Database Icon -->
+          <div class="icon-item" data-category="system">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+              <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+            </svg>
+            <span class="icon-name">database</span>
+          </div>
 
+          <!-- Database Icon -->
+          <div class="icon-item" data-category="files">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+              <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+            </svg>
+            <span class="icon-name">database</span>
+          </div>
+
+          <!-- Decrease Trend Down -->
+          <div class="icon-item" data-category="chartsAndGraphs">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <polyline points="23 18 13.5 8.5 8.5 13.5 1 6" />
+              <polyline points="17 18 23 18 23 12" />
+            </svg>
+            <span class="icon-name">decrease trend down</span>
+          </div>
+
+          <!-- Decrease Trend Down -->
+          <div class="icon-item" data-category="business">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <polyline points="23 18 13.5 8.5 8.5 13.5 1 6" />
+              <polyline points="17 18 23 18 23 12" />
+            </svg>
+            <span class="icon-name">decrease trend down</span>
+          </div>
+
+          <!-- Delete Icon -->
           <div class="icon-item" data-category="actions">
             <svg
               class="icon"
@@ -772,15 +1162,77 @@
               stroke-width="2"
               data-icon-fill="false"
             >
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="17 8 12 3 7 8"></polyline>
-              <line x1="12" y1="3" x2="12" y2="15"></line>
+              <polyline points="3 6 5 6 21 6"></polyline>
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+              <line x1="10" y1="11" x2="10" y2="17"></line>
+              <line x1="14" y1="11" x2="14" y2="17"></line>
             </svg>
-            <span class="icon-name">upload</span>
+            <span class="icon-name">delete</span>
+          </div>
+
+          <!-- Desktop Computer -->
+          <div class="icon-item" data-category="device">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg>
+            <span class="icon-name">desktop computer</span>
+          </div>
+
+          <!-- Display -->
+          <div class="icon-item" data-category="device">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg>
+            <span class="icon-name">display</span>
+          </div>
+
+          <!-- Document Icon -->
+          <div class="icon-item" data-category="content">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
+            </svg>
+            <span class="icon-name">document</span>
+          </div>
+
+          <!-- Down Arrow Icon -->
+          <div class="icon-item" data-category="actions">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <path d="M12 5v14"></path>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+            <span class="icon-name">down arrow</span>
+          </div>
+
+          <!-- Down Arrow -->
+          <div class="icon-item" data-category="navigation">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M12 5v14"></path>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+            <span class="icon-name">down arrow</span>
           </div>
 
           <!-- Download Icon -->
-
           <div class="icon-item" data-category="actions">
             <svg
               class="icon"
@@ -795,8 +1247,827 @@
             <span class="icon-name">download</span>
           </div>
 
-          <!-- Refresh Icon -->
+          <!-- Email Icon -->
+          <div class="icon-item" data-category="communications">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
 
+            <span class="icon-name">email</span>
+          </div>
+
+          <!-- Error Icon -->
+          <div class="icon-item" data-category="status">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="15" y1="9" x2="9" y2="15" />
+              <line x1="9" y1="9" x2="15" y2="15" />
+            </svg>
+            <span class="icon-name">error</span>
+          </div>
+
+          <!-- Exit Full Screen Icon -->
+          <div class="icon-item" data-category="actions">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <path
+                d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"
+              />
+            </svg>
+            <span class="icon-name">exit full screen</span>
+          </div>
+
+          <!-- External Link Icon -->
+          <div class="icon-item" data-category="content">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <path
+                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+              />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+            <span class="icon-name">external link</span>
+          </div>
+
+          <!-- Eye Icon -->
+          <div class="icon-item" data-category="status">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+            <span class="icon-name">eye</span>
+          </div>
+
+          <!-- Eye-Slash Icon -->
+          <div class="icon-item" data-category="status">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path
+                d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"
+              />
+              <line x1="1" y1="1" x2="23" y2="23" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+            <span class="icon-name">eye-slash</span>
+          </div>
+
+          <!-- Fast Forward Icon -->
+          <div class="icon-item" data-category="media">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <polygon points="5 4 15 12 5 20 5 4" />
+              <line x1="19" y1="5" x2="19" y2="19" />
+            </svg>
+            <span class="icon-name">skip forward</span>
+          </div>
+
+          <!-- Filter Icon -->
+          <div class="icon-item" data-category="actions">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <polygon
+                points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"
+              ></polygon>
+            </svg>
+            <span class="icon-name">filter</span>
+          </div>
+
+          <!-- Flag Icon -->
+          <div class="icon-item" data-category="navigation">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path
+                d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"
+              />
+              <line x1="4" y1="22" x2="4" y2="15" />
+            </svg>
+            <span class="icon-name">flag</span>
+          </div>
+
+          <!-- Flask Icon -->
+          <div class="icon-item" data-category="system">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M9 3h6" />
+              <path d="M10 3v7L6 20h12l-4-10V3" />
+              <path d="M6 15h12" />
+            </svg>
+            <span class="icon-name">flask</span>
+          </div>
+
+          <!-- Folder Icon -->
+          <div class="icon-item" data-category="content">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <path
+                d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+              ></path>
+            </svg>
+            <span class="icon-name">folder</span>
+          </div>
+
+          <!-- Font Icon -->
+          <div class="icon-item" data-category="editAndDesign">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <line x1="4" y1="20" x2="20" y2="20" />
+              <path d="M12 4L7 20" stroke-width="3" />
+              <path d="M12 4L17 20" stroke-width="3" />
+              <line x1="8" y1="14" x2="16" y2="14" stroke-width="3" />
+            </svg>
+            <span class="icon-name">font</span>
+          </div>
+
+          <!-- Forward Icon -->
+          <div class="icon-item" data-category="communications">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <polyline points="15 17 20 12 15 7" />
+              <path d="M4 18v-2a4 4 0 0 1 4-4h12" />
+            </svg>
+            <span class="icon-name">forward</span>
+          </div>
+
+          <!-- Front Arrow Icon -->
+          <div class="icon-item" data-category="actions">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <path d="M5 12h14"></path>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+            <span class="icon-name">front arrow</span>
+          </div>
+
+          <!-- Front Arrow Icon -->
+          <div class="icon-item" data-category="navigation">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M5 12h14"></path>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+            <span class="icon-name">front arrow</span>
+          </div>
+
+          <!-- Full Screen Icon -->
+          <div class="icon-item" data-category="actions">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <path
+                d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"
+              />
+            </svg>
+            <span class="icon-name">full screen</span>
+          </div>
+
+          <!-- Gift Icon -->
+          <div class="icon-item" data-category="eCommerce">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <polyline points="20 12 20 22 4 22 4 12" />
+              <rect x="2" y="7" width="20" height="5" />
+              <line x1="12" y1="22" x2="12" y2="7" />
+              <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" />
+              <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
+            </svg>
+            <span class="icon-name">gift</span>
+          </div>
+
+          <!-- Gift Icon -->
+          <div class="icon-item" data-category="business">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <polyline points="20 12 20 22 4 22 4 12" />
+              <rect x="2" y="7" width="20" height="5" />
+              <line x1="12" y1="22" x2="12" y2="7" />
+              <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" />
+              <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
+            </svg>
+            <span class="icon-name">gift</span>
+          </div>
+
+          <!-- Globe Icon -->
+          <div class="icon-item" data-category="navigation">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <path
+                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+              />
+              <line x1="2" y1="12" x2="22" y2="12" />
+            </svg>
+            <span class="icon-name">globe</span>
+          </div>
+
+          <!-- Grid Icon -->
+          <div class="icon-item" data-category="navigation">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span class="icon-name">grid</span>
+          </div>
+
+          <!-- Hamburger Menu Icon -->
+          <div class="icon-item" data-category="navigation">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+            <span class="icon-name">hamburger menu</span>
+          </div>
+
+          <!-- Happy Icon -->
+          <div class="icon-item" data-category="social">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+              <line x1="9" y1="9" x2="9.01" y2="9"></line>
+              <line x1="15" y1="9" x2="15.01" y2="9"></line>
+            </svg>
+            <span class="icon-name">happy</span>
+          </div>
+
+          <!-- Hard Drive Icon -->
+          <div class="icon-item" data-category="system">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path
+                d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"
+              />
+              <line x1="22" y1="12" x2="2" y2="12"></line>
+              <line x1="6" y1="16" x2="6.01" y2="16"></line>
+              <line x1="10" y1="16" x2="10.01" y2="16"></line>
+            </svg>
+            <span class="icon-name">hard drive</span>
+          </div>
+
+          <!-- Hard Drive -->
+          <div class="icon-item" data-category="files">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path
+                d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"
+              />
+              <line x1="22" y1="12" x2="2" y2="12"></line>
+              <line x1="6" y1="16" x2="6.01" y2="16"></line>
+              <line x1="10" y1="16" x2="10.01" y2="16"></line>
+            </svg>
+            <span class="icon-name">hard drive</span>
+          </div>
+
+          <!-- Heart Icon -->
+          <div class="icon-item" data-category="social">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+              ></path>
+            </svg>
+            <span class="icon-name">heart</span>
+          </div>
+
+          <!-- Home Icon -->
+          <div class="icon-item" data-category="navigation">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+            <span class="icon-name">home</span>
+          </div>
+
+          <!-- Image Icon -->
+          <div class="icon-item" data-category="content">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+            <span class="icon-name">image</span>
+          </div>
+
+          <!-- Increase Trend Up Icon -->
+          <div class="icon-item" data-category="chartsAndGraphs">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+              <polyline points="17 6 23 6 23 12" />
+            </svg>
+            <span class="icon-name">increase trend up</span>
+          </div>
+
+          <!-- Increase Trend Up Icon -->
+          <div class="icon-item" data-category="business">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+              <polyline points="17 6 23 6 23 12" />
+            </svg>
+            <span class="icon-name">increase trend up</span>
+          </div>
+
+          <!-- Info Icon -->
+          <div class="icon-item" data-category="status">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <span class="icon-name">info</span>
+          </div>
+
+          <!-- Key Icon -->
+          <div class="icon-item" data-category="security">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <path
+                d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"
+              />
+            </svg>
+            <span class="icon-name">key</span>
+          </div>
+
+          <!-- Laptop Icon -->
+          <div class="icon-item" data-category="device">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path
+                d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0l1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"
+              />
+            </svg>
+            <span class="icon-name">laptop</span>
+          </div>
+
+          <!-- Lifesaver Icon -->
+          <div class="icon-item" data-category="miscellaneous">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <circle cx="12" cy="12" r="4" />
+              <line x1="4.93" y1="4.93" x2="9.17" y2="9.17" />
+              <line x1="14.83" y1="14.83" x2="19.07" y2="19.07" />
+              <line x1="14.83" y1="9.17" x2="19.07" y2="4.93" />
+              <line x1="14.83" y1="9.17" x2="18.36" y2="5.64" />
+              <line x1="4.93" y1="19.07" x2="9.17" y2="14.83" />
+            </svg>
+            <span class="icon-name">lifesaver</span>
+          </div>
+
+          <!-- Lightbulb Icon -->
+          <div class="icon-item" data-category="system">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M9 18h6" />
+              <path d="M10 22h4" />
+              <path
+                d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"
+              />
+            </svg>
+            <span class="icon-name">lightbulb</span>
+          </div>
+
+          <!-- Line Chart Icon -->
+          <div class="icon-item" data-category="chartsAndGraphs">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <line x1="4" y1="19" x2="20" y2="19" />
+              <polyline points="4 15 8 9 12 11 16 6 20 10" />
+            </svg>
+            <span class="icon-name">line chart</span>
+          </div>
+
+          <!-- Line Chart Icon -->
+          <div class="icon-item" data-category="business">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <line x1="4" y1="19" x2="20" y2="19" />
+              <polyline points="4 15 8 9 12 11 16 6 20 10" />
+            </svg>
+            <span class="icon-name">line chart</span>
+          </div>
+
+          <!-- Lock Icon -->
+          <div class="icon-item" data-category="security">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              stroke-width="2"
+            >
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" fill="none" stroke-width="2" />
+            </svg>
+            <span class="icon-name">lock</span>
+          </div>
+
+          <!-- Lock Icon -->
+          <div class="icon-item" data-category="status">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" fill="none" stroke-width="2" />
+            </svg>
+            <span class="icon-name">lock</span>
+          </div>
+
+          <!-- Login Icon -->
+          <div class="icon-item" data-category="user">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+              <polyline points="10 17 15 12 10 7" />
+              <line x1="15" y1="12" x2="3" y2="12" />
+            </svg>
+            <span class="icon-name">login</span>
+          </div>
+
+          <!-- Logout -->
+          <div class="icon-item" data-category="user">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+              <polyline points="16 17 21 12 16 7" />
+              <line x1="21" y1="12" x2="9" y2="12" />
+            </svg>
+            <span class="icon-name">logout</span>
+          </div>
+
+          <!-- Microphone Icon -->
+          <div class="icon-item" data-category="media">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <path
+                d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"
+              ></path>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+              <line x1="12" y1="19" x2="12" y2="23"></line>
+              <line x1="8" y1="23" x2="16" y2="23"></line>
+            </svg>
+            <span class="icon-name">microphone</span>
+          </div>
+
+          <!-- Money Icon -->
+          <div class="icon-item" data-category="business">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <line x1="12" y1="1" x2="12" y2="23" />
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            </svg>
+            <span class="icon-name">money</span>
+          </div>
+
+          <!-- Moon Icon -->
+          <div class="icon-item" data-category="weather">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+            <span class="icon-name">moon</span>
+          </div>
+
+          <!-- Mute Icon -->
+          <div class="icon-item" data-category="media">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+              <line x1="23" y1="9" x2="17" y2="15" />
+              <line x1="17" y1="9" x2="23" y2="15" />
+            </svg>
+            <span class="icon-name">mute</span>
+          </div>
+
+          <!-- Number List Icon -->
+          <div class="icon-item" data-category="uiElements">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <line x1="9" y1="6" x2="20" y2="6" />
+              <line x1="9" y1="12" x2="20" y2="12" />
+              <line x1="9" y1="18" x2="20" y2="18" />
+              <path d="M4 6h1v4" />
+              <path d="M4 10h2" />
+              <path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1" />
+            </svg>
+            <span class="icon-name">number list</span>
+          </div>
+
+          <!-- Open Folder Icon -->
+          <div class="icon-item" data-category="actions">
+            <svg
+              class="icon"
+              viewBox="0 0 21.15 16"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <path
+                class="cls-1"
+                d="M1,13V3c0-1.1.9-2,2-2h4l2,2h6c1.1,0,2,.9,2,2v8c0,1.1-.9,2-2,2H3c-1.1,0-2-.9-2-2Z"
+              />
+              <path
+                class="cls-1"
+                d="M15.55,15H2.73c-.76,0-1.31-.67-1.13-1.35l1.36-5.11c.13-.49.6-.83,1.13-.83h14.89c.81,0,1.38.76,1.09,1.48l-1.58,3.91c-.46,1.14-1.63,1.9-2.94,1.9Z"
+              />
+            </svg>
+            <span class="icon-name">open folder</span>
+          </div>
+
+          <!-- Open Folder Icon -->
+          <div class="icon-item" data-category="content">
+            <svg class="icon" viewBox="0 0 21.15 16" stroke-width="2">
+              <path
+                class="cls-1"
+                d="M1,13V3c0-1.1.9-2,2-2h4l2,2h6c1.1,0,2,.9,2,2v8c0,1.1-.9,2-2,2H3c-1.1,0-2-.9-2-2Z"
+              />
+              <path
+                class="cls-1"
+                d="M15.55,15H2.73c-.76,0-1.31-.67-1.13-1.35l1.36-5.11c.13-.49.6-.83,1.13-.83h14.89c.81,0,1.38.76,1.09,1.48l-1.58,3.91c-.46,1.14-1.63,1.9-2.94,1.9Z"
+              />
+            </svg>
+            <span class="icon-name">open folder</span>
+          </div>
+
+          <!-- Paint Bucket Icon -->
+          <div class="icon-item" data-category="editAndDesign">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path
+                class="icon-path"
+                d="M19 5H5v4h14V5zm1 2v2a3 3 0 0 1-3 3h-3v2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3a2 2 0 0 0-2-2v-2h3a5 5 0 0 0 5-5V7a2 2 0 0 0-2-2z"
+              />
+            </svg>
+            <span class="icon-name">paint bucket</span>
+          </div>
+
+          <!-- Paperclip Icon -->
+          <div class="icon-item" data-category="content">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <path
+                d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"
+              ></path>
+            </svg>
+            <span class="icon-name">paperclip</span>
+          </div>
+
+          <!-- Paste Icon -->
+          <div class="icon-item" data-category="actions">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <path
+                d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
+              ></path>
+              <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+            </svg>
+            <span class="icon-name">paste</span>
+          </div>
+
+          <!-- Pause Icon -->
+          <div class="icon-item" data-category="media">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+            <span class="icon-name">pause</span>
+          </div>
+
+          <!-- PDF Icon -->
+          <div class="icon-item" data-category="content">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              />
+              <polyline points="14 2 14 8 20 8" />
+              <path d="M9 15h6" />
+              <path d="M9 11h6" />
+              <path d="M9 18h6" />
+            </svg>
+            <span class="icon-name">PDF</span>
+          </div>
+
+          <!-- Phone Icon -->
+          <div class="icon-item" data-category="communications">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+              />
+            </svg>
+            <span class="icon-name">phone</span>
+          </div>
+
+          <!-- Pin Icon -->
+          <div class="icon-item" data-category="navigation">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span class="icon-name">pin</span>
+          </div>
+
+          <!-- Play Icon -->
+          <div class="icon-item" data-category="media">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <span class="icon-name">play</span>
+          </div>
+
+          <!-- Portfolio Icon -->
+          <div class="icon-item" data-category="business">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+            </svg>
+            <span class="icon-name">portfolio</span>
+          </div>
+
+          <!-- Presentation Icon -->
+          <div class="icon-item" data-category="content">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+              <path d="M7 7h10" />
+              <path d="M7 11h10" />
+            </svg>
+            <span class="icon-name">presentation</span>
+          </div>
+
+          <!-- Print Icon -->
+          <div class="icon-item" data-category="actions">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <polyline points="6 9 6 2 18 2 18 9" />
+              <path
+                d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"
+              />
+              <rect x="6" y="14" width="12" height="8" />
+            </svg>
+            <span class="icon-name">print</span>
+          </div>
+
+          <!-- Puzzle Piece Icon -->
+          <div class="icon-item" data-category="miscellaneous">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path
+                d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 0 1-.837.276c-.47-.07-.802-.48-.968-.968a2.98 2.98 0 1 0-3.241 3.241c.487.166.897.498.967.968a.979.979 0 0 1-.276.837l-1.611 1.611a2.404 2.404 0 0 1-1.704.706 2.402 2.402 0 0 1-1.704-.706l-1.568-1.568a1.026 1.026 0 0 0-.877-.29c-.493.074-.84.504-1.02 1.006a3 3 0 1 1-3.241-3.241c.502-.18.932-.527 1.006-1.02.051-.322-.059-.648-.29-.877l-1.567-1.568A2.402 2.402 0 0 1 1.998 12c0-.617.236-1.234.706-1.704L4.23 8.77c.24-.24.581-.353.917-.303.515.077.877.528 1.073 1.06a3 3 0 1 0 3.241-3.241c-.532-.196-.983-.558-1.06-1.073-.05-.336.062-.676.303-.917l1.525-1.525A2.402 2.402 0 0 1 12 1.998c.617 0 1.234.236 1.704.706l1.568 1.568c.23.23.556.338.877.29.493-.074.84-.504 1.02-1.006a3 3 0 1 1 3.241 3.241c-.502.18-.932.527-1.006 1.02z"
+              />
+            </svg>
+            <span class="icon-name">puzzle piece</span>
+          </div>
+
+          <!-- Question Mark Icon -->
+          <div class="icon-item" data-category="status">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+              <line x1="12" y1="17" x2="12.01" y2="17" />
+            </svg>
+            <span class="icon-name">question mark</span>
+          </div>
+
+          <!-- Rain Icon -->
+          <div class="icon-item" data-category="weather">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <line x1="16" y1="13" x2="16" y2="21" />
+              <line x1="8" y1="13" x2="8" y2="21" />
+              <line x1="12" y1="15" x2="12" y2="23" />
+              <path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25" />
+            </svg>
+            <span class="icon-name">rain</span>
+          </div>
+
+          <!-- Redo Icon -->
+          <div class="icon-item" data-category="actions">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <path d="M21 7v6h-6" />
+              <path d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3L21 13" />
+            </svg>
+            <span class="icon-name">redo</span>
+          </div>
+
+          <!-- Refresh Icon -->
           <div class="icon-item" data-category="actions">
             <svg
               class="icon"
@@ -813,51 +2084,138 @@
             <span class="icon-name">refresh</span>
           </div>
 
-          <!-- Print Icon -->
+          <!-- Reply Icon -->
+          <div class="icon-item" data-category="communications">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <polyline points="9 14 4 9 9 4" />
+              <path d="M20 20v-7a4 4 0 0 0-4-4H4" />
+            </svg>
+            <span class="icon-name">reply</span>
+          </div>
 
-          <div class="icon-item" data-category="actions">
+          <!-- Research Icon -->
+          <div class="icon-item" data-category="business">
             <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <polyline points="6 9 6 2 18 2 18 9" />
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              <line x1="11" y1="8" x2="11" y2="14" />
+              <line x1="8" y1="11" x2="14" y2="11" />
+            </svg>
+            <span class="icon-name">research</span>
+          </div>
+
+          <!-- Rewind Icon -->
+          <div class="icon-item" data-category="media">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <polygon points="11 19 2 12 11 5 11 19"></polygon>
+              <polygon points="22 19 13 12 22 5 22 19"></polygon>
+            </svg>
+            <span class="icon-name">rewind</span>
+          </div>
+
+          <!-- Save Icon -->
+          <div class="icon-item" data-category="actions">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
               <path
-                d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"
+                d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v13a2 2 0 0 1-2 2z"
+              ></path>
+              <polyline points="17 21 17 13 7 13 7 21"></polyline>
+              <polyline points="7 3 7 8 15 8"></polyline>
+            </svg>
+            <span class="icon-name">save</span>
+          </div>
+
+          <!-- Scatter Plot Icon -->
+          <div class="icon-item" data-category="chartsAndGraphs">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <line x1="4" y1="20" x2="20" y2="20" />
+              <line x1="4" y1="4" x2="4" y2="20" />
+              <circle cx="8" cy="10" r="1" />
+              <circle cx="12" cy="14" r="1" />
+              <circle cx="16" cy="8" r="1" />
+              <circle cx="18" cy="12" r="1" />
+              <circle cx="10" cy="16" r="1" />
+            </svg>
+            <span class="icon-name">scatter plot</span>
+          </div>
+
+          <!-- Scatter Plot Icon -->
+          <div class="icon-item" data-category="business">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <line x1="4" y1="20" x2="20" y2="20" />
+              <line x1="4" y1="4" x2="4" y2="20" />
+              <circle cx="8" cy="10" r="1" />
+              <circle cx="12" cy="14" r="1" />
+              <circle cx="16" cy="8" r="1" />
+              <circle cx="18" cy="12" r="1" />
+              <circle cx="10" cy="16" r="1" />
+            </svg>
+            <span class="icon-name">scatter plot</span>
+          </div>
+
+          <!-- Send Icon -->
+          <div class="icon-item" data-category="communications">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              <line x1="22" y1="2" x2="11" y2="13" />
+            </svg>
+            <span class="icon-name">send</span>
+          </div>
+
+          <!-- Settings Icon -->
+          <div class="icon-item" data-category="system">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
               />
-              <rect x="6" y="14" width="12" height="8" />
+              <circle cx="12" cy="12" r="3" />
             </svg>
-            <span class="icon-name">print</span>
+            <span class="icon-name">settings</span>
           </div>
 
-          <!-- Undo Icon -->
-
-          <div class="icon-item" data-category="actions">
+          <!-- Share -->
+          <div class="icon-item" data-category="social">
             <svg
               class="icon"
               viewBox="0 0 24 24"
               stroke-width="2"
-              data-icon-fill="false"
+              data-icon-detailed="true"
             >
-              <path d="M3 7v6h6" />
-              <path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13" />
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
             </svg>
-            <span class="icon-name">undo</span>
-          </div>
-
-          <!-- Redo Icon -->
-
-          <div class="icon-item" data-category="actions">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <path d="M21 7v6h-6" />
-              <path d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3L21 13" />
-            </svg>
-            <span class="icon-name">redo</span>
+            <span class="icon-name">share</span>
           </div>
 
           <!-- Share Icon -->
-
           <div class="icon-item" data-category="actions">
             <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
               <circle cx="18" cy="5" r="3"></circle>
@@ -869,8 +2227,88 @@
             <span class="icon-name">share</span>
           </div>
 
-          <!-- Sort ABC Icon -->
+          <!-- Shopping Cart Icon -->
+          <div class="icon-item" data-category="eCommerce">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <circle cx="9" cy="21" r="1" />
+              <circle cx="20" cy="21" r="1" />
+              <path
+                d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+              />
+            </svg>
+            <span class="icon-name">shopping cart</span>
+          </div>
 
+          <!-- Skip Backward -->
+          <div class="icon-item" data-category="actions">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <polygon points="19 20 9 12 19 4 19 20" />
+              <line x1="5" y1="19" x2="5" y2="5" />
+            </svg>
+            <span class="icon-name">skip backward</span>
+          </div>
+
+          <!-- Skip Backwards -->
+          <div class="icon-item" data-category="media">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <polygon points="19 20 9 12 19 4 19 20" />
+              <line x1="5" y1="19" x2="5" y2="5" />
+            </svg>
+            <span class="icon-name">skip backward</span>
+          </div>
+
+          <!-- Skip Forwards -->
+          <div class="icon-item" data-category="media">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <polygon points="5 4 15 12 5 20 5 4" />
+              <line x1="19" y1="5" x2="19" y2="19" />
+            </svg>
+            <span class="icon-name">skip forward</span>
+          </div>
+
+          <!-- Skip Forward Icon -->
+          <div class="icon-item" data-category="actions">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <polygon points="5 4 15 12 5 20 5 4" />
+              <line x1="19" y1="5" x2="19" y2="19" />
+            </svg>
+            <span class="icon-name">skip forward</span>
+          </div>
+
+          <!-- Smartphone Icon -->
+          <div class="icon-item" data-category="device">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+              <line x1="12" y1="18" x2="12.01" y2="18" />
+            </svg>
+            <span class="icon-name">smartphone</span>
+          </div>
+
+          <!-- Snow Icon -->
+          <div class="icon-item" data-category="weather">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <path d="M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25" />
+              <line x1="8" y1="16" x2="8.01" y2="16" />
+              <line x1="8" y1="20" x2="8.01" y2="20" />
+              <line x1="12" y1="18" x2="12.01" y2="18" />
+              <line x1="12" y1="22" x2="12.01" y2="22" />
+              <line x1="16" y1="16" x2="16.01" y2="16" />
+              <line x1="16" y1="20" x2="16.01" y2="20" />
+            </svg>
+            <span class="icon-name">snow</span>
+          </div>
+
+          <!-- Sort ABC Icon -->
           <div class="icon-item" data-category="actions">
             <svg
               class="icon"
@@ -903,406 +2341,7 @@
             <span class="icon-name">sort abc</span>
           </div>
 
-          <!-- Filter Icon -->
-
-          <div class="icon-item" data-category="actions">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <polygon
-                points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"
-              ></polygon>
-            </svg>
-            <span class="icon-name">filter</span>
-          </div>
-
-          <!-- Open Folder Icon -->
-
-          <div class="icon-item" data-category="actions">
-            <svg
-              class="icon"
-              viewBox="0 0 21.15 16"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <path
-                class="cls-1"
-                d="M1,13V3c0-1.1.9-2,2-2h4l2,2h6c1.1,0,2,.9,2,2v8c0,1.1-.9,2-2,2H3c-1.1,0-2-.9-2-2Z"
-              />
-              <path
-                class="cls-1"
-                d="M15.55,15H2.73c-.76,0-1.31-.67-1.13-1.35l1.36-5.11c.13-.49.6-.83,1.13-.83h14.89c.81,0,1.38.76,1.09,1.48l-1.58,3.91c-.46,1.14-1.63,1.9-2.94,1.9Z"
-              />
-            </svg>
-            <span class="icon-name">open folder</span>
-          </div>
-
-          <!-- Close Icon -->
-
-          <div class="icon-item" data-category="actions">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-            <span class="icon-name">close</span>
-          </div>
-
-          <!-- Back Arrow Icon -->
-
-          <div class="icon-item">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <path d="M19 12H5"></path>
-              <polyline points="12 19 5 12 12 5"></polyline>
-            </svg>
-            <span class="icon-name">back arrow</span>
-          </div>
-
-          <!-- Front Arrow Icon -->
-
-          <div class="icon-item" data-category="actions">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <path d="M5 12h14"></path>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-            <span class="icon-name">front arrow</span>
-          </div>
-
-          <!-- Up Arrow Icon -->
-
-          <div class="icon-item" data-category="actions">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <path d="M12 19V5"></path>
-              <polyline points="5 12 12 5 19 12"></polyline>
-            </svg>
-            <span class="icon-name">up arrow</span>
-          </div>
-
-          <!-- Down Arrow Icon -->
-
-          <div class="icon-item" data-category="actions">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <path d="M12 5v14"></path>
-              <polyline points="19 12 12 19 5 12"></polyline>
-            </svg>
-            <span class="icon-name">down arrow</span>
-          </div>
-
-          <!-- Three Dots in a Row Icon -->
-
-          <div class="icon-item" data-category="actions">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <circle cx="12" cy="12" r="1"></circle>
-              <circle cx="19" cy="12" r="1"></circle>
-              <circle cx="5" cy="12" r="1"></circle>
-            </svg>
-            <span class="icon-name">three dots in a row</span>
-          </div>
-
-          <!-- Full Screen Icon -->
-
-          <div class="icon-item" data-category="actions">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <path
-                d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"
-              />
-            </svg>
-            <span class="icon-name">full screen</span>
-          </div>
-
-          <!-- Exit Full Screen Icon -->
-
-          <div class="icon-item" data-category="actions">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <path
-                d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"
-              />
-            </svg>
-            <span class="icon-name">exit full screen</span>
-          </div>
-
-          <!-- Zoom In Icon -->
-
-          <div class="icon-item" data-category="actions">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              <line x1="11" y1="8" x2="11" y2="14" />
-              <line x1="8" y1="11" x2="14" y2="11" />
-            </svg>
-            <span class="icon-name">zoom in</span>
-          </div>
-
-          <!-- Zoom Out Icon -->
-
-          <div class="icon-item" data-category="actions">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              <line x1="8" y1="11" x2="14" y2="11" />
-            </svg>
-            <span class="icon-name">zoom out</span>
-          </div>
-
-          <!-- Skip Forward Icon -->
-
-          <div class="icon-item" data-category="actions">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <polygon points="5 4 15 12 5 20 5 4" />
-              <line x1="19" y1="5" x2="19" y2="19" />
-            </svg>
-            <span class="icon-name">skip forward</span>
-          </div>
-
-          <!-- Skip Backward -->
-
-          <div class="icon-item" data-category="actions">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <polygon points="19 20 9 12 19 4 19 20" />
-              <line x1="5" y1="19" x2="5" y2="5" />
-            </svg>
-            <span class="icon-name">skip backward</span>
-          </div>
-
-          <!-- Email Icon -->
-
-          <div class="icon-item" data-category="communications">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path
-                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-              />
-              <polyline points="22,6 12,13 2,6" />
-            </svg>
-
-            <span class="icon-name">email</span>
-          </div>
-
-          <!-- Phone Icon -->
-
-          <div class="icon-item" data-category="communications">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path
-                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-              />
-            </svg>
-            <span class="icon-name">phone</span>
-          </div>
-
-          <!-- Chat Icon -->
-
-          <div class="icon-item" data-category="communications">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path
-                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-              />
-            </svg>
-            <span class="icon-name">chat</span>
-          </div>
-
-          <!-- Send Icon -->
-
-          <div class="icon-item" data-category="communications">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <polygon points="22 2 15 22 11 13 2 9 22 2" />
-              <line x1="22" y1="2" x2="11" y2="13" />
-            </svg>
-            <span class="icon-name">send</span>
-          </div>
-
-          <!-- Reply Icon -->
-
-          <div class="icon-item" data-category="communications">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <polyline points="9 14 4 9 9 4" />
-              <path d="M20 20v-7a4 4 0 0 0-4-4H4" />
-            </svg>
-            <span class="icon-name">reply</span>
-          </div>
-
-          <!-- Forward Icon -->
-
-          <div class="icon-item" data-category="communications">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <polyline points="15 17 20 12 15 7" />
-              <path d="M4 18v-2a4 4 0 0 1 4-4h12" />
-            </svg>
-            <span class="icon-name">forward</span>
-          </div>
-
-          <!-- Contacts Icon -->
-
-          <div class="icon-item" data-category="communications">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-            </svg>
-            <span class="icon-name">contacts</span>
-          </div>
-
-          <!-- Calendar Icon -->
-
-          <div class="icon-item" data-category="communications">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-              <line x1="16" y1="2" x2="16" y2="6" />
-              <line x1="8" y1="2" x2="8" y2="6" />
-              <line x1="3" y1="10" x2="21" y2="10" />
-            </svg>
-            <span class="icon-name">calendar</span>
-          </div>
-
-          <!-- Closed Captions -->
-
-          <div class="icon-item" data-category="communications">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <rect x="2" y="4" width="20" height="16" rx="2" ry="2" />
-              <path d="M8 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2" />
-              <path d="M16 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2" />
-            </svg>
-            <span class="icon-name">closed captions</span>
-          </div>
-
-          <!-- Bookmark Icon -->
-
-          <div class="icon-item" data-category="content">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path
-                d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
-              ></path>
-            </svg>
-            <span class="icon-name">bookmark</span>
-          </div>
-
-          <!-- Document Icon -->
-
-          <div class="icon-item" data-category="content">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path
-                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-              />
-              <polyline points="14 2 14 8 20 8" />
-              <line x1="16" y1="13" x2="8" y2="13" />
-              <line x1="16" y1="17" x2="8" y2="17" />
-              <polyline points="10 9 9 9 8 9" />
-            </svg>
-            <span class="icon-name">document</span>
-          </div>
-
-          <!-- Image Icon -->
-
-          <div class="icon-item" data-category="content">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-              <circle cx="8.5" cy="8.5" r="1.5" />
-              <polyline points="21 15 16 10 5 21" />
-            </svg>
-            <span class="icon-name">image</span>
-          </div>
-
-          <!-- Video Icon -->
-
-          <div class="icon-item" data-category="content">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18" />
-              <line x1="7" y1="2" x2="7" y2="22" />
-              <line x1="17" y1="2" x2="17" y2="22" />
-              <line x1="2" y1="12" x2="22" y2="12" />
-              <line x1="2" y1="7" x2="7" y2="7" />
-              <line x1="2" y1="17" x2="7" y2="17" />
-              <line x1="17" y1="17" x2="22" y2="17" />
-              <line x1="17" y1="7" x2="22" y2="7" />
-            </svg>
-            <span class="icon-name">video</span>
-          </div>
-
-          <!-- Audio Icon -->
-
-          <div class="icon-item" data-category="content">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
-              <path
-                d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"
-              />
-            </svg>
-            <span class="icon-name">audio</span>
-          </div>
-
           <!-- Spreadsheet Icon -->
-
           <div class="icon-item" data-category="content">
             <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
               <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
@@ -1314,1362 +2353,7 @@
             <span class="icon-name">spreadsheet</span>
           </div>
 
-          <!-- Presentation Icon -->
-
-          <div class="icon-item" data-category="content">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-              <line x1="8" y1="21" x2="16" y2="21" />
-              <line x1="12" y1="17" x2="12" y2="21" />
-              <path d="M7 7h10" />
-              <path d="M7 11h10" />
-            </svg>
-            <span class="icon-name">presentation</span>
-          </div>
-
-          <!-- PDF Icon -->
-
-          <div class="icon-item" data-category="content">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <path
-                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-              />
-              <polyline points="14 2 14 8 20 8" />
-              <path d="M9 15h6" />
-              <path d="M9 11h6" />
-              <path d="M9 18h6" />
-            </svg>
-            <span class="icon-name">PDF</span>
-          </div>
-
-          <!-- Zip Icon -->
-
-          <div class="icon-item" data-category="content">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <path d="M8 3h8v3h-3v3h3v3h-3v3h3v3h-8" />
-              <path d="M11 3v3h-3v3h3v3h-3v3h3" />
-              <path d="M8 18l-2 4 6 2 6-2-2-4" />
-              <path d="M10 18v4" />
-              <path d="M14 18v4" />
-            </svg>
-            <span class="icon-name">zip or compress</span>
-          </div>
-
-          <!-- Folder Icon -->
-
-          <div class="icon-item" data-category="content">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <path
-                d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
-              ></path>
-            </svg>
-            <span class="icon-name">folder</span>
-          </div>
-
-          <!-- Open Folder Icon -->
-
-          <div class="icon-item" data-category="content">
-            <svg class="icon" viewBox="0 0 21.15 16" stroke-width="2">
-              <path
-                class="cls-1"
-                d="M1,13V3c0-1.1.9-2,2-2h4l2,2h6c1.1,0,2,.9,2,2v8c0,1.1-.9,2-2,2H3c-1.1,0-2-.9-2-2Z"
-              />
-              <path
-                class="cls-1"
-                d="M15.55,15H2.73c-.76,0-1.31-.67-1.13-1.35l1.36-5.11c.13-.49.6-.83,1.13-.83h14.89c.81,0,1.38.76,1.09,1.48l-1.58,3.91c-.46,1.14-1.63,1.9-2.94,1.9Z"
-              />
-            </svg>
-            <span class="icon-name">open folder</span>
-          </div>
-
-          <!-- Paperclip Icon -->
-
-          <div class="icon-item" data-category="content">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <path
-                d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"
-              ></path>
-            </svg>
-            <span class="icon-name">paperclip</span>
-          </div>
-
-          <!-- External Link Icon -->
-
-          <div class="icon-item" data-category="content">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <path
-                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-              />
-              <polyline points="15 3 21 3 21 9" />
-              <line x1="10" y1="14" x2="21" y2="3" />
-            </svg>
-            <span class="icon-name">external link</span>
-          </div>
-
-          <!-- Tag Icon -->
-
-          <div class="icon-item" data-category="content">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path
-                d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
-              />
-              <line x1="7" y1="7" x2="7.01" y2="7" />
-            </svg>
-            <span class="icon-name">tag</span>
-          </div>
-
-          <!-- Smartphone Icon -->
-
-          <div class="icon-item" data-category="device">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-              <line x1="12" y1="18" x2="12.01" y2="18" />
-            </svg>
-            <span class="icon-name">smartphone</span>
-          </div>
-
-          <!-- Tablet Icon -->
-
-          <div class="icon-item" data-category="device">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
-              <line x1="12" y1="18" x2="12.01" y2="18" />
-            </svg>
-            <span class="icon-name">tablet</span>
-          </div>
-
-          <!-- Laptop Icon -->
-
-          <div class="icon-item" data-category="device">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path
-                d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0l1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"
-              />
-            </svg>
-            <span class="icon-name">laptop</span>
-          </div>
-
-          <!-- Desktop Computer -->
-
-          <div class="icon-item" data-category="device">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-              <line x1="8" y1="21" x2="16" y2="21" />
-              <line x1="12" y1="17" x2="12" y2="21" />
-            </svg>
-            <span class="icon-name">desktop computer</span>
-          </div>
-
-          <!-- Display -->
-
-          <div class="icon-item" data-category="device">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-              <line x1="8" y1="21" x2="16" y2="21" />
-              <line x1="12" y1="17" x2="12" y2="21" />
-            </svg>
-            <span class="icon-name">display</span>
-          </div>
-
-          <!-- Paint Bucket Icon -->
-
-          <div class="icon-item" data-category="editAndDesign">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path
-                class="icon-path"
-                d="M19 5H5v4h14V5zm1 2v2a3 3 0 0 1-3 3h-3v2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3a2 2 0 0 0-2-2v-2h3a5 5 0 0 0 5-5V7a2 2 0 0 0-2-2z"
-              />
-            </svg>
-            <span class="icon-name">paint bucket</span>
-          </div>
-
-          <!-- Align-Justify Icon -->
-
-          <div class="icon-item" data-category="editAndDesign">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <line x1="21" y1="10" x2="3" y2="10"></line>
-              <line x1="21" y1="6" x2="3" y2="6"></line>
-              <line x1="21" y1="14" x2="3" y2="14"></line>
-              <line x1="21" y1="18" x2="3" y2="18"></line>
-            </svg>
-            <span class="icon-name">align-justify</span>
-          </div>
-
-          <!-- Align-Center Icon -->
-
-          <div class="icon-item" data-category="editAndDesign">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <line x1="17" y1="10" x2="6" y2="10"></line>
-              <line x1="21" y1="6" x2="3" y2="6"></line>
-              <line x1="21" y1="14" x2="3" y2="14"></line>
-              <line x1="17" y1="18" x2="6" y2="18"></line>
-            </svg>
-            <span class="icon-name">align-center</span>
-          </div>
-
-          <!-- Align-Left Icon -->
-
-          <div class="icon-item" data-category="editAndDesign">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <line x1="17" y1="10" x2="3" y2="10"></line>
-              <line x1="21" y1="6" x2="3" y2="6"></line>
-              <line x1="21" y1="14" x2="3" y2="14"></line>
-              <line x1="17" y1="18" x2="3" y2="18"></line>
-            </svg>
-            <span class="icon-name">align-left</span>
-          </div>
-
-          <!-- Align-Right Icon -->
-
-          <div class="icon-item" data-category="editAndDesign">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <line x1="21" y1="10" x2="7" y2="10"></line>
-              <line x1="21" y1="6" x2="3" y2="6"></line>
-              <line x1="21" y1="14" x2="3" y2="14"></line>
-              <line x1="21" y1="18" x2="7" y2="18"></line>
-            </svg>
-            <span class="icon-name">align-right</span>
-          </div>
-
-          <!-- Font Icon -->
-
-          <div class="icon-item" data-category="editAndDesign">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <line x1="4" y1="20" x2="20" y2="20" />
-              <path d="M12 4L7 20" stroke-width="3" />
-              <path d="M12 4L17 20" stroke-width="3" />
-              <line x1="8" y1="14" x2="16" y2="14" stroke-width="3" />
-            </svg>
-            <span class="icon-name">font</span>
-          </div>
-
-          <!-- Tools -->
-
-          <div class="icon-item" data-category="editAndDesign">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path
-                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
-              />
-            </svg>
-            <span class="icon-name">tools</span>
-          </div>
-
-          <!-- Camera Icon -->
-
-          <div class="icon-item" data-category="media">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <path
-                d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
-              ></path>
-              <circle cx="12" cy="13" r="4"></circle>
-            </svg>
-            <span class="icon-name">camera</span>
-          </div>
-
-          <!-- Video Camera Icon -->
-
-          <div class="icon-item" data-category="media">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <path d="M23 7l-7 5 7 5V7z"></path>
-              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-            </svg>
-            <span class="icon-name">video camera</span>
-          </div>
-
-          <!-- Microphone Icon -->
-
-          <div class="icon-item" data-category="media">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <path
-                d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"
-              ></path>
-              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-              <line x1="12" y1="19" x2="12" y2="23"></line>
-              <line x1="8" y1="23" x2="16" y2="23"></line>
-            </svg>
-            <span class="icon-name">microphone</span>
-          </div>
-
-          <!-- Play Icon -->
-
-          <div class="icon-item" data-category="media">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <polygon points="5 3 19 12 5 21 5 3"></polygon>
-            </svg>
-            <span class="icon-name">play</span>
-          </div>
-
-          <!-- Pause Icon -->
-
-          <div class="icon-item" data-category="media">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <rect x="6" y="4" width="4" height="16"></rect>
-              <rect x="14" y="4" width="4" height="16"></rect>
-            </svg>
-            <span class="icon-name">pause</span>
-          </div>
-
-          <!-- Rewind Icon -->
-
-          <div class="icon-item" data-category="media">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <polygon points="11 19 2 12 11 5 11 19"></polygon>
-              <polygon points="22 19 13 12 22 5 22 19"></polygon>
-            </svg>
-            <span class="icon-name">rewind</span>
-          </div>
-
-          <!-- Fast Forward Icon -->
-
-          <div class="icon-item" data-category="media">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <polygon points="5 4 15 12 5 20 5 4" />
-              <line x1="19" y1="5" x2="19" y2="19" />
-            </svg>
-            <span class="icon-name">skip forward</span>
-          </div>
-
-          <!-- Skip Backwards -->
-
-          <div class="icon-item" data-category="media">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <polygon points="19 20 9 12 19 4 19 20" />
-              <line x1="5" y1="19" x2="5" y2="5" />
-            </svg>
-            <span class="icon-name">skip backward</span>
-          </div>
-
-          <!-- Skip Forwards -->
-
-          <div class="icon-item" data-category="media">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <polygon points="5 4 15 12 5 20 5 4" />
-              <line x1="19" y1="5" x2="19" y2="19" />
-            </svg>
-            <span class="icon-name">skip forward</span>
-          </div>
-
-          <!-- Volume Icon -->
-
-          <div class="icon-item" data-category="media">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-              <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
-              <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
-            </svg>
-            <span class="icon-name">volume</span>
-          </div>
-
-          <!-- Mute Icon -->
-
-          <div class="icon-item" data-category="media">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-              <line x1="23" y1="9" x2="17" y2="15" />
-              <line x1="17" y1="9" x2="23" y2="15" />
-            </svg>
-            <span class="icon-name">mute</span>
-          </div>
-
-          <!-- Volume Up Icon -->
-
-          <div class="icon-item" data-category="media">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-              <path
-                d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"
-              />
-            </svg>
-            <span class="icon-name">volume up</span>
-          </div>
-
-          <!-- Volume Down Icon -->
-
-          <div class="icon-item" data-category="media">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-              <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
-            </svg>
-            <span class="icon-name">volume down</span>
-          </div>
-
-          <!-- Closed Captions -->
-
-          <div class="icon-item" data-category="media">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <rect x="2" y="4" width="20" height="16" rx="2" ry="2" />
-              <path d="M8 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2" />
-              <path d="M16 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2" />
-            </svg>
-            <span class="icon-name">closed captions</span>
-          </div>
-
-          <!-- Hamburger Menu Icon -->
-
-          <div class="icon-item" data-category="navigation">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <line x1="3" y1="12" x2="21" y2="12"></line>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-            <span class="icon-name">hamburger menu</span>
-          </div>
-
-          <!-- Grid Icon -->
-
-          <div class="icon-item" data-category="navigation">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <rect x="3" y="3" width="7" height="7"></rect>
-              <rect x="14" y="3" width="7" height="7"></rect>
-              <rect x="14" y="14" width="7" height="7"></rect>
-              <rect x="3" y="14" width="7" height="7"></rect>
-            </svg>
-            <span class="icon-name">grid</span>
-          </div>
-
-          <!-- Home Icon -->
-
-          <div class="icon-item" data-category="navigation">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-              <polyline points="9 22 9 12 15 12 15 22" />
-            </svg>
-            <span class="icon-name">home</span>
-          </div>
-
-          <!-- Compass Icon -->
-
-          <div class="icon-item" data-category="navigation">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <circle cx="12" cy="12" r="10" />
-              <polygon
-                points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"
-              />
-            </svg>
-            <span class="icon-name">compass</span>
-          </div>
-
-          <!-- Pin Icon -->
-
-          <div class="icon-item" data-category="navigation">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-              <circle cx="12" cy="10" r="3" />
-            </svg>
-            <span class="icon-name">pin</span>
-          </div>
-
-          <!-- Flag Icon -->
-
-          <div class="icon-item" data-category="navigation">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path
-                d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"
-              />
-              <line x1="4" y1="22" x2="4" y2="15" />
-            </svg>
-            <span class="icon-name">flag</span>
-          </div>
-
-          <!-- Globe Icon -->
-
-          <div class="icon-item" data-category="navigation">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <circle cx="12" cy="12" r="10" />
-              <path
-                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-              />
-              <line x1="2" y1="12" x2="22" y2="12" />
-            </svg>
-            <span class="icon-name">globe</span>
-          </div>
-
-          <!-- Back Arrow Icon -->
-
-          <div class="icon-item" data-category="navigation">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path d="M19 12H5"></path>
-              <polyline points="12 19 5 12 12 5"></polyline>
-            </svg>
-            <span class="icon-name">back arrow</span>
-          </div>
-
-          <!-- Front Arrow Icon -->
-
-          <div class="icon-item" data-category="navigation">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path d="M5 12h14"></path>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-            <span class="icon-name">front arrow</span>
-          </div>
-
-          <!-- Up Arrow Icon -->
-
-          <div class="icon-item" data-category="navigation">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path d="M12 19V5"></path>
-              <polyline points="5 12 12 5 19 12"></polyline>
-            </svg>
-            <span class="icon-name">up arrow</span>
-          </div>
-
-          <!-- Down Arrow -->
-
-          <div class="icon-item" data-category="navigation">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path d="M12 5v14"></path>
-              <polyline points="19 12 12 19 5 12"></polyline>
-            </svg>
-            <span class="icon-name">down arrow</span>
-          </div>
-
-          <!-- Heart Icon -->
-
-          <div class="icon-item" data-category="social">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <path
-                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-              ></path>
-            </svg>
-            <span class="icon-name">heart</span>
-          </div>
-
-          <!-- Happy Icon -->
-
-          <div class="icon-item" data-category="social">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-              <line x1="9" y1="9" x2="9.01" y2="9"></line>
-              <line x1="15" y1="9" x2="15.01" y2="9"></line>
-            </svg>
-            <span class="icon-name">happy</span>
-          </div>
-
-          <!-- Thumbs Down Icon -->
-
-          <div class="icon-item" data-category="social">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path
-                d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"
-              />
-            </svg>
-            <span class="icon-name">thumbs down</span>
-          </div>
-
-          <!-- Thumbs Up Icon -->
-
-          <div class="icon-item" data-category="social">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path
-                d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
-              />
-            </svg>
-            <span class="icon-name">thumbs up</span>
-          </div>
-
-          <!-- Chats Icon -->
-
-          <div class="icon-item" data-category="social">
-            <svg class="icon" viewBox="0 0 24 24">
-              <path
-                d="M7 2h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3l-3 3-3-3H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"
-              />
-              <path
-                d="M3 6h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3l-3 3-3-3H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"
-              />
-            </svg>
-            <span class="icon-name">chats</span>
-          </div>
-
-          <!-- Share -->
-
-          <div class="icon-item" data-category="social">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <circle cx="18" cy="5" r="3"></circle>
-              <circle cx="6" cy="12" r="3"></circle>
-              <circle cx="18" cy="19" r="3"></circle>
-              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-            </svg>
-            <span class="icon-name">share</span>
-          </div>
-
-          <!-- Info Icon -->
-
-          <div class="icon-item" data-category="status">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="12" y1="16" x2="12" y2="12"></line>
-              <line x1="12" y1="8" x2="12.01" y2="8"></line>
-            </svg>
-            <span class="icon-name">info</span>
-          </div>
-
-          <!-- Alert Icon -->
-
-          <div class="icon-item" data-category="status">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-              <path d="M2 8c0-2.2.7-4.3 2-6"></path>
-              <path d="M22 8a10 10 0 0 0-2-6"></path>
-            </svg>
-            <span class="icon-name">alert</span>
-          </div>
-
-          <!-- Warning Icon -->
-
-          <div class="icon-item" data-category="status">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path
-                d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
-              />
-              <line x1="12" y1="9" x2="12" y2="13" />
-              <line x1="12" y1="17" x2="12.01" y2="17" />
-            </svg>
-            <span class="icon-name">warning</span>
-          </div>
-
-          <!-- Error Icon -->
-
-          <div class="icon-item" data-category="status">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <circle cx="12" cy="12" r="10" />
-              <line x1="15" y1="9" x2="9" y2="15" />
-              <line x1="9" y1="9" x2="15" y2="15" />
-            </svg>
-            <span class="icon-name">error</span>
-          </div>
-
-          <!-- Question Mark Icon -->
-
-          <div class="icon-item" data-category="status">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <circle cx="12" cy="12" r="10" />
-              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-              <line x1="12" y1="17" x2="12.01" y2="17" />
-            </svg>
-            <span class="icon-name">question mark</span>
-          </div>
-
-          <!-- Lock Icon -->
-
-          <div class="icon-item" data-category="status">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-              <path d="M7 11V7a5 5 0 0 1 10 0v4" fill="none" stroke-width="2" />
-            </svg>
-            <span class="icon-name">lock</span>
-          </div>
-
-          <!-- Unlock Icon -->
-
-          <div class="icon-item" data-category="status">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-              <path d="M7 11V7a5 5 0 0 1 9.9-1" fill="none" stroke-width="2" />
-            </svg>
-            <span class="icon-name">unlock</span>
-          </div>
-
-          <!-- Eye Icon -->
-
-          <div class="icon-item" data-category="status">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-              <circle cx="12" cy="12" r="3" />
-            </svg>
-            <span class="icon-name">eye</span>
-          </div>
-
-          <!-- Eye-Slash Icon -->
-
-          <div class="icon-item" data-category="status">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path
-                d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"
-              />
-              <line x1="1" y1="1" x2="23" y2="23" />
-              <circle cx="12" cy="12" r="3" />
-            </svg>
-            <span class="icon-name">eye-slash</span>
-          </div>
-
-          <!-- Battery Icon -->
-
-          <div class="icon-item" data-category="status">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <rect x="1" y="6" width="18" height="12" rx="2" ry="2" />
-              <line x1="23" y1="13" x2="23" y2="11" />
-            </svg>
-            <span class="icon-name">battery</span>
-          </div>
-
-          <!-- Bullet List Icon -->
-
-          <div class="icon-item" data-category="uiElements">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <line x1="9" y1="6" x2="20" y2="6" />
-              <line x1="9" y1="12" x2="20" y2="12" />
-              <line x1="9" y1="18" x2="20" y2="18" />
-              <circle cx="4" cy="6" r="1" />
-              <circle cx="4" cy="12" r="1" />
-              <circle cx="4" cy="18" r="1" />
-            </svg>
-            <span class="icon-name">bullet list</span>
-          </div>
-
-          <!-- Number List Icon -->
-
-          <div class="icon-item" data-category="uiElements">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <line x1="9" y1="6" x2="20" y2="6" />
-              <line x1="9" y1="12" x2="20" y2="12" />
-              <line x1="9" y1="18" x2="20" y2="18" />
-              <path d="M4 6h1v4" />
-              <path d="M4 10h2" />
-              <path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1" />
-            </svg>
-            <span class="icon-name">number list</span>
-          </div>
-
-          <!-- Check Icon -->
-
-          <div class="icon-item" data-category="uiElements">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <polyline points="20 6 9 17 4 12" />
-            </svg>
-            <span class="icon-name">check</span>
-          </div>
-
-          <!-- Three Dots in a Row -->
-
-          <div class="icon-item" data-category="uiElements">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <circle cx="12" cy="12" r="1"></circle>
-              <circle cx="19" cy="12" r="1"></circle>
-              <circle cx="5" cy="12" r="1"></circle>
-            </svg>
-            <span class="icon-name">three dots in a row</span>
-          </div>
-
-          <!-- Money Icon -->
-
-          <div class="icon-item" data-category="business">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <line x1="12" y1="1" x2="12" y2="23" />
-              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-            </svg>
-            <span class="icon-name">money</span>
-          </div>
-
-          <!-- Trading Icon -->
-
-          <div class="icon-item" data-category="business">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <path d="M3 3v18h18" />
-              <path d="M7 17l4-4 4 4 4-4" />
-              <path d="M7 11l4-4 4 4 4-4" />
-            </svg>
-            <span class="icon-name">trading</span>
-          </div>
-
-          <!-- Research Icon -->
-
-          <div class="icon-item" data-category="business">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              <line x1="11" y1="8" x2="11" y2="14" />
-              <line x1="8" y1="11" x2="14" y2="11" />
-            </svg>
-            <span class="icon-name">research</span>
-          </div>
-
-          <!-- Portfolio Icon -->
-
-          <div class="icon-item" data-category="business">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-            </svg>
-            <span class="icon-name">portfolio</span>
-          </div>
-
-          <!-- Credit Card Icon -->
-
-          <div class="icon-item" data-category="business">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
-              <line x1="1" y1="10" x2="23" y2="10" />
-            </svg>
-            <span class="icon-name">credit card</span>
-          </div>
-
-          <!-- Gift Icon -->
-
-          <div class="icon-item" data-category="business">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <polyline points="20 12 20 22 4 22 4 12" />
-              <rect x="2" y="7" width="20" height="5" />
-              <line x1="12" y1="22" x2="12" y2="7" />
-              <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" />
-              <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
-            </svg>
-            <span class="icon-name">gift</span>
-          </div>
-
-          <!-- Bar Chart Icon -->
-
-          <div class="icon-item" data-category="business">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <line x1="12" y1="20" x2="12" y2="10" />
-              <line x1="18" y1="20" x2="18" y2="4" />
-              <line x1="6" y1="20" x2="6" y2="16" />
-            </svg>
-            <span class="icon-name">bar chart</span>
-          </div>
-
-          <!-- Line Chart Icon -->
-
-          <div class="icon-item" data-category="business">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <line x1="4" y1="19" x2="20" y2="19" />
-              <polyline points="4 15 8 9 12 11 16 6 20 10" />
-            </svg>
-            <span class="icon-name">line chart</span>
-          </div>
-
-          <!-- Area Chart Icon -->
-
-          <div class="icon-item" data-category="business">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path d="M4 19L8 13 12 15 16 10 20 14 20 19 4 19z" />
-              <path d="M4 12L8 6 12 8 16 3 20 7" />
-            </svg>
-            <span class="icon-name">area chart</span>
-          </div>
-
-          <!-- Scatter Plot Icon -->
-
-          <div class="icon-item" data-category="business">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <line x1="4" y1="20" x2="20" y2="20" />
-              <line x1="4" y1="4" x2="4" y2="20" />
-              <circle cx="8" cy="10" r="1" />
-              <circle cx="12" cy="14" r="1" />
-              <circle cx="16" cy="8" r="1" />
-              <circle cx="18" cy="12" r="1" />
-              <circle cx="10" cy="16" r="1" />
-            </svg>
-            <span class="icon-name">scatter plot</span>
-          </div>
-
-          <!-- Increase Trend Up Icon -->
-
-          <div class="icon-item" data-category="business">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-              <polyline points="17 6 23 6 23 12" />
-            </svg>
-            <span class="icon-name">increase trend up</span>
-          </div>
-
-          <!-- Decrease Trend Down -->
-
-          <div class="icon-item" data-category="business">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <polyline points="23 18 13.5 8.5 8.5 13.5 1 6" />
-              <polyline points="17 18 23 18 23 12" />
-            </svg>
-            <span class="icon-name">decrease trend down</span>
-          </div>
-
-          <!-- Code Icon -->
-
-          <div class="icon-item" data-category="files">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <polyline points="16 18 22 12 16 6"></polyline>
-              <polyline points="8 6 2 12 8 18"></polyline>
-            </svg>
-            <span class="icon-name">code</span>
-          </div>
-
-          <!-- Database Icon -->
-
-          <div class="icon-item" data-category="files">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-              <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-            </svg>
-            <span class="icon-name">database</span>
-          </div>
-
-          <!-- Hard Drive -->
-
-          <div class="icon-item" data-category="files">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path
-                d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"
-              />
-              <line x1="22" y1="12" x2="2" y2="12"></line>
-              <line x1="6" y1="16" x2="6.01" y2="16"></line>
-              <line x1="10" y1="16" x2="10.01" y2="16"></line>
-            </svg>
-            <span class="icon-name">hard drive</span>
-          </div>
-
-          <!-- Shopping Cart Icon -->
-
-          <div class="icon-item" data-category="eCommerce">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <circle cx="9" cy="21" r="1" />
-              <circle cx="20" cy="21" r="1" />
-              <path
-                d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
-              />
-            </svg>
-            <span class="icon-name">shopping cart</span>
-          </div>
-
-          <!-- Tag Icon -->
-
-          <div class="icon-item" data-category="eCommerce">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <path
-                d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
-              />
-              <line x1="7" y1="7" x2="7.01" y2="7" />
-            </svg>
-            <span class="icon-name">tag</span>
-          </div>
-
-          <!-- Credit Card Icon -->
-
-          <div class="icon-item" data-category="eCommerce">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
-              <line x1="1" y1="10" x2="23" y2="10" />
-            </svg>
-            <span class="icon-name">credit card</span>
-          </div>
-
-          <!-- Gift Icon -->
-
-          <div class="icon-item" data-category="eCommerce">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <polyline points="20 12 20 22 4 22 4 12" />
-              <rect x="2" y="7" width="20" height="5" />
-              <line x1="12" y1="22" x2="12" y2="7" />
-              <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" />
-              <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
-            </svg>
-            <span class="icon-name">gift</span>
-          </div>
-
-          <!-- Lock Icon -->
-
-          <div class="icon-item" data-category="security">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke-width="2"
-            >
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-              <path d="M7 11V7a5 5 0 0 1 10 0v4" fill="none" stroke-width="2" />
-            </svg>
-            <span class="icon-name">lock</span>
-          </div>
-
-          <!-- Unlock Icon -->
-
-          <div class="icon-item" data-category="security">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke-width="2"
-            >
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-              <path d="M7 11V7a5 5 0 0 1 9.9-1" fill="none" stroke-width="2" />
-            </svg>
-            <span class="icon-name">unlock</span>
-          </div>
-
-          <!-- Key Icon -->
-
-          <div class="icon-item" data-category="security">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <path
-                d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"
-              />
-            </svg>
-            <span class="icon-name">key</span>
-          </div>
-
-          <!-- Settings Icon -->
-
-          <div class="icon-item" data-category="system">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path
-                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
-              />
-              <circle cx="12" cy="12" r="3" />
-            </svg>
-            <span class="icon-name">settings</span>
-          </div>
-
-          <!-- Tools Icon -->
-
-          <div class="icon-item" data-category="system">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <path
-                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
-              />
-            </svg>
-            <span class="icon-name">tools</span>
-          </div>
-
-          <!-- Cloud Icon -->
-
-          <div class="icon-item" data-category="system">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
-            </svg>
-            <span class="icon-name">cloud</span>
-          </div>
-
-          <!-- Database Icon -->
-
-          <div class="icon-item" data-category="system">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-              <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-            </svg>
-            <span class="icon-name">database</span>
-          </div>
-
-          <!-- Hard Drive Icon -->
-
-          <div class="icon-item" data-category="system">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path
-                d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"
-              />
-              <line x1="22" y1="12" x2="2" y2="12"></line>
-              <line x1="6" y1="16" x2="6.01" y2="16"></line>
-              <line x1="10" y1="16" x2="10.01" y2="16"></line>
-            </svg>
-            <span class="icon-name">hard drive</span>
-          </div>
-
-          <!-- WiFi Icon -->
-
-          <div class="icon-item" data-category="system">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <path d="M5 12.55a11 11 0 0 1 14.08 0" />
-              <path d="M1.42 9a16 16 0 0 1 21.16 0" />
-              <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
-              <line x1="12" y1="20" x2="12.01" y2="20" />
-            </svg>
-            <span class="icon-name">wifi</span>
-          </div>
-
-          <!-- Bluetooth Icon -->
-
-          <div class="icon-item" data-category="system">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <path d="M6.5 6.5l11 11L12 23V1l5.5 5.5-11 11" />
-            </svg>
-            <span class="icon-name">bluetooth</span>
-          </div>
-
-          <!-- Flask Icon -->
-
-          <div class="icon-item" data-category="system">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path d="M9 3h6" />
-              <path d="M10 3v7L6 20h12l-4-10V3" />
-              <path d="M6 15h12" />
-            </svg>
-            <span class="icon-name">flask</span>
-          </div>
-
-          <!-- Lightbulb Icon -->
-
-          <div class="icon-item" data-category="system">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path d="M9 18h6" />
-              <path d="M10 22h4" />
-              <path
-                d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"
-              />
-            </svg>
-            <span class="icon-name">lightbulb</span>
-          </div>
-
-          <!-- User Profile Icon -->
-
-          <div class="icon-item" data-category="user">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-              <circle cx="12" cy="7" r="4" />
-            </svg>
-            <span class="icon-name">user profile</span>
-          </div>
-
-          <!-- Avatar Icon -->
-
-          <div class="icon-item" data-category="user">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <circle cx="12" cy="12" r="10" />
-              <circle cx="12" cy="10" r="3" />
-              <path d="M7 21v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2" />
-            </svg>
-            <span class="icon-name">avatar</span>
-          </div>
-
-          <!-- Login Icon -->
-
-          <div class="icon-item" data-category="user">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
-              <polyline points="10 17 15 12 10 7" />
-              <line x1="15" y1="12" x2="3" y2="12" />
-            </svg>
-            <span class="icon-name">login</span>
-          </div>
-
-          <!-- Logout -->
-
-          <div class="icon-item" data-category="user">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-              <polyline points="16 17 21 12 16 7" />
-              <line x1="21" y1="12" x2="9" y2="12" />
-            </svg>
-            <span class="icon-name">logout</span>
-          </div>
-
           <!-- Sun Icon -->
-
           <div class="icon-item" data-category="weather">
             <svg
               class="icon"
@@ -2690,55 +2374,28 @@
             <span class="icon-name">sun</span>
           </div>
 
-          <!-- Moon Icon -->
-
-          <div class="icon-item" data-category="weather">
+          <!-- Tablet Icon -->
+          <div class="icon-item" data-category="device">
             <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-            </svg>
-            <span class="icon-name">moon</span>
-          </div>
-
-          <!-- Rain Icon -->
-
-          <div class="icon-item" data-category="weather">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <line x1="16" y1="13" x2="16" y2="21" />
-              <line x1="8" y1="13" x2="8" y2="21" />
-              <line x1="12" y1="15" x2="12" y2="23" />
-              <path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25" />
-            </svg>
-            <span class="icon-name">rain</span>
-          </div>
-
-          <!-- Snow Icon -->
-
-          <div class="icon-item" data-category="weather">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-detailed="true"
-            >
-              <path d="M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25" />
-              <line x1="8" y1="16" x2="8.01" y2="16" />
-              <line x1="8" y1="20" x2="8.01" y2="20" />
+              <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
               <line x1="12" y1="18" x2="12.01" y2="18" />
-              <line x1="12" y1="22" x2="12.01" y2="22" />
-              <line x1="16" y1="16" x2="16.01" y2="16" />
-              <line x1="16" y1="20" x2="16.01" y2="20" />
             </svg>
-            <span class="icon-name">snow</span>
+            <span class="icon-name">tablet</span>
           </div>
 
-          <!-- Wind Icon -->
+          <!-- Tag Icon -->
+          <div class="icon-item" data-category="content">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path
+                d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
+              />
+              <line x1="7" y1="7" x2="7.01" y2="7" />
+            </svg>
+            <span class="icon-name">tag</span>
+          </div>
 
-          <div class="icon-item" data-category="weather">
+          <!-- Tag Icon -->
+          <div class="icon-item" data-category="eCommerce">
             <svg
               class="icon"
               viewBox="0 0 24 24"
@@ -2746,14 +2403,59 @@
               data-icon-detailed="true"
             >
               <path
-                d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"
+                d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
+              />
+              <line x1="7" y1="7" x2="7.01" y2="7" />
+            </svg>
+            <span class="icon-name">tag</span>
+          </div>
+
+          <!-- Three Dots in a Row -->
+          <div class="icon-item" data-category="uiElements">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <circle cx="12" cy="12" r="1"></circle>
+              <circle cx="19" cy="12" r="1"></circle>
+              <circle cx="5" cy="12" r="1"></circle>
+            </svg>
+            <span class="icon-name">three dots in a row</span>
+          </div>
+
+          <!-- Three Dots in a Row Icon -->
+          <div class="icon-item" data-category="actions">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <circle cx="12" cy="12" r="1"></circle>
+              <circle cx="19" cy="12" r="1"></circle>
+              <circle cx="5" cy="12" r="1"></circle>
+            </svg>
+            <span class="icon-name">three dots in a row</span>
+          </div>
+
+          <!-- Thumbs Down Icon -->
+          <div class="icon-item" data-category="social">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path
+                d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"
               />
             </svg>
-            <span class="icon-name">wind</span>
+            <span class="icon-name">thumbs down</span>
+          </div>
+
+          <!-- Thumbs Up Icon -->
+          <div class="icon-item" data-category="social">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path
+                d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+              />
+            </svg>
+            <span class="icon-name">thumbs up</span>
           </div>
 
           <!-- Thunder and Lightning -->
-
           <div class="icon-item" data-category="weather">
             <svg
               class="icon"
@@ -2768,130 +2470,238 @@
             <span class="icon-name">thunder and lightning</span>
           </div>
 
-          <!-- Bar Chart Icon -->
-
-          <div class="icon-item" data-category="chartsAndGraphs">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <line x1="12" y1="20" x2="12" y2="10" />
-              <line x1="18" y1="20" x2="18" y2="4" />
-              <line x1="6" y1="20" x2="6" y2="16" />
-            </svg>
-            <span class="icon-name">bar chart</span>
-          </div>
-
-          <!-- Line Chart Icon -->
-
-          <div class="icon-item" data-category="chartsAndGraphs">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <line x1="4" y1="19" x2="20" y2="19" />
-              <polyline points="4 15 8 9 12 11 16 6 20 10" />
-            </svg>
-            <span class="icon-name">line chart</span>
-          </div>
-
-          <!-- Area Chart Icon -->
-
-          <div class="icon-item" data-category="chartsAndGraphs">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <path d="M4 19L8 13 12 15 16 10 20 14 20 19 4 19z" />
-              <path d="M4 12L8 6 12 8 16 3 20 7" />
-            </svg>
-            <span class="icon-name">area chart</span>
-          </div>
-
-          <!-- Scatter Plot Icon -->
-
-          <div class="icon-item" data-category="chartsAndGraphs">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <line x1="4" y1="20" x2="20" y2="20" />
-              <line x1="4" y1="4" x2="4" y2="20" />
-              <circle cx="8" cy="10" r="1" />
-              <circle cx="12" cy="14" r="1" />
-              <circle cx="16" cy="8" r="1" />
-              <circle cx="18" cy="12" r="1" />
-              <circle cx="10" cy="16" r="1" />
-            </svg>
-            <span class="icon-name">scatter plot</span>
-          </div>
-
-          <!-- Increase Trend Up Icon -->
-
-          <div class="icon-item" data-category="chartsAndGraphs">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-              <polyline points="17 6 23 6 23 12" />
-            </svg>
-            <span class="icon-name">increase trend up</span>
-          </div>
-
-          <!-- Decrease Trend Down -->
-
-          <div class="icon-item" data-category="chartsAndGraphs">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <polyline points="23 18 13.5 8.5 8.5 13.5 1 6" />
-              <polyline points="17 18 23 18 23 12" />
-            </svg>
-            <span class="icon-name">decrease trend down</span>
-          </div>
-
-          <!-- Lifesaver Icon -->
-
-          <div class="icon-item" data-category="miscellaneous">
+          <!-- Tools Icon -->
+          <div class="icon-item" data-category="system">
             <svg
               class="icon"
               viewBox="0 0 24 24"
               stroke-width="2"
               data-icon-detailed="true"
             >
-              <circle cx="12" cy="12" r="10" />
-              <circle cx="12" cy="12" r="4" />
-              <line x1="4.93" y1="4.93" x2="9.17" y2="9.17" />
-              <line x1="14.83" y1="14.83" x2="19.07" y2="19.07" />
-              <line x1="14.83" y1="9.17" x2="19.07" y2="4.93" />
-              <line x1="14.83" y1="9.17" x2="18.36" y2="5.64" />
-              <line x1="4.93" y1="19.07" x2="9.17" y2="14.83" />
-            </svg>
-            <span class="icon-name">lifesaver</span>
-          </div>
-
-          <!-- Puzzle Piece Icon -->
-
-          <div class="icon-item" data-category="miscellaneous">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
               <path
-                d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 0 1-.837.276c-.47-.07-.802-.48-.968-.968a2.98 2.98 0 1 0-3.241 3.241c.487.166.897.498.967.968a.979.979 0 0 1-.276.837l-1.611 1.611a2.404 2.404 0 0 1-1.704.706 2.402 2.402 0 0 1-1.704-.706l-1.568-1.568a1.026 1.026 0 0 0-.877-.29c-.493.074-.84.504-1.02 1.006a3 3 0 1 1-3.241-3.241c.502-.18.932-.527 1.006-1.02.051-.322-.059-.648-.29-.877l-1.567-1.568A2.402 2.402 0 0 1 1.998 12c0-.617.236-1.234.706-1.704L4.23 8.77c.24-.24.581-.353.917-.303.515.077.877.528 1.073 1.06a3 3 0 1 0 3.241-3.241c-.532-.196-.983-.558-1.06-1.073-.05-.336.062-.676.303-.917l1.525-1.525A2.402 2.402 0 0 1 12 1.998c.617 0 1.234.236 1.704.706l1.568 1.568c.23.23.556.338.877.29.493-.074.84-.504 1.02-1.006a3 3 0 1 1 3.241 3.241c-.502.18-.932.527-1.006 1.02z"
+                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
               />
             </svg>
-            <span class="icon-name">puzzle piece</span>
+            <span class="icon-name">tools</span>
+          </div>
+
+          <!-- Tools -->
+          <div class="icon-item" data-category="editAndDesign">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path
+                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+              />
+            </svg>
+            <span class="icon-name">tools</span>
+          </div>
+
+          <!-- Trading Icon -->
+          <div class="icon-item" data-category="business">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <path d="M3 3v18h18" />
+              <path d="M7 17l4-4 4 4 4-4" />
+              <path d="M7 11l4-4 4 4 4-4" />
+            </svg>
+            <span class="icon-name">trading</span>
+          </div>
+
+          <!-- Undo Icon -->
+          <div class="icon-item" data-category="actions">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <path d="M3 7v6h6" />
+              <path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13" />
+            </svg>
+            <span class="icon-name">undo</span>
+          </div>
+
+          <!-- Unlock Icon -->
+          <div class="icon-item" data-category="security">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              stroke-width="2"
+            >
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 9.9-1" fill="none" stroke-width="2" />
+            </svg>
+            <span class="icon-name">unlock</span>
+          </div>
+
+          <!-- Unlock Icon -->
+          <div class="icon-item" data-category="status">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 9.9-1" fill="none" stroke-width="2" />
+            </svg>
+            <span class="icon-name">unlock</span>
+          </div>
+
+          <!-- Upload Icon -->
+          <div class="icon-item" data-category="actions">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="17 8 12 3 7 8"></polyline>
+              <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+            <span class="icon-name">upload</span>
+          </div>
+
+          <!-- Up Arrow Icon -->
+          <div class="icon-item" data-category="actions">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <path d="M12 19V5"></path>
+              <polyline points="5 12 12 5 19 12"></polyline>
+            </svg>
+            <span class="icon-name">up arrow</span>
+          </div>
+
+          <!-- Up Arrow Icon -->
+          <div class="icon-item" data-category="navigation">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M12 19V5"></path>
+              <polyline points="5 12 12 5 19 12"></polyline>
+            </svg>
+            <span class="icon-name">up arrow</span>
+          </div>
+
+          <!-- User Profile Icon -->
+          <div class="icon-item" data-category="user">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            <span class="icon-name">user profile</span>
+          </div>
+
+          <!-- Video Icon -->
+          <div class="icon-item" data-category="content">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18" />
+              <line x1="7" y1="2" x2="7" y2="22" />
+              <line x1="17" y1="2" x2="17" y2="22" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <line x1="2" y1="7" x2="7" y2="7" />
+              <line x1="2" y1="17" x2="7" y2="17" />
+              <line x1="17" y1="17" x2="22" y2="17" />
+              <line x1="17" y1="7" x2="22" y2="7" />
+            </svg>
+            <span class="icon-name">video</span>
+          </div>
+
+          <!-- Video Camera Icon -->
+          <div class="icon-item" data-category="media">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <path d="M23 7l-7 5 7 5V7z"></path>
+              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+            </svg>
+            <span class="icon-name">video camera</span>
+          </div>
+
+          <!-- Volume Icon -->
+          <div class="icon-item" data-category="media">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+            </svg>
+            <span class="icon-name">volume</span>
+          </div>
+
+          <!-- Volume Down Icon -->
+          <div class="icon-item" data-category="media">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+            </svg>
+            <span class="icon-name">volume down</span>
+          </div>
+
+          <!-- Volume Down Icon -->
+          <div class="icon-item" data-category="media">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+            </svg>
+            <span class="icon-name">volume down</span>
+          </div>
+
+          <!-- Volume Up Icon -->
+          <div class="icon-item" data-category="media">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+              <path
+                d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"
+              />
+            </svg>
+            <span class="icon-name">volume up</span>
+          </div>
+
+          <!-- Volume Up Icon -->
+          <div class="icon-item" data-category="media">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+              <path
+                d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"
+              />
+            </svg>
+            <span class="icon-name">volume up</span>
+          </div>
+
+          <!-- Warning Icon -->
+          <div class="icon-item" data-category="status">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <path
+                d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+              />
+              <line x1="12" y1="9" x2="12" y2="13" />
+              <line x1="12" y1="17" x2="12.01" y2="17" />
+            </svg>
+            <span class="icon-name">warning</span>
           </div>
 
           <!-- Wheel Chair Icon -->
-
           <div class="icon-item" data-category="miscellaneous">
             <svg
               class="icon"
@@ -2907,6 +2717,75 @@
               <circle cx="10" cy="17" r="5" stroke-width="3"></circle>
             </svg>
             <span class="icon-name">wheelchair</span>
+          </div>
+
+          <!-- WiFi Icon -->
+          <div class="icon-item" data-category="system">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <path d="M5 12.55a11 11 0 0 1 14.08 0" />
+              <path d="M1.42 9a16 16 0 0 1 21.16 0" />
+              <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
+              <line x1="12" y1="20" x2="12.01" y2="20" />
+            </svg>
+            <span class="icon-name">wifi</span>
+          </div>
+
+          <!-- Wind Icon -->
+          <div class="icon-item" data-category="weather">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-detailed="true"
+            >
+              <path
+                d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"
+              />
+            </svg>
+            <span class="icon-name">wind</span>
+          </div>
+
+          <!-- Zip Icon -->
+          <div class="icon-item" data-category="content">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              data-icon-fill="false"
+            >
+              <path d="M8 3h8v3h-3v3h3v3h-3v3h3v3h-8" />
+              <path d="M11 3v3h-3v3h3v3h-3v3h3" />
+              <path d="M8 18l-2 4 6 2 6-2-2-4" />
+              <path d="M10 18v4" />
+              <path d="M14 18v4" />
+            </svg>
+            <span class="icon-name">zip or compress</span>
+          </div>
+
+          <!-- Zoom In Icon -->
+          <div class="icon-item" data-category="actions">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              <line x1="11" y1="8" x2="11" y2="14" />
+              <line x1="8" y1="11" x2="14" y2="11" />
+            </svg>
+            <span class="icon-name">zoom in</span>
+          </div>
+
+          <!-- Zoom Out Icon -->
+          <div class="icon-item" data-category="actions">
+            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              <line x1="8" y1="11" x2="14" y2="11" />
+            </svg>
+            <span class="icon-name">zoom out</span>
           </div>
         </div>
       </section>
@@ -3147,7 +3026,6 @@
         ];
 
         const iconSpecialCases2 = ["print", "delete"];
-
         const researchGroup = ["research", "zoom in", "zoom out"];
         const infoGroup = ["warning", "error", "info"];
 
@@ -3314,6 +3192,8 @@
           this.cornerStyle = document.getElementById("corner-style");
           this.primaryColor = document.getElementById("primary-color");
           this.secondaryColor = document.getElementById("secondary-color");
+          //   this.themeSwitch = document.getElementById("theme-switch");
+
           this.iconSize = document.getElementById("icon-size");
           this.iconWeight = document.getElementById("icon-weight");
           this.iconPreview = document.querySelector(".icon-preview");
@@ -3322,6 +3202,11 @@
           this.setupEventListeners();
           this.initializeUI();
         }
+
+        // adjustPrimaryColor(theme) {
+        //   // Just update the color value, nothing else
+        //   this.primaryColor.value = theme === "dark" ? "#f1f1f1" : "#212121";
+        // }
 
         setupEventListeners() {
           // Control panel events
@@ -3364,8 +3249,12 @@
             const corner = this.cornerStyle.value;
             const primary = this.primaryColor.value;
             const secondary = this.secondaryColor.value;
+            // const theme = this.themeSwitch.value;
             const size = this.iconSize.value;
             const weight = this.iconWeight.value;
+
+            //    document.body.classList.toggle("dark-mode", theme === "dark");
+            //    this.adjustPrimaryColor(theme);
 
             // Loop through all icons in the preview pane
             this.iconPreview
@@ -3388,24 +3277,28 @@
                 icon.style.strokeLinejoin =
                   corner === "rounded" ? "round" : "miter";
 
-                const iconName = icon
-                  .closest(".icon-item")
-                  ?.querySelector(".icon-name")
-                  ?.textContent.trim();
+                const iconName =
+                  icon
+                    .closest(".icon-item")
+                    ?.querySelector(".icon-name")
+                    ?.textContent.trim() || "";
 
                 // Apply icon style
 
                 // OUTLINE
                 if (style === "outline") {
                   icon.style.stroke = primary;
-                  //icon.style.fill = "none";
-                  icon
-                    .querySelectorAll("*")
-                    .forEach((el) => (el.style.fill = "none"));
-                  icon
-                    .querySelectorAll("*")
-                    .forEach((el) => (el.style.stroke = primary));
                   icon.style.strokeWidth = weight;
+                  //icon.style.fill = "none";
+                  icon.querySelectorAll("*").forEach((el) => {
+                    el.style.stroke = primary;
+                    el.style.fill = "none";
+                    el.style.strokeWidth = weight;
+                  });
+                  // icon
+                  //   .querySelectorAll("*")
+                  //   .forEach((el) => (el.style.stroke = primary));
+                  // icon.style.strokeWidth = weight;
 
                   // FILLED
                 } else if (style === "filled") {
@@ -3414,6 +3307,11 @@
                     icon.style.stroke = primary;
                     icon.style.fill = "none";
                     icon.style.strokeWidth = weight;
+                    icon.querySelectorAll("*").forEach((el) => {
+                      el.style.stroke = primary;
+                      el.style.fill = "none";
+                      el.style.strokeWidth = weight;
+                    });
                   } else if (detailedIcons.includes(iconName)) {
                     // Handle Detailed Icon Fills and Strokes
                     handleDetailedPaths(icon, primary, secondary, weight);
