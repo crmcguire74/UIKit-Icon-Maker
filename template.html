@@ -26,6 +26,15 @@
         --background-start: #f0f8ff;
         --background-end: #e6f0ff;
         --gradient-middle: #eaf4ff;
+
+        /* Dark theme variables */
+        --dark-background-start: #1a1a2e;
+        --dark-background-end: #15152d;
+        --dark-gradient-middle: #1d1d35;
+        --dark-text-color: #f1f1f1;
+        --dark-fillspace-color: #2a2a3e;
+
+        --light-text-color: #2a2a3e;
       }
 
       /* Global Styles */
@@ -59,6 +68,53 @@
       nav a:hover {
         color: var(--primary-color);
         transform: translateY(-2px);
+      }
+
+      /* Dark Theme Styles */
+
+      /* Dark Mode Styles */
+      body.dark-mode {
+        background: linear-gradient(
+          135deg,
+          var(--dark-background-start) 0%,
+          var(--dark-gradient-middle) 50%,
+          var(--dark-background-end) 100%
+        );
+        color: var(--dark-text-color);
+      }
+
+      body.dark-mode .right-block {
+        background-color: rgba(26, 26, 46, 0.95);
+        border-color: #2a2a3e;
+      }
+
+      body.dark-mode h1 {
+        color: #f1f1f1;
+      }
+
+      body.dark-mode .description {
+        color: #f1f1f1;
+      }
+
+      body.dark-mode .icon-preview {
+        background-color: rgba(26, 26, 46, 0.7);
+      }
+
+      body.dark-mode .control-group label {
+        color: var(--light-color);
+      }
+
+      body.dark-mode .category-button {
+        background-color: var(--dark-fillspace-color);
+        color: var(--dark-text-color);
+      }
+
+      body.dark-mode .icon-item .icon-name {
+        color: var(--dark-text-color);
+      }
+
+      body.dark-mode .feature-card {
+        color: var(--light-text-color);
       }
 
       /* Header Styles */
@@ -325,7 +381,7 @@
 
       .icon-preview {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
         gap: 2rem;
         margin-top: 2rem;
         background-color: rgba(230, 240, 255, 0.7);
@@ -421,6 +477,11 @@
         font-family: "Raleway";
         font-weight: 900;
         height: 5rem;
+      }
+
+      footer {
+        margin-bottom: 2rem;
+        margin-left: 2rem;
       }
 
       @media screen and (max-width: 768px) {
@@ -2993,10 +3054,13 @@
         },
       };
 
-      function handleDetailedPaths(icon, primary, secondary, weight) {
+      function handleDetailedPaths(icon, primary, secondary, weight, theme) {
         const paths = Array.from(
           icon.querySelectorAll("path, line, polyline, polygon, rect, circle")
         );
+
+        const fillColor = theme === "dark" ? "#2a2a3e" : "#f1f1f1";
+
         const iconName = icon
           .closest(".icon-item")
           ?.querySelector(".icon-name")
@@ -3182,6 +3246,10 @@
           }
 
           path.style.strokeWidth = weight;
+
+          if (path.style.fill === "#f1f1f1") {
+            path.style.fill = fillColor;
+          }
         });
       }
 
@@ -3192,7 +3260,7 @@
           this.cornerStyle = document.getElementById("corner-style");
           this.primaryColor = document.getElementById("primary-color");
           this.secondaryColor = document.getElementById("secondary-color");
-          //   this.themeSwitch = document.getElementById("theme-switch");
+          this.themeSwitch = document.getElementById("theme-switch");
 
           this.iconSize = document.getElementById("icon-size");
           this.iconWeight = document.getElementById("icon-weight");
@@ -3241,6 +3309,31 @@
               this.filterIcons();
             });
           });
+
+          // Add theme switch listener
+          this.themeSwitch.addEventListener("change", () => {
+            this.updateTheme();
+            this.updateIcons();
+          });
+        }
+
+        updateTheme() {
+          const isDarkMode = this.themeSwitch.value === "dark";
+          document.body.classList.toggle("dark-mode", isDarkMode);
+
+          // Update icon colors for dark mode
+          if (isDarkMode) {
+            if (!this.primaryColor.dataset.lastLightColor) {
+              this.primaryColor.dataset.lastLightColor =
+                this.primaryColor.value;
+            }
+            this.primaryColor.value = "#f1f1f1";
+          } else {
+            if (this.primaryColor.dataset.lastLightColor) {
+              this.primaryColor.value =
+                this.primaryColor.dataset.lastLightColor;
+            }
+          }
         }
 
         updateIcons() {
@@ -3249,7 +3342,7 @@
             const corner = this.cornerStyle.value;
             const primary = this.primaryColor.value;
             const secondary = this.secondaryColor.value;
-            // const theme = this.themeSwitch.value;
+            const theme = this.themeSwitch.value;
             const size = this.iconSize.value;
             const weight = this.iconWeight.value;
 
@@ -3314,7 +3407,13 @@
                     });
                   } else if (detailedIcons.includes(iconName)) {
                     // Handle Detailed Icon Fills and Strokes
-                    handleDetailedPaths(icon, primary, secondary, weight);
+                    handleDetailedPaths(
+                      icon,
+                      primary,
+                      secondary,
+                      weight,
+                      theme
+                    );
                     icon.style.strokeWidth = weight;
                   } else {
                     icon
@@ -3369,6 +3468,10 @@
         }
 
         initializeUI() {
+          const savedTheme = localStorage.getItem("theme") || "light";
+          this.themeSwitch.value = savedTheme;
+          this.updateTheme();
+
           this.updateIcons();
           this.updateCategoryButtons();
           this.filterIcons();
