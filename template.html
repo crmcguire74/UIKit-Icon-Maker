@@ -239,26 +239,28 @@
       }
 
       .cta-button {
-        display: inline-block;
-        background-color: var(--primary-color);
-        color: white;
-        padding: 1.4rem 3.5rem;
-        border-radius: 60px;
-        text-decoration: none;
-        font-weight: 500;
-        margin-top: 3rem;
-        margin-bottom: 3rem;
-        font-size: 1.1rem;
-        line-height: 0.9rem;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 15px rgba(77, 51, 5, 0.4);
+          display: inline-block;
+          background-color: var(--primary-color);
+          color: white;
+          padding: 1.4rem 3.5rem;
+          border-radius: 60px;
+          text-decoration: none;
+          font-weight: 500;
+          margin-top: 3rem;
+          margin-bottom: 3rem;
+          font-size: 1.1rem;
+          line-height: 0.9rem;
+          transition: all 0.3s ease;
+          box-shadow: 0 5px 15px rgba(77, 51, 5, 0.4);
+          border: none; /* Add this */
+          cursor: pointer; /* Add this */
       }
 
       .cta-button:hover {
-        background-color: var(--highlight-color);
-        color: #ffffff;
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(255, 198, 100, 0.5);
+          background-color: var(--highlight-color);
+          color: #ffffff;
+          transform: translateY(-5px);
+          box-shadow: 0 15px 30px rgba(255, 198, 100, 0.5);
       }
 
       /* Icon Customization Tools */
@@ -426,6 +428,19 @@
         transition: all 0.3s ease;
         stroke: var(--dark-color);
         fill: var(--light-color);
+      }
+
+      .icon-item svg {
+          cursor: pointer;
+          transition: transform 0.2s ease;
+      }
+
+      .icon-item svg:hover {
+          transform: scale(1.1);
+      }
+
+      .icon-item svg:active {
+          transform: scale(0.95);
       }
 
       .icon:hover {
@@ -617,9 +632,8 @@
           style. Our platform makes it easy to create, customize, and implement
           stunning icons across your digital presence.
         </p>
-        <a href="https://app.iconforge.com/register" class="cta-button"
-          >Build Package</a
-        >
+        <button class="cta-button" id="buildPackageBtn">Build Package</button>
+
       </section>
       <section class="right-block">
         <h3>Icon Customization</h3>
@@ -3480,6 +3494,81 @@
 
       // Initialize the controller
       const iconController = new IconController();
+
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script>
+        // Simple SVG download function
+        function downloadSVG(svg, filename) {
+            // Get the SVG content
+            const svgContent = svg.outerHTML;
+            
+            // Create blob and URL
+            const blob = new Blob([svgContent], { type: 'image/svg+xml' });
+            const url = URL.createObjectURL(blob);
+            
+            // Create download link
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = filename;
+            
+            // Trigger download
+            document.body.appendChild(link);
+            link.click();
+            
+            // Cleanup
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+
+        // Simple ZIP creation function
+        async function downloadIconPackage(icons) {
+            const zip = new JSZip();
+            
+            // Add each icon to zip
+            icons.forEach((icon, index) => {
+                const name = icon.closest('.icon-item').querySelector('.icon-name').textContent.trim();
+                zip.file(`${name}.svg`, icon.outerHTML);
+            });
+            
+            // Generate and download zip
+            const blob = await zip.generateAsync({type: 'blob'});
+            const url = URL.createObjectURL(blob);
+            
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'icon-package.zip';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+
+        // Add click handlers
+        document.querySelectorAll('.icon-item').forEach(item => {
+            const svg = item.querySelector('svg');
+            svg.style.cursor = 'pointer';
+            
+            svg.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const name = item.querySelector('.icon-name').textContent.trim();
+                downloadSVG(svg, `${name}.svg`);
+            });
+        });
+
+        // Build Package button handler
+        const buildPackageBtn = document.getElementById('buildPackageBtn');
+        if (buildPackageBtn) {
+            buildPackageBtn.addEventListener('click', async () => {
+                const visibleIcons = Array.from(document.querySelectorAll('.icon-item'))
+                    .filter(item => item.style.display !== 'none')
+                    .map(item => item.querySelector('svg'));
+                
+                await downloadIconPackage(visibleIcons);
+            });
+        }
+    </script>
+
   </body>
 </html>
