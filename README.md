@@ -1,8 +1,7 @@
 # Icon Forge 🎨
 
-![Icon Forge Banner](link-to-banner-image.png)
 
-[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Support-yellow.svg)](your-coffee-link)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Support-yellow.svg)](https://buymeacoffee.com/crmcguire74)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ![GitHub stars](https://img.shields.io/github/stars/yourusername/icon-forge?style=social)
 
@@ -10,7 +9,7 @@
 
 Icon Forge is a free, open-source tool that lets you customize and generate professional SVG icon packs instantly. No signup required, no software to install.
 
-[Try Icon Forge Now](your-website-url) | [Watch Demo](youtube-link)
+[Try Icon Forge Now](https://myiconforge.netlify.app) | Watch Demo - Coming Soon
 
 ![Demo GIF](link-to-demo.gif)
 
@@ -39,7 +38,7 @@ Icon Forge is a free, open-source tool that lets you customize and generate prof
 
 ## 🚀 Quick Start
 
-1. Visit [Icon Forge](your-website-url)
+1. Visit [Icon Forge](https://myiconforge.netlify.app)
 2. Choose your icon style (outline, filled, or duo-tone)
 3. Customize colors, size, and weight
 4. Click individual icons to download or use "Build Package" for sets
