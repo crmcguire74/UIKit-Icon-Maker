@@ -64,10 +64,7 @@ Icon Forge is a free, open-source tool that lets you customize and generate prof
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/icon-forge.git
-
-# Navigate to directory
-cd icon-forge
+git clone https://github.com/crmcguire74/UIKit-Icon-Maker
 
 # Open in browser
 # Just open index.html in your browser - no build process required!
