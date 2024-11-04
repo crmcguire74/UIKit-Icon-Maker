@@ -33,7 +33,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
@@ -662,6 +662,11 @@
 
         .hero-text h2 {
           font-size: 8vw;
+        }
+
+        .icon-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(80px,1fr));
         }
 
         .feature-card,
