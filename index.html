@@ -678,6 +678,25 @@
 
 
         <div class="controls">
+
+          <!-- Theme Control -->
+          <div class="control-group">
+            <label for="theme-switch">Theme:</label>
+            <select id="theme-switch" placeholder="Light Theme">
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </div>
+
+          <!-- Output File Format Control -->
+          <div class="control-group">
+            <label for="file-format">Export Format:</label>
+            <select id="file-format" placeholder="Set Format">
+                <option value="svg" selected>SVG</option>
+                <option value="png">PNG</option>
+            </select>
+          </div>
+          
           <!-- Icon Type Control -->
           <div class="control-group">
             <label for="icon-style">Icon Type:</label>
@@ -723,14 +742,6 @@
             <input id="secondary-color" type="color" />
           </div>
 
-          <!-- Secondary Color Control -->
-          <div class="control-group">
-            <label for="theme-switch">Theme:</label>
-            <select id="theme-switch" placeholder="Light Theme">
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-            </select>
-          </div>
         </div>
 
         <div class="icon-categories" style="justify-content: left">
@@ -741,8 +752,13 @@
           </div>
         </div>
 
+        
+
         <div class="icon-categories">
           <div class="category-group">
+            <button class="category-button" data-category="accessibility">
+              Accessibility
+            </button>
             <button class="category-button" data-category="actions">
               Actions
             </button>
@@ -752,11 +768,17 @@
             <button class="category-button" data-category="chartsAndGraphs">
               Charts and Graphs
             </button>
-            <button class="category-button" data-category="communications">
-              Communications
+            <button class="category-button" data-category="communication">
+              communication
             </button>
             <button class="category-button" data-category="content">
               Content
+            </button>
+            <button class="category-button" data-category="data">
+              Data
+            </button>
+            <button class="category-button" data-category="development">
+              Development
             </button>
             <button class="category-button" data-category="device">
               Device
@@ -768,12 +790,24 @@
               Edit and Design
             </button>
             <button class="category-button" data-category="files">Files</button>
+            <button class="category-button" data-category="file-operations">
+              File Operations
+            </button>
+            <button class="category-button" data-category="location">
+              Location
+            </button>
             <button class="category-button" data-category="media">Media</button>
             <button class="category-button" data-category="miscellaneous">
               Miscellaneous
             </button>
             <button class="category-button" data-category="navigation">
               Navigation
+            </button>
+            <button class="category-button" data-category="productivity">
+              Productivity
+            </button>
+            <button class="category-button" data-category="reactions">
+              Reactions
             </button>
             <button class="category-button" data-category="security">
               Security
@@ -787,7 +821,10 @@
             <button class="category-button" data-category="system">
               System
             </button>
-            <button class="category-button" data-category="uiElements">
+            <button class="category-button" data-category="time">
+              Time
+            </button>
+            <button class="category-button" data-category="ui-elements">
               UI Elements
             </button>
             <button class="category-button" data-category="user">User</button>
@@ -924,9 +961,9 @@
           <!-- Avatar Icon -->
           <div class="icon-item" data-category="user">
             <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <circle cx="12" cy="12" r="10" />
-              <circle cx="12" cy="10" r="3" />
-              <path d="M7 21v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2" />
+              <circle data-category="stroke_P_fill_P" cx="12" cy="12" r="10" />
+              <circle data-category="stroke_P_fill_S" cx="12" cy="10" r="3" />
+              <path data-category="stroke_P_fill_S" d="M7 21v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2" />
             </svg>
             <span class="icon-name">avatar</span>
           </div>
@@ -1012,7 +1049,7 @@
           </div>
 
           <!-- Bullet List Icon -->
-          <div class="icon-item" data-category="uiElements">
+          <div class="icon-item" data-category="ui-elements">
             <svg
               class="icon"
               viewBox="0 0 24 24"
@@ -1030,7 +1067,7 @@
           </div>
 
           <!-- Calendar Icon -->
-          <div class="icon-item" data-category="communications">
+          <div class="icon-item" data-category="communication">
             <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
               <line x1="16" y1="2" x2="16" y2="6" />
@@ -1057,7 +1094,7 @@
           </div>
 
           <!-- Chat Icon -->
-          <div class="icon-item" data-category="communications">
+          <div class="icon-item" data-category="communication">
             <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
               <path
                 d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
@@ -1080,7 +1117,7 @@
           </div>
 
           <!-- Check Icon -->
-          <div class="icon-item" data-category="uiElements">
+          <div class="icon-item" data-category="ui-elements">
             <svg
               class="icon"
               viewBox="0 0 24 24"
@@ -1107,7 +1144,7 @@
           </div>
 
           <!-- Closed Captions -->
-          <div class="icon-item" data-category="communications">
+          <div class="icon-item" data-category="communication">
             <svg
               class="icon"
               viewBox="0 0 24 24"
@@ -1170,7 +1207,7 @@
           </div>
 
           <!-- Contacts Icon -->
-          <div class="icon-item" data-category="communications">
+          <div class="icon-item" data-category="communication">
             <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
               <circle cx="9" cy="7" r="4" />
@@ -1363,7 +1400,7 @@
           </div>
 
           <!-- Email Icon -->
-          <div class="icon-item" data-category="communications">
+          <div class="icon-item" data-category="communication">
             <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
               <path
                 d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
@@ -1514,7 +1551,7 @@
           </div>
 
           <!-- Forward Icon -->
-          <div class="icon-item" data-category="communications">
+          <div class="icon-item" data-category="communication">
             <svg
               class="icon"
               viewBox="0 0 24 24"
@@ -1930,7 +1967,7 @@
           </div>
 
           <!-- Number List Icon -->
-          <div class="icon-item" data-category="uiElements">
+          <div class="icon-item" data-category="ui-elements">
             <svg
               class="icon"
               viewBox="0 0 24 24"
@@ -2058,7 +2095,7 @@
           </div>
 
           <!-- Phone Icon -->
-          <div class="icon-item" data-category="communications">
+          <div class="icon-item" data-category="communication">
             <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
               <path
                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
@@ -2200,7 +2237,7 @@
           </div>
 
           <!-- Reply Icon -->
-          <div class="icon-item" data-category="communications">
+          <div class="icon-item" data-category="communication">
             <svg
               class="icon"
               viewBox="0 0 24 24"
@@ -2289,7 +2326,7 @@
           </div>
 
           <!-- Send Icon -->
-          <div class="icon-item" data-category="communications">
+          <div class="icon-item" data-category="communication">
             <svg
               class="icon"
               viewBox="0 0 24 24"
@@ -2526,7 +2563,7 @@
           </div>
 
           <!-- Three Dots in a Row -->
-          <div class="icon-item" data-category="uiElements">
+          <div class="icon-item" data-category="ui-elements">
             <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
               <circle cx="12" cy="12" r="1"></circle>
               <circle cx="19" cy="12" r="1"></circle>
@@ -2902,6 +2939,2060 @@
             </svg>
             <span class="icon-name">zoom out</span>
           </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Success Icon -->
+<div class="icon-item" data-category="Status & Feedback" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+      <path d="M7 13l3 3L17 8" fill="none"/>
+      <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" fill="none"/>
+  </svg>
+  <span class="icon-name">Success</span>
+</div>
+
+<!-- Processing Icon -->
+<div class="icon-item" data-category="Status & Feedback" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+      <path d="M12 2V6" fill="none"/>
+      <path d="M12 18V22" fill="none"/>
+      <path d="M4.93 4.93L7.76 7.76" fill="none"/>
+      <path d="M16.24 16.24L19.07 19.07" fill="none"/>
+      <path d="M2 12H6" fill="none"/>
+      <path d="M18 12H22" fill="none"/>
+      <path d="M4.93 19.07L7.76 16.24" fill="none"/>
+      <path d="M16.24 7.76L19.07 4.93" fill="none"/>
+  </svg>
+  <span class="icon-name">Processing</span>
+</div>
+
+<!-- Pending Icon -->
+<div class="icon-item" data-category="Status & Feedback" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+      <circle cx="12" cy="12" r="10" fill="none"/>
+      <path d="M12 6v6l4 2" fill="none"/>
+  </svg>
+  <span class="icon-name">Pending</span>
+</div>
+
+<!-- Failed Icon -->
+<div class="icon-item" data-category="Status & Feedback" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+      <circle cx="12" cy="12" r="10" fill="none"/>
+      <path d="M15 9l-6 6" fill="none"/>
+      <path d="M9 9l6 6" fill="none"/>
+  </svg>
+  <span class="icon-name">Failed</span>
+</div>
+
+<!-- Blocked Icon -->
+<div class="icon-item" data-category="Status & Feedback" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+      <circle cx="12" cy="12" r="10" fill="none"/>
+      <path d="M4.93 4.93L19.07 19.07" fill="none"/>
+  </svg>
+  <span class="icon-name">Blocked</span>
+</div>
+
+<!-- Draft Icon -->
+<div class="icon-item" data-category="Status & Feedback" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" fill="none"/>
+      <path d="M14 2v6h6" fill="none"/>
+      <path d="M8 13h8" fill="none"/>
+      <path d="M8 17h8" fill="none"/>
+      <path d="M8 9h2" fill="none"/>
+  </svg>
+  <span class="icon-name">Draft</span>
+</div>
+
+<!-- Published Icon -->
+<div class="icon-item" data-category="Status & Feedback" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+      <path d="M12 2L2 7l10 5 10-5-10-5z" fill="none"/>
+      <path d="M2 17l10 5 10-5" fill="none"/>
+      <path d="M2 12l10 5 10-5" fill="none"/>
+  </svg>
+  <span class="icon-name">Published</span>
+</div>
+
+<!-- Archived Icon -->
+<div class="icon-item" data-category="Status & Feedback" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+      <path d="M21 8v13H3V8" fill="none"/>
+      <path d="M1 3h22v5H1z" fill="none"/>
+      <path d="M10 12h4" fill="none"/>
+  </svg>
+  <span class="icon-name">Archived</span>
+</div>
+
+<!-- Verified Icon -->
+<div class="icon-item" data-category="Status & Feedback" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+      <circle cx="12" cy="12" r="10" fill="none"/>
+      <path d="M8 12l3 3 6-6" fill="none"/>
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10" fill="none"/>
+      <path d="M12 2c5.52 0 10 4.48 10 10" fill="none" stroke-dasharray="2 4"/>
+  </svg>
+  <span class="icon-name">Verified</span>
+</div>
+
+<!-- Flagged Icon -->
+<div class="icon-item" data-category="Status & Feedback" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+      <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" fill="none"/>
+      <line x1="4" y1="22" x2="4" y2="15" fill="none"/>
+  </svg>
+  <span class="icon-name">Flagged</span>
+</div>
+
+<!-- Pinned Icon -->
+<div class="icon-item" data-category="Status & Feedback" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+      <circle cx="12" cy="7" r="5" fill="none"/>
+      <line x1="12" y1="12" x2="12" y2="21" fill="none" stroke-width="1.5"/>
+      <path d="M12 12l-2 2M12 12l2 2" fill="none" stroke-width="1.5"/>
+  </svg>
+  <span class="icon-name">Pinned</span>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Comment Icon -->
+<div class="icon-item" data-category="communication" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M3 12c0-4.418 4.03-8 9-8s9 3.582 9 8-4.03 8-9 8c-1.007 0-1.978-.132-2.886-.378L4 21l.6-3.882C3.567 15.822 3 13.972 3 12z" fill="none"/>
+  </svg>
+  <span class="icon-name">comment</span>
+</div>
+
+<!-- Thread Icon -->
+<div class="icon-item" data-category="communication" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(224, 28, 28); stroke-width: 4; cursor: pointer;">
+    <path d="M3 12h3m-3 4h6m-6-8h6m4-4v16" fill="none"/>
+    <path d="M16 8h5l-5 5h5" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">thread</span>
+</div>
+
+<!-- Mention Icon -->
+<div class="icon-item" data-category="communication" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 2, 2); stroke-width: 4; cursor: pointer;">
+    <circle cx="12" cy="12" r="4" fill="none"/>
+    <path d="M16 8v2a4 4 0 0 0 4 4h1m-9-2v6" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">mention</span>
+</div>
+
+<!-- Notification Bell Icon -->
+<div class="icon-item" data-category="communication" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" fill="none"/>
+    <path d="M13.73 21a2 2 0 0 1-3.46 0" fill="none"/>
+  </svg>
+  <span class="icon-name">notification-bell</span>
+</div>
+
+<!-- Status Online Icon -->
+<div class="icon-item" data-category="communication" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="10" fill="none"/>
+    <circle cx="12" cy="12" r="4" fill="currentColor"/>
+  </svg>
+  <span class="icon-name">status-online</span>
+</div>
+
+<!-- Status Away Icon -->
+<div class="icon-item" data-category="communication" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="10" fill="none"/>
+    <path d="M12 8v4l2 2" fill="none"/>
+  </svg>
+  <span class="icon-name">status-away</span>
+</div>
+
+<!-- Status Busy Icon -->
+<div class="icon-item" data-category="communication" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="10" fill="none"/>
+    <line x1="8" y1="12" x2="16" y2="12"/>
+  </svg>
+  <span class="icon-name">status-busy</span>
+</div>
+
+<!-- Status Offline Icon -->
+<div class="icon-item" data-category="communication" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="10" fill="none"/>
+    <circle cx="12" cy="12" r="4" fill="none"/>
+  </svg>
+  <span class="icon-name">status-offline</span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Link/Unlink Icon -->
+<div class="icon-item" data-category="communication" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none"/>
+    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none"/>
+  </svg>
+  <span class="icon-name">link-unlink</span>
+</div>
+
+<!-- Group Chat Icon -->
+<div class="icon-item" data-category="communication" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M17 8h2a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2v4l-4-4H9a2 2 0 0 1-2-2v-1" fill="none"/>
+    <path d="M3 6h10a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H7l-4 4V6z" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">group-chat</span>
+</div>
+
+<!-- Video Call Icon -->
+<div class="icon-item" data-category="communication" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="2" y="6" width="14" height="12" rx="2" ry="2" fill="none"/>
+    <path d="M16 10l4-4v12l-4-4" fill="none"/>
+  </svg>
+  <span class="icon-name">video-call</span>
+</div>
+
+<!-- Screen Share Icon -->
+<div class="icon-item" data-category="communication" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="3" y="4" width="18" height="12" rx="2" ry="2" fill="none"/>
+    <line x1="8" y1="21" x2="16" y2="21"/>
+    <line x1="12" y1="16" x2="12" y2="21"/>
+  </svg>
+  <span class="icon-name">screen-share</span>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Like Reaction -->
+<div class="icon-item" data-category="reactions" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" fill="none"/>
+  </svg>
+  <span class="icon-name">reaction-like</span>
+</div>
+
+<!-- Love Reaction -->
+<div class="icon-item" data-category="reactions" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" fill="none"/>
+  </svg>
+  <span class="icon-name">reaction-love</span>
+</div>
+
+<!-- Laugh Reaction -->
+<div class="icon-item" data-category="reactions" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="10" fill="none"/>
+    <path d="M8 14s1.5 2 4 2 4-2 4-2" fill="none"/>
+    <line x1="9" y1="9" x2="9.01" y2="9"/>
+    <line x1="15" y1="9" x2="15.01" y2="9"/>
+    <path d="M7 9.5C7 8.67 7.67 8 8.5 8S10 8.67 10 9.5"/>
+    <path d="M14 9.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5"/>
+  </svg>
+  <span class="icon-name">reaction-laugh</span>
+</div>
+
+<!-- Sad Reaction -->
+<div class="icon-item" data-category="reactions" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="10" fill="none"/>
+    <path d="M16 16s-1.5-2-4-2-4 2-4 2" fill="none"/>
+    <line x1="9" y1="9" x2="9.01" y2="9"/>
+    <line x1="15" y1="9" x2="15.01" y2="9"/>
+  </svg>
+  <span class="icon-name">reaction-sad</span>
+</div>
+
+<!-- Angry Reaction -->
+<div class="icon-item" data-category="reactions" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="10" fill="none"/>
+    <path d="M16 16s-1.5-2-4-2-4 2-4 2" fill="none"/>
+    <path d="M7.5 8l3 3" fill="none"/>
+    <path d="M10.5 8l-3 3" fill="none"/>
+    <path d="M13.5 8l3 3" fill="none"/>
+    <path d="M16.5 8l-3 3" fill="none"/>
+  </svg>
+  <span class="icon-name">reaction-angry</span>
+</div>
+
+
+
+
+
+
+
+
+<!-- Store Icon -->
+<div class="icon-item" data-category="ecommerce" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M3 21h18M3 7V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2" fill="none"/>
+    <path d="M3 7h18l-2 5c-.24.59-.82 1-1.5 1h-11c-.68 0-1.26-.41-1.5-1L3 7z" fill="none"/>
+    <path d="M5 21V12m14 9V12" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">store</span>
+</div>
+
+<!-- Inventory Icon -->
+<div class="icon-item" data-category="ecommerce" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="4" y="4" width="16" height="6" rx="1" fill="none"/>
+    <rect x="4" y="14" width="16" height="6" rx="1" fill="none"/>
+    <line x1="9" y1="7" x2="15" y2="7"/>
+    <line x1="9" y1="17" x2="15" y2="17"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">inventory</span>
+</div>
+
+<!-- Barcode Icon -->
+<div class="icon-item" data-category="ecommerce" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <line x1="4" y1="6" x2="4" y2="18"/>
+    <line x1="7" y1="6" x2="7" y2="18"/>
+    <line x1="10" y1="6" x2="10" y2="18"/>
+    <line x1="13" y1="6" x2="13" y2="18"/>
+    <line x1="16" y1="6" x2="16" y2="18"/>
+    <line x1="19" y1="6" x2="19" y2="18"/>
+    <line x1="3" y1="4" x2="21" y2="4"/>
+    <line x1="3" y1="20" x2="21" y2="20"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">barcode</span>
+</div>
+
+<!-- QR Code Icon -->
+<div class="icon-item" data-category="ecommerce" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="4" y="4" width="6" height="6" fill="none"/>
+    <rect x="14" y="4" width="6" height="6" fill="none"/>
+    <rect x="4" y="14" width="6" height="6" fill="none"/>
+    <rect x="14" y="14" width="6" height="6" fill="none"/>
+    <rect x="7" y="7" width="0.01" height="0.01" fill="currentColor"/>
+    <rect x="17" y="7" width="0.01" height="0.01" fill="currentColor"/>
+    <rect x="7" y="17" width="0.01" height="0.01" fill="currentColor"/>
+    <rect x="17" y="17" width="0.01" height="0.01" fill="currentColor"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">qr-code</span>
+</div>
+
+<!-- Receipt Icon -->
+<div class="icon-item" data-category="ecommerce" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M4 4v16l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V4l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1z" fill="none"/>
+    <line x1="8" y1="9" x2="16" y2="9"/>
+    <line x1="8" y1="13" x2="16" y2="13"/>
+    <line x1="8" y1="17" x2="12" y2="17"/>
+  </svg>
+  <span class="icon-name">receipt</span>
+</div>
+
+<!-- Discount/Offer Icon -->
+<div class="icon-item" data-category="ecommerce" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <line x1="19" y1="5" x2="5" y2="19"/>
+    <circle cx="8" cy="8" r="2" fill="none"/>
+    <circle cx="16" cy="16" r="2" fill="none"/>
+    <path d="M21 3L3 21" fill="none"/>
+  </svg>
+  <span class="icon-name">discount</span>
+</div>
+
+<!-- Delivery Truck Icon -->
+<div class="icon-item" data-category="ecommerce" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M16 16h4V8l-4-4H3v12h3" fill="none"/>
+    <path d="M7 16a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" fill="none"/>
+    <path d="M17 16a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" fill="none"/>
+    <path d="M3 8h13" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">delivery-truck</span>
+</div>
+
+<!-- Package Icon -->
+<div class="icon-item" data-category="ecommerce" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" fill="none"/>
+    <path d="M12 12l8-4.5M12 12v9M12 12L4 7.5" fill="none"/>
+    <line x1="16" y1="5.25" x2="8" y2="9.75"/>
+  </svg>
+  <span class="icon-name">package</span>
+</div>
+
+<!-- Price Tag Icon -->
+<div class="icon-item" data-category="ecommerce" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" fill="none"/>
+    <circle cx="7" cy="7" r="1" fill="currentColor"/>
+  </svg>
+  <span class="icon-name">price-tag</span>
+</div>
+
+<!-- Wishlist Icon -->
+<div class="icon-item" data-category="ecommerce" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" fill="none"/>
+  </svg>
+  <span class="icon-name">wishlist</span>
+</div>
+
+<!-- Compare Icon -->
+<div class="icon-item" data-category="ecommerce" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M16 3l4 4-4 4" fill="none"/>
+    <path d="M20 7H4" fill="none"/>
+    <path d="M8 21l-4-4 4-4" fill="none"/>
+    <path d="M4 17h16" fill="none"/>
+  </svg>
+  <span class="icon-name">compare</span>
+</div>
+
+<!-- Return/Refund Icon -->
+<div class="icon-item" data-category="ecommerce" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M4 12a8 8 0 0 1 8-8v0a8 8 0 0 1 8 8v0a8 8 0 0 1-8 8v0" fill="none"/>
+    <polyline points="4,12 7,15 4,18" fill="none"/>
+    <line x1="9" y1="12" x2="15" y2="12"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">return-refund</span>
+</div>
+
+<!-- Rating Stars Icon -->
+<div class="icon-item" data-category="ecommerce" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="none"/>
+  </svg>
+  <span class="icon-name">rating-stars</span>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Clock Timer Icon -->
+<div class="icon-item" data-category="time" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="10" fill="none"/>
+    <polyline points="12 6 12 12 16 14" fill="none"/>
+  </svg>
+  <span class="icon-name">clock-timer</span>
+</div>
+
+<!-- Stopwatch Icon -->
+<div class="icon-item" data-category="time" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="13" r="8" fill="none"/>
+    <path d="M12 9v4l2 2" fill="none"/>
+    <path d="M12 5V3" fill="none"/>
+    <path d="M15 5l1-1" fill="none"/>
+    <path d="M9 5L8 4" fill="none"/>
+  </svg>
+  <span class="icon-name">stopwatch</span>
+</div>
+
+<!-- Alarm Icon -->
+<div class="icon-item" data-category="time" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="13" r="8" fill="none"/>
+    <path d="M12 9v4l2 2" fill="none"/>
+    <path d="M5 3L2 6" fill="none"/>
+    <path d="M19 3l3 3" fill="none"/>
+    <path d="M9 21h6" fill="none"/>
+  </svg>
+  <span class="icon-name">alarm</span>
+</div>
+
+<!-- Schedule Icon -->
+<div class="icon-item" data-category="time" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" fill="none"/>
+    <line x1="16" y1="2" x2="16" y2="6"/>
+    <line x1="8" y1="2" x2="8" y2="6"/>
+    <line x1="3" y1="10" x2="21" y2="10"/>
+    <path d="M8 14h3M8 17h7" fill="none"/>
+  </svg>
+  <span class="icon-name">schedule</span>
+</div>
+
+<!-- Timeline Icon -->
+<div class="icon-item" data-category="time" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <line x1="12" y1="4" x2="12" y2="20"/>
+    <circle cx="12" cy="7" r="2" fill="none"/>
+    <circle cx="12" cy="12" r="2" fill="none"/>
+    <circle cx="12" cy="17" r="2" fill="none"/>
+    <path d="M14 7h6M14 12h6M14 17h6" fill="none"/>
+    <path d="M10 7H4M10 12H4M10 17H4" fill="none"/>
+  </svg>
+  <span class="icon-name">timeline</span>
+</div>
+
+<!-- History Icon -->
+<div class="icon-item" data-category="time" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M4 12a8 8 0 0 1 8-8v0a8 8 0 0 1 8 8v0a8 8 0 0 1-8 8v0" fill="none"/>
+    <polyline points="12 7 12 12 15 14" fill="none"/>
+    <path d="M4.01 8.1L4 8" fill="none"/>
+  </svg>
+  <span class="icon-name">history</span>
+</div>
+
+<!-- Recent Icon -->
+<div class="icon-item" data-category="time" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M12 21a9 9 0 1 1 6.18-15.55" fill="none"/>
+    <polyline points="12 9 12 13 14 15" fill="none"/>
+    <path d="M19 5v4h-4" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">recent</span>
+</div>
+
+<!-- Upcoming Icon -->
+<div class="icon-item" data-category="time" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" fill="none"/>
+    <line x1="16" y1="2" x2="16" y2="6"/>
+    <line x1="8" y1="2" x2="8" y2="6"/>
+    <line x1="3" y1="10" x2="21" y2="10"/>
+    <path d="M9 16l2 2 4-4" fill="none"/>
+  </svg>
+  <span class="icon-name">upcoming</span>
+</div>
+
+<!-- Duration Icon -->
+<div class="icon-item" data-category="time" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M21 12a9 9 0 1 1-9-9" fill="none"/>
+    <path d="M12 3v9l4 4" fill="none"/>
+    <path d="M21 12h-2" fill="none"/>
+    <path d="M12 21v-2" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">duration</span>
+</div>
+
+
+
+
+
+
+
+
+<!-- Map Marker Icon -->
+<div class="icon-item" data-category="location" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M12 21c3-3 8-9.5 8-13a8 8 0 1 0-16 0c0 3.5 5 10 8 13z" fill="none"/>
+    <circle cx="12" cy="8" r="2" fill="none"/>
+  </svg>
+  <span class="icon-name">map-marker</span>
+</div>
+
+<!-- Navigation Icon -->
+<div class="icon-item" data-category="location" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <polygon points="3 11 22 2 13 21 11 13 3 11" fill="none"/>
+  </svg>
+  <span class="icon-name">navigation</span>
+</div>
+
+<!-- Location Icon -->
+<div class="icon-item" data-category="location" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="3" fill="none"/>
+    <path d="M19 12c0 3.866-7 11-7 11s-7-7.134-7-11a7 7 0 1 1 14 0z" fill="none"/>
+  </svg>
+  <span class="icon-name">location</span>
+</div>
+
+<!-- Direction Icon -->
+<div class="icon-item" data-category="location" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M12 3v18" fill="none"/>
+    <path d="M3 12h18" fill="none"/>
+    <path d="M12 3l4 4-4-4-4 4" fill="none"/>
+    <path d="M21 12l-4 4 4-4-4-4" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">direction</span>
+</div>
+
+<!-- Route Icon -->
+<div class="icon-item" data-category="location" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="5" cy="5" r="2" fill="none"/>
+    <circle cx="19" cy="19" r="2" fill="none"/>
+    <path d="M5 7v2a6 6 0 0 0 6 6h2a6 6 0 0 0 6-6v-2" fill="none"/>
+  </svg>
+  <span class="icon-name">route</span>
+</div>
+
+<!-- Distance Icon -->
+<div class="icon-item" data-category="location" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M4 8l8-4 8 4" fill="none"/>
+    <path d="M4 16l8 4 8-4" fill="none"/>
+    <line x1="4" y1="8" x2="4" y2="16"/>
+    <line x1="20" y1="8" x2="20" y2="16"/>
+  </svg>
+  <span class="icon-name">distance</span>
+</div>
+
+<!-- Address Icon -->
+<div class="icon-item" data-category="location" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="none"/>
+    <path d="M7 9h10M7 13h10M7 17h5" fill="none"/>
+  </svg>
+  <span class="icon-name">address</span>
+</div>
+
+<!-- Coordinates Icon -->
+<div class="icon-item" data-category="location" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="10" fill="none"/>
+    <path d="M2 12h20" fill="none"/>
+    <path d="M12 2v20" fill="none"/>
+    <circle cx="12" cy="12" r="1" fill="currentColor"/>
+  </svg>
+  <span class="icon-name">coordinates</span>
+</div>
+
+<!-- Geofence Icon -->
+<div class="icon-item" data-category="location" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="8" fill="none" stroke-dasharray="4"/>
+    <circle cx="12" cy="12" r="3" fill="none"/>
+    <path d="M12 9v-4M12 19v-4M15 12h4M5 12h4" fill="none"/>
+  </svg>
+  <span class="icon-name">geofence</span>
+</div>
+
+<!-- Territory Icon -->
+<div class="icon-item" data-category="location" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M4 4h16v16H4z" fill="none"/>
+    <path d="M4 8h16M4 12h16M4 16h16" fill="none"/>
+    <path d="M8 4v16M12 4v16M16 4v16" fill="none"/>
+  </svg>
+  <span class="icon-name">territory</span>
+</div>
+
+
+
+
+
+
+
+<!-- Two-factor Authentication Icon -->
+<div class="icon-item" data-category="security" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="3" y="11" width="8" height="10" rx="2" fill="none"/>
+    <rect x="13" y="11" width="8" height="10" rx="2" fill="none"/>
+    <circle cx="7" cy="16" r="1" fill="currentColor"/>
+    <path d="M17 16h-1" fill="none"/>
+    <path d="M7 11V7a5 5 0 0 1 10 0v4" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">two-factor-auth</span>
+</div>
+
+<!-- Biometric Icon -->
+<div class="icon-item" data-category="security" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M7 12c0-2.8 2.2-5 5-5s5 2.2 5 5" fill="none"/>
+    <path d="M12 3v4" fill="none"/>
+    <path d="M3 12h4" fill="none"/>
+    <path d="M17 12h4" fill="none"/>
+    <path d="M8 17c1.5 1.5 3.5 2 5.5 2s4-.5 5.5-2" fill="none"/>
+    <path d="M12 12v9" fill="none"/>
+  </svg>
+  <span class="icon-name">biometric</span>
+</div>
+
+<!-- Face ID Icon -->
+<div class="icon-item" data-category="security" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="3" y="3" width="18" height="18" rx="2" fill="none"/>
+    <path d="M8 9v-2h2M16 9v-2h-2M9 16s1.5 1 3 1 3-1 3-1" fill="none"/>
+    <line x1="9" y1="9" x2="9" y2="9"/>
+    <line x1="15" y1="9" x2="15" y2="9"/>
+  </svg>
+  <span class="icon-name">face-id</span>
+</div>
+
+<!-- Fingerprint Icon -->
+<div class="icon-item" data-category="security" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M12 4c4.4 0 8 3.6 8 8v2M4 12c0-4.4 3.6-8 8-8" fill="none"/>
+    <path d="M12 8c2.2 0 4 1.8 4 4v2M8 12c0-2.2 1.8-4 4-4" fill="none"/>
+    <path d="M12 12v4" fill="none"/>
+    <path d="M16 16c0-2.2-1.8-4-4-4s-4 1.8-4 4" fill="none"/>
+    <path d="M8 20c0-2.2 1.8-4 4-4s4 1.8 4 4" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">fingerprint</span>
+</div>
+
+<!-- Shield Icon -->
+<div class="icon-item" data-category="security" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none"/>
+    <path d="M12 8v6" fill="none"/>
+    <path d="M9 11h6" fill="none"/>
+  </svg>
+  <span class="icon-name">shield</span>
+</div>
+
+<!-- Firewall Icon -->
+<div class="icon-item" data-category="security" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="4" y="4" width="16" height="16" rx="2" fill="none"/>
+    <path d="M4 8h16M4 12h16M4 16h16" fill="none"/>
+    <path d="M9 4v4M15 8v4M9 12v4M15 16v4" fill="none"/>
+  </svg>
+  <span class="icon-name">firewall</span>
+</div>
+
+<!-- Private/Public Icon -->
+<div class="icon-item" data-category="security" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" fill="none"/>
+    <path d="M7 11V7a5 5 0 0 1 10 0v4" fill="none"/>
+    <circle cx="12" cy="16" r="1" fill="none"/>
+  </svg>
+  <span class="icon-name">private-public</span>
+</div>
+
+<!-- Certificate Icon -->
+<div class="icon-item" data-category="security" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="4" y="4" width="16" height="16" rx="2" fill="none"/>
+    <circle cx="12" cy="10" r="3" fill="none"/>
+    <path d="M12 13v5m-2 0l2-2 2 2" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">certificate</span>
+</div>
+
+<!-- Encrypted/Decrypted Icon -->
+<div class="icon-item" data-category="security" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" fill="none"/>
+    <polyline points="17 8 12 3 7 8" fill="none"/>
+    <line x1="12" y1="3" x2="12" y2="15"/>
+    <path d="M8 11l4 4 4-4" fill="none"/>
+  </svg>
+  <span class="icon-name">encrypted-decrypted</span>
+</div>
+
+<!-- Permission Icon -->
+<div class="icon-item" data-category="security" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="none"/>
+    <path d="M9 12h6" fill="none"/>
+    <path d="M12 9v6" fill="none"/>
+    <circle cx="12" cy="12" r="4" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">permission</span>
+</div>
+
+
+
+
+
+
+<!-- Task Icon -->
+<div class="icon-item" data-category="productivity" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="3" y="4" width="18" height="16" rx="2" fill="none"/>
+    <path d="M9 9l2 2 4-4" fill="none"/>
+    <line x1="8" y1="14" x2="16" y2="14"/>
+    <line x1="8" y1="17" x2="14" y2="17"/>
+  </svg>
+  <span class="icon-name">task</span>
+</div>
+
+<!-- Project Icon -->
+<div class="icon-item" data-category="productivity" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="3" y="3" width="7" height="7" fill="none"/>
+    <rect x="14" y="3" width="7" height="7" fill="none"/>
+    <rect x="14" y="14" width="7" height="7" fill="none"/>
+    <rect x="3" y="14" width="7" height="7" fill="none"/>
+    <path d="M10 7h4M7 10v4M17 10v4M10 17h4" fill="none"/>
+  </svg>
+  <span class="icon-name">project</span>
+</div>
+
+<!-- Milestone Icon -->
+<div class="icon-item" data-category="productivity" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M4 12h16" fill="none"/>
+    <circle cx="12" cy="12" r="3" fill="none"/>
+    <path d="M12 4v3" fill="none"/>
+    <path d="M12 17v3" fill="none"/>
+    <path d="M18 12l3-3v6z" fill="none"/>
+  </svg>
+  <span class="icon-name">milestone</span>
+</div>
+
+<!-- Sprint Icon -->
+<div class="icon-item" data-category="productivity" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M4 5v14" fill="none"/>
+    <path d="M4 12h6l2-3 2 6 2-3h4" fill="none"/>
+    <polyline points="16 8 20 12 16 16" fill="none"/>
+  </svg>
+  <span class="icon-name">sprint</span>
+</div>
+
+<!-- Kanban Icon -->
+<div class="icon-item" data-category="productivity" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="3" y="3" width="18" height="18" rx="2" fill="none"/>
+    <line x1="9" y1="3" x2="9" y2="21"/>
+    <line x1="15" y1="3" x2="15" y2="21"/>
+    <path d="M5 8h2M11 8h2M17 8h2" fill="none"/>
+    <path d="M5 12h2M11 12h2M17 12h2" fill="none"/>
+  </svg>
+  <span class="icon-name">kanban</span>
+</div>
+
+<!-- Board Icon -->
+<div class="icon-item" data-category="productivity" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="3" y="3" width="18" height="18" rx="2" fill="none"/>
+    <line x1="3" y1="9" x2="21" y2="9"/>
+    <line x1="3" y1="15" x2="21" y2="15"/>
+    <line x1="9" y1="9" x2="9" y2="21"/>
+    <line x1="15" y1="9" x2="15" y2="21"/>
+  </svg>
+  <span class="icon-name">board</span>
+</div>
+
+<!-- List View Icon -->
+<div class="icon-item" data-category="productivity" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <line x1="8" y1="6" x2="21" y2="6"/>
+    <line x1="8" y1="12" x2="21" y2="12"/>
+    <line x1="8" y1="18" x2="21" y2="18"/>
+    <circle cx="4" cy="6" r="1" fill="currentColor"/>
+    <circle cx="4" cy="12" r="1" fill="currentColor"/>
+    <circle cx="4" cy="18" r="1" fill="currentColor"/>
+  </svg>
+  <span class="icon-name">list-view</span>
+</div>
+
+<!-- Tree View Icon -->
+<div class="icon-item" data-category="productivity" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M12 3v4" fill="none"/>
+    <path d="M12 7h-6v4h4v4h-6v4h8" fill="none"/>
+    <path d="M12 7h6v4h-4v4h6v4h-8" fill="none"/>
+    <circle cx="12" cy="3" r="1" fill="currentColor"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">tree-view</span>
+</div>
+
+<!-- Matrix Icon -->
+<div class="icon-item" data-category="productivity" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="3" y="3" width="18" height="18" rx="2" fill="none"/>
+    <path d="M3 9h18M3 15h18M9 3v18M15 3v18" fill="none"/>
+  </svg>
+  <span class="icon-name">matrix</span>
+</div>
+
+<!-- Workflow Icon -->
+<div class="icon-item" data-category="productivity" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="6" cy="12" r="3" fill="none"/>
+    <circle cx="18" cy="6" r="3" fill="none"/>
+    <circle cx="18" cy="18" r="3" fill="none"/>
+    <path d="M8.7 10.7L15.3 7.3" fill="none"/>
+    <path d="M8.7 13.3l6.6 3.4" fill="none"/>
+  </svg>
+  <span class="icon-name">workflow</span>
+</div>
+
+<!-- Pipeline Icon -->
+<div class="icon-item" data-category="productivity" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M3 6h18" fill="none"/>
+    <path d="M3 12h18" fill="none"/>
+    <path d="M3 18h18" fill="none"/>
+    <circle cx="6" cy="6" r="2" fill="none"/>
+    <circle cx="12" cy="12" r="2" fill="none"/>
+    <circle cx="18" cy="18" r="2" fill="none"/>
+  </svg>
+  <span class="icon-name">pipeline</span>
+</div>
+
+
+
+
+<!-- Breadcrumb Separator Icon -->
+<div class="icon-item" data-category="ui-elements" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <polyline points="9 6 15 12 9 18" fill="none"/>
+  </svg>
+  <span class="icon-name">breadcrumb-separator</span>
+</div>
+
+<!-- Accordion Expand Icon -->
+<div class="icon-item" data-category="ui-elements" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="10" fill="none"/>
+    <line x1="12" y1="8" x2="12" y2="16"/>
+    <line x1="8" y1="12" x2="16" y2="12"/>
+  </svg>
+  <span class="icon-name">accordion-expand</span>
+</div>
+
+<!-- Accordion Collapse Icon -->
+<div class="icon-item" data-category="ui-elements" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="10" fill="none"/>
+    <line x1="8" y1="12" x2="16" y2="12"/>
+  </svg>
+  <span class="icon-name">accordion-collapse</span>
+</div>
+
+<!-- Modal/Dialog Icon -->
+<div class="icon-item" data-category="ui-elements" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="3" y="3" width="18" height="18" rx="2" fill="none"/>
+    <line x1="3" y1="9" x2="21" y2="9"/>
+    <line x1="17" y1="6" x2="17" y2="6"/>
+    <line x1="13" y1="6" x2="13" y2="6"/>
+  </svg>
+  <span class="icon-name">modal-dialog</span>
+</div>
+
+<!-- Tooltip Icon -->
+<div class="icon-item" data-category="ui-elements" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M12 4c4.4 0 8 2.7 8 6s-3.6 6-8 6c-.8 0-1.6-.1-2.4-.3L4 18l1.5-4.5C4.5 12.3 4 11.2 4 10c0-3.3 3.6-6 8-6z" fill="none"/>
+  </svg>
+  <span class="icon-name">tooltip</span>
+</div>
+
+<!-- Spinner/Loading Icon -->
+<div class="icon-item" data-category="ui-elements" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" fill="none"/>
+  </svg>
+  <span class="icon-name">spinner-loading</span>
+</div>
+
+<!-- Progress Bar Icon -->
+<div class="icon-item" data-category="ui-elements" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="3" y="8" width="18" height="8" rx="2" fill="none"/>
+    <path d="M3 12h12" fill="none"/>
+  </svg>
+  <span class="icon-name">progress-bar</span>
+</div>
+
+<!-- Drag Handle Icon -->
+<div class="icon-item" data-category="ui-elements" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="9" cy="6" r="1" fill="currentColor"/>
+    <circle cx="15" cy="6" r="1" fill="currentColor"/>
+    <circle cx="9" cy="12" r="1" fill="currentColor"/>
+    <circle cx="15" cy="12" r="1" fill="currentColor"/>
+    <circle cx="9" cy="18" r="1" fill="currentColor"/>
+    <circle cx="15" cy="18" r="1" fill="currentColor"/>
+  </svg>
+  <span class="icon-name">drag-handle</span>
+</div>
+
+<!-- Resize Handle Icon -->
+<div class="icon-item" data-category="ui-elements" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <line x1="14" y1="10" x2="20" y2="16"/>
+    <line x1="14" y1="16" x2="20" y2="22"/>
+  </svg>
+  <span class="icon-name">resize-handle</span>
+</div>
+
+
+<!-- Close Circle Icon -->
+<div class="icon-item" data-category="ui-elements" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="10" fill="none"/>
+    <line x1="15" y1="9" x2="9" y2="15"/>
+    <line x1="9" y1="9" x2="15" y2="15"/>
+  </svg>
+  <span class="icon-name">close-circle</span>
+</div>
+
+<!-- More Vertical (Kebab Menu) Icon -->
+<div class="icon-item" data-category="ui-elements" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="6" r="1" fill="currentColor"/>
+    <circle cx="12" cy="12" r="1" fill="currentColor"/>
+    <circle cx="12" cy="18" r="1" fill="currentColor"/>
+  </svg>
+  <span class="icon-name">more-vertical</span>
+</div>
+
+<!-- Checkbox Checked Icon -->
+<div class="icon-item" data-category="ui-elements" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="4" y="4" width="16" height="16" rx="2" fill="none"/>
+    <polyline points="8 12 11 15 16 9" fill="none"/>
+  </svg>
+  <span class="icon-name">checkbox-checked</span>
+</div>
+
+<!-- Checkbox Unchecked Icon -->
+<div class="icon-item" data-category="ui-elements" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="4" y="4" width="16" height="16" rx="2" fill="none"/>
+  </svg>
+  <span class="icon-name">checkbox-unchecked</span>
+</div>
+
+<!-- Checkbox Indeterminate Icon -->
+<div class="icon-item" data-category="ui-elements" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="4" y="4" width="16" height="16" rx="2" fill="none"/>
+    <line x1="8" y1="12" x2="16" y2="12"/>
+  </svg>
+  <span class="icon-name">checkbox-indeterminate</span>
+</div>
+
+<!-- Radio Button Selected Icon -->
+<div class="icon-item" data-category="ui-elements" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="9" fill="none"/>
+    <circle cx="12" cy="12" r="4" fill="currentColor"/>
+  </svg>
+  <span class="icon-name">radio-selected</span>
+</div>
+
+<!-- Radio Button Unselected Icon -->
+<div class="icon-item" data-category="ui-elements" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="9" fill="none"/>
+  </svg>
+  <span class="icon-name">radio-unselected</span>
+</div>
+
+<!-- Toggle On Icon -->
+<div class="icon-item" data-category="ui-elements" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="2" y="6" width="20" height="12" rx="6" fill="none"/>
+    <circle cx="16" cy="12" r="4" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">toggle-on</span>
+</div>
+
+<!-- Toggle Off Icon -->
+<div class="icon-item" data-category="ui-elements" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="2" y="6" width="20" height="12" rx="6" fill="none"/>
+    <circle cx="8" cy="12" r="4" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">toggle-off</span>
+</div>
+
+
+
+
+
+<!-- New File Icon -->
+<div class="icon-item" data-category="file-operations" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M14 3v4a1 1 0 001 1h4" fill="none"/>
+    <path d="M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z" fill="none"/>
+    <line x1="12" y1="11" x2="12" y2="17"/>
+    <line x1="9" y1="14" x2="15" y2="14"/>
+  </svg>
+  <span class="icon-name">new-file</span>
+</div>
+
+<!-- Microsoft Word File Icon -->
+<div class="icon-item" data-category="file-operations" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M14 3v4a1 1 0 001 1h4" fill="none"/>
+    <path d="M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z" fill="none"/>
+    <path d="M8 12l2 6 2-6 2 6 2-6" fill="none"/>
+  </svg>
+  <span class="icon-name">file-word</span>
+</div>
+
+<!-- Microsoft Excel File Icon -->
+<div class="icon-item" data-category="file-operations" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M14 3v4a1 1 0 001 1h4" fill="none"/>
+    <path d="M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z" fill="none"/>
+    <path d="M8 12l4 6m0-6l-4 6" fill="none"/>
+  </svg>
+  <span class="icon-name">file-excel</span>
+</div>
+
+<!-- Microsoft PowerPoint File Icon -->
+<div class="icon-item" data-category="file-operations" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M14 3v4a1 1 0 001 1h4" fill="none"/>
+    <path d="M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z" fill="none"/>
+    <circle cx="10" cy="14" r="2" fill="none"/>
+    <path d="M10 12v-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">file-powerpoint</span>
+</div>
+
+<!-- Audio File Icon -->
+<div class="icon-item" data-category="file-operations" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M14 3v4a1 1 0 001 1h4" fill="none"/>
+    <path d="M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z" fill="none"/>
+    <path d="M10 12v4" fill="none"/>
+    <path d="M14 12v4" fill="none"/>
+    <path d="M10 16a2 2 0 004 0" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">file-audio</span>
+</div>
+
+<!-- Video File Icon -->
+<div class="icon-item" data-category="file-operations" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M14 3v4a1 1 0 001 1h4" fill="none"/>
+    <path d="M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z" fill="none"/>
+    <path d="M10 12l4 2-4 2v-4z" fill="none"/>
+  </svg>
+  <span class="icon-name">file-video</span>
+</div>
+
+<!-- Archive Icon -->
+<div class="icon-item" data-category="file-operations" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="4" y="3" width="16" height="18" rx="2" fill="none"/>
+    <line x1="8" y1="7" x2="16" y2="7"/>
+    <line x1="8" y1="11" x2="16" y2="11"/>
+    <line x1="8" y1="15" x2="16" y2="15"/>
+    <polyline points="16 19 12 15 8 19" fill="none"/>
+  </svg>
+  <span class="icon-name">archive</span>
+</div>
+
+<!-- Unarchive Icon -->
+<div class="icon-item" data-category="file-operations" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="4" y="3" width="16" height="18" rx="2" fill="none"/>
+    <line x1="8" y1="7" x2="16" y2="7"/>
+    <line x1="8" y1="11" x2="16" y2="11"/>
+    <line x1="8" y1="15" x2="16" y2="15"/>
+    <polyline points="8 19 12 15 16 19" fill="none"/>
+  </svg>
+  <span class="icon-name">unarchive</span>
+</div>
+
+
+
+<!-- Merge Icon -->
+<div class="icon-item" data-category="file-operations" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M8 3v10a4 4 0 004 4h4" fill="none"/>
+    <path d="M16 3v10a4 4 0 01-4 4h-4" fill="none"/>
+    <polyline points="16 17 20 13 16 9" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">merge</span>
+</div>
+
+<!-- Split Icon -->
+<div class="icon-item" data-category="file-operations" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M12 3v18" fill="none"/>
+    <polyline points="8 8 4 12 8 16" fill="none"/>
+    <polyline points="16 8 20 12 16 16" fill="none"/>
+  </svg>
+  <span class="icon-name">split</span>
+</div>
+
+<!-- Duplicate Icon -->
+<div class="icon-item" data-category="file-operations" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="8" y="8" width="12" height="12" rx="2" fill="none"/>
+    <path d="M16 8V6a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2h2" fill="none"/>
+  </svg>
+  <span class="icon-name">duplicate</span>
+</div>
+
+<!-- Version History Icon -->
+<div class="icon-item" data-category="file-operations" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="9" fill="none"/>
+    <polyline points="12 7 12 12 15 15" fill="none"/>
+    <path d="M12 12l-2-2" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">version-history</span>
+</div>
+
+<!-- Properties Icon -->
+<div class="icon-item" data-category="file-operations" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="4" y="4" width="16" height="16" rx="2" fill="none"/>
+    <line x1="8" y1="8" x2="16" y2="8"/>
+    <line x1="8" y1="12" x2="16" y2="12"/>
+    <line x1="8" y1="16" x2="12" y2="16"/>
+  </svg>
+  <span class="icon-name">properties</span>
+</div>
+
+<!-- Signature Icon -->
+<div class="icon-item" data-category="file-operations" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M4 17c2.5-1 4.5-1 7.5 0s5.5 1 7.5 0" fill="none"/>
+    <path d="M4 14c2.5-1 4.5-1 7.5 0s5.5 1 7.5 0" fill="none"/>
+    <line x1="12" y1="4" x2="12" y2="10"/>
+    <polyline points="9 7 12 4 15 7" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">signature</span>
+</div>
+
+<!-- Certificate Icon -->
+<div class="icon-item" data-category="file-operations" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="4" y="4" width="16" height="16" rx="2" fill="none"/>
+    <path d="M12 8v4" fill="none"/>
+    <circle cx="12" cy="15" r="2" fill="none"/>
+    <path d="M12 17v2" fill="none"/>
+    <path d="M8 8h8" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">certificate</span>
+</div>
+
+
+
+<!-- Terminal/Command Line Icon -->
+<div class="icon-item" data-category="development" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="2" y="4" width="20" height="16" rx="2" fill="none"/>
+    <path d="M6 8l4 4-4 4" fill="none"/>
+    <line x1="12" y1="16" x2="18" y2="16"/>
+  </svg>
+  <span class="icon-name">terminal</span>
+</div>
+
+<!-- Bug Icon -->
+<div class="icon-item" data-category="development" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M8 6h8M12 3v3M7 12h10M7 18h10" fill="none"/>
+    <circle cx="12" cy="12" r="7" fill="none"/>
+    <path d="M19 12c0-1.5-2-3-7-3s-7 1.5-7 3" fill="none"/>
+    <path d="M19 18c0-1.5-2-3-7-3s-7 1.5-7 3" fill="none"/>
+  </svg>
+  <span class="icon-name">bug</span>
+</div>
+
+<!-- Deploy Icon -->
+<div class="icon-item" data-category="development" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M12 3l9 4.5v9L12 21l-9-4.5v-9L12 3z" fill="none"/>
+    <path d="M12 12v9M12 12L3 7.5M12 12l9-4.5" fill="none"/>
+    <circle cx="12" cy="12" r="2" fill="none"/>
+  </svg>
+  <span class="icon-name">deploy</span>
+</div>
+
+<!-- Branch Icon -->
+<div class="icon-item" data-category="development" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="18" cy="6" r="3" fill="none"/>
+    <circle cx="6" cy="12" r="3" fill="none"/>
+    <circle cx="18" cy="18" r="3" fill="none"/>
+    <path d="M6 15v-6M18 9v6" fill="none"/>
+  </svg>
+  <span class="icon-name">branch</span>
+</div>
+
+<!-- Merge Icon -->
+<div class="icon-item" data-category="development" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="18" cy="18" r="3" fill="none"/>
+    <circle cx="6" cy="6" r="3" fill="none"/>
+    <path d="M6 9v3c0 3 3 6 6 6h3" fill="none"/>
+    <circle cx="18" cy="6" r="3" fill="none"/>
+    <path d="M18 9v3" fill="none"/>
+  </svg>
+  <span class="icon-name">merge</span>
+</div>
+
+<!-- Pull Request Icon -->
+<div class="icon-item" data-category="development" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="18" cy="18" r="3" fill="none"/>
+    <circle cx="6" cy="6" r="3" fill="none"/>
+    <path d="M6 9v12" fill="none"/>
+    <path d="M18 15v-3c0-3-3-6-6-6H6" fill="none"/>
+  </svg>
+  <span class="icon-name">pull-request</span>
+</div>
+
+<!-- API Icon -->
+<div class="icon-item" data-category="development" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M4 17V7a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2z" fill="none"/>
+    <path d="M7 8h2v3H7v2h2" fill="none"/>
+    <path d="M11 8h2M11 11h2M11 14h2" fill="none"/>
+    <path d="M15 8h2v3h-2v2h2" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">api</span>
+</div>
+
+<!-- Component Icon -->
+<div class="icon-item" data-category="development" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="3" y="3" width="7" height="7" fill="none"/>
+    <rect x="14" y="3" width="7" height="7" fill="none"/>
+    <rect x="14" y="14" width="7" height="7" fill="none"/>
+    <rect x="3" y="14" width="7" height="7" fill="none"/>
+    <path d="M10 6.5h4M6.5 10v4M17.5 10v4M10 17.5h4" fill="none"/>
+  </svg>
+  <span class="icon-name">component</span>
+</div>
+
+<!-- Server Icon -->
+<div class="icon-item" data-category="development" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="4" y="4" width="16" height="6" rx="1" fill="none"/>
+    <rect x="4" y="14" width="16" height="6" rx="1" fill="none"/>
+    <line x1="7" y1="7" x2="7" y2="7"/>
+    <line x1="7" y1="17" x2="7" y2="17"/>
+    <line x1="11" y1="7" x2="17" y2="7"/>
+    <line x1="11" y1="17" x2="17" y2="17"/>
+  </svg>
+  <span class="icon-name">server</span>
+</div>
+
+<!-- Network Icon -->
+<div class="icon-item" data-category="development" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="3" fill="none"/>
+    <path d="M12 3a9 9 0 019 9M12 21a9 9 0 01-9-9" fill="none"/>
+    <path d="M17 12a5 5 0 01-5 5M7 12a5 5 0 015-5" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">network</span>
+</div>
+
+<!-- Endpoint Icon -->
+<div class="icon-item" data-category="development" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="18" cy="12" r="3" fill="none"/>
+    <path d="M3 12h12" fill="none"/>
+    <path d="M3 6h18M3 18h18" fill="none"/>
+  </svg>
+  <span class="icon-name">endpoint</span>
+</div>
+
+<!-- Source Code Icon -->
+<div class="icon-item" data-category="development" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <polyline points="16 18 22 12 16 6" fill="none"/>
+    <polyline points="8 6 2 12 8 18" fill="none"/>
+    <line x1="15" y1="4" x2="9" y2="20"/>
+  </svg>
+  <span class="icon-name">source-code</span>
+</div>
+
+
+
+<!-- Memory Icon -->
+<div class="icon-item" data-category="system" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="4" y="4" width="16" height="16" rx="2" fill="none"/>
+    <line x1="4" y1="8" x2="20" y2="8"/>
+    <line x1="4" y1="12" x2="20" y2="12"/>
+    <line x1="4" y1="16" x2="20" y2="16"/>
+    <line x1="8" y1="4" x2="8" y2="20"/>
+    <line x1="12" y1="4" x2="12" y2="20"/>
+    <line x1="16" y1="4" x2="16" y2="20"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">memory</span>
+</div>
+
+<!-- CPU Icon -->
+<div class="icon-item" data-category="system" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="4" y="4" width="16" height="16" rx="2" fill="none"/>
+    <rect x="8" y="8" width="8" height="8" fill="none"/>
+    <line x1="12" y1="4" x2="12" y2="2"/>
+    <line x1="12" y1="22" x2="12" y2="20"/>
+    <line x1="4" y1="12" x2="2" y2="12"/>
+    <line x1="22" y1="12" x2="20" y2="12"/>
+  </svg>
+  <span class="icon-name">cpu</span>
+</div>
+
+<!-- GPU Icon -->
+<div class="icon-item" data-category="system" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="3" y="6" width="18" height="12" rx="2" fill="none"/>
+    <rect x="7" y="9" width="10" height="6" fill="none"/>
+    <line x1="7" y1="3" x2="7" y2="6"/>
+    <line x1="12" y1="3" x2="12" y2="6"/>
+    <line x1="17" y1="3" x2="17" y2="6"/>
+    <line x1="7" y1="18" x2="7" y2="21"/>
+    <line x1="12" y1="18" x2="12" y2="21"/>
+    <line x1="17" y1="18" x2="17" y2="21"/>
+  </svg>
+  <span class="icon-name">gpu</span>
+</div>
+
+<!-- Storage Icon -->
+<div class="icon-item" data-category="system" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M4 6c0-1.1.9-2 2-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6z" fill="none"/>
+    <circle cx="12" cy="12" r="3" fill="none"/>
+    <path d="M12 8v1" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">storage</span>
+</div>
+
+<!-- Network Adapter Icon -->
+<div class="icon-item" data-category="system" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="4" y="8" width="16" height="8" rx="2" fill="none"/>
+    <path d="M7 12h.01M11 12h.01M15 12h.01" fill="none"/>
+    <path d="M4 12c4 3 12 3 16 0" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">network-adapter</span>
+</div>
+
+<!-- Printer Icon -->
+<div class="icon-item" data-category="system" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M6 9V2h12v7" fill="none"/>
+    <path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2" fill="none"/>
+    <rect x="6" y="14" width="12" height="8" fill="none"/>
+  </svg>
+  <span class="icon-name">printer</span>
+</div>
+
+<!-- Scanner Icon -->
+<div class="icon-item" data-category="system" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="3" y="6" width="18" height="12" rx="2" fill="none"/>
+    <path d="M3 12h18" fill="none"/>
+    <path d="M7 15h10" fill="none"/>
+    <path d="M8 9h8" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">scanner</span>
+</div>
+
+<!-- Router Icon -->
+<div class="icon-item" data-category="system" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="4" y="8" width="16" height="8" rx="2" fill="none"/>
+    <path d="M7 12h.01M11 12h.01M15 12h.01" fill="none"/>
+    <path d="M12 8v-4" fill="none"/>
+    <path d="M8 4h8" fill="none"/>
+    <path d="M6 16l-2 4M18 16l2 4" fill="none"/>
+  </svg>
+  <span class="icon-name">router</span>
+</div>
+
+<!-- Modem Icon -->
+<div class="icon-item" data-category="system" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="4" y="10" width="16" height="8" rx="2" fill="none"/>
+    <path d="M7 14h.01M11 14h.01M15 14h.01" fill="none"/>
+    <path d="M12 10V4" fill="none"/>
+    <path d="M9 7l3-3 3 3" fill="none"/>
+  </svg>
+  <span class="icon-name">modem</span>
+</div>
+
+<!-- Device Sync Icon -->
+<div class="icon-item" data-category="system" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M21 7v6h-6" fill="none"/>
+    <path d="M3 17v-6h6" fill="none"/>
+    <path d="M21 7c0 4.418-3.582 8-8 8s-8-3.582-8-8" fill="none"/>
+    <path d="M3 17c0-4.418 3.582-8 8-8s8 3.582 8 8" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">device-sync</span>
+</div>
+
+<!-- Peripheral Icon -->
+<div class="icon-item" data-category="system" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="4" y="4" width="16" height="8" rx="2" fill="none"/>
+    <rect x="4" y="16" width="7" height="4" rx="1" fill="none"/>
+    <rect x="13" y="16" width="7" height="4" rx="1" fill="none"/>
+    <path d="M12 12v2" fill="none"/>
+    <path d="M7 8h.01M11 8h.01M15 8h.01" fill="none"/>
+  </svg>
+  <span class="icon-name">peripheral</span>
+</div>
+
+<!-- Screen Reader Icon -->
+<div class="icon-item" data-category="accessibility" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="3" fill="none"/>
+    <path d="M12 4v3M12 17v3" fill="none"/>
+    <path d="M4 12h3M17 12h3" fill="none"/>
+    <path d="M19 19l-2-2M7 7L5 5" fill="none"/>
+    <path d="M19 5l-2 2M7 17l-2 2" fill="none"/>
+    <path d="M12 15a3 3 0 100-6" fill="none"/>
+  </svg>
+  <span class="icon-name">screen-reader</span>
+</div>
+
+<!-- Sign Language Icon -->
+<div class="icon-item" data-category="accessibility" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M7 12c1-3 4-3 4 0 0 1.5-2 2.5-2 4" fill="none"/>
+    <path d="M13 12c1-3 4-3 4 0 0 1.5-2 2.5-2 4" fill="none"/>
+    <path d="M9 18h.01M15 18h.01" fill="none"/>
+    <path d="M5 5c2-2 4-2 6 0" fill="none"/>
+    <path d="M13 5c2-2 4-2 6 0" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">sign-language</span>
+</div>
+
+<!-- High Contrast Icon -->
+<div class="icon-item" data-category="accessibility" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="9" fill="none"/>
+    <path d="M12 3v18" fill="none"/>
+    <path d="M12 3a9 9 0 010 18" fill="currentColor"/>
+  </svg>
+  <span class="icon-name">high-contrast</span>
+</div>
+
+<!-- Font Size Icon -->
+<div class="icon-item" data-category="accessibility" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M4 7V5h8v2" fill="none"/>
+    <path d="M8 5v14" fill="none"/>
+    <path d="M12 12v-2h8v2" fill="none"/>
+    <path d="M16 10v9" fill="none"/>
+  </svg>
+  <span class="icon-name">font-size</span>
+</div>
+
+<!-- Color Blindness Icon -->
+<div class="icon-item" data-category="accessibility" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="9" fill="none"/>
+    <path d="M12 3v9l7-7" fill="none"/>
+    <path d="M12 12l7 7" fill="none"/>
+    <path d="M12 12l-7 7" fill="none"/>
+    <path d="M12 12L5 5" fill="none"/>
+  </svg>
+  <span class="icon-name">color-blindness</span>
+</div>
+
+<!-- Translation Icon -->
+<div class="icon-item" data-category="accessibility" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M4 5h8M9 3v2M4 9h8" fill="none"/>
+    <path d="M4 5c3 6 8 6 8 6" fill="none"/>
+    <path d="M12 20l4-9 4 9" fill="none"/>
+    <path d="M14 17h4" fill="none"/>
+  </svg>
+  <span class="icon-name">translation</span>
+</div>
+
+<!-- Language Icon -->
+<div class="icon-item" data-category="accessibility" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="9" fill="none"/>
+    <path d="M3 12h18" fill="none"/>
+    <path d="M12 3a15 15 0 014 9 15 15 0 01-4 9 15 15 0 01-4-9 15 15 0 014-9z" fill="none"/>
+  </svg>
+  <span class="icon-name">language</span>
+</div>
+
+<!-- Region Icon -->
+<div class="icon-item" data-category="accessibility" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M4 4h16v16H4z" fill="none"/>
+    <path d="M4 8h16" fill="none"/>
+    <path d="M8 4v16" fill="none"/>
+    <circle cx="6" cy="6" r="1" fill="currentColor"/>
+  </svg>
+  <span class="icon-name">region</span>
+</div>
+
+<!-- Keyboard Navigation Icon -->
+<div class="icon-item" data-category="accessibility" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="3" y="3" width="18" height="18" rx="2" fill="none"/>
+    <path d="M8 7h8M7 12h10M9 17h6" fill="none"/>
+    <path d="M12 7v10" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">keyboard-navigation</span>
+</div>
+
+<!-- Voice Control Icon -->
+<div class="icon-item" data-category="accessibility" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M12 2v20" fill="none"/>
+    <path d="M8 6v12" fill="none"/>
+    <path d="M16 6v12" fill="none"/>
+    <path d="M4 10v4" fill="none"/>
+    <path d="M20 10v4" fill="none"/>
+  </svg>
+  <span class="icon-name">voice-control</span>
+</div>
+
+<!-- Pie Chart Icon -->
+<div class="icon-item" data-category="data" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="9" fill="none"/>
+    <path d="M12 12L12 3" fill="none"/>
+    <path d="M12 12L17 17" fill="none"/>
+  </svg>
+  <span class="icon-name">pie-chart</span>
+</div>
+
+<!-- Gauge Chart Icon -->
+<div class="icon-item" data-category="data" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M12 14a2 2 0 100-4 2 2 0 000 4z" fill="none"/>
+    <path d="M12 12L7 7" fill="none"/>
+    <path d="M19 12a7 7 0 10-14 0" fill="none"/>
+  </svg>
+  <span class="icon-name">gauge-chart</span>
+</div>
+
+<!-- Funnel Chart Icon -->
+<div class="icon-item" data-category="data" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M4 4h16" fill="none"/>
+    <path d="M6 8h12" fill="none"/>
+    <path d="M8 12h8" fill="none"/>
+    <path d="M10 16h4" fill="none"/>
+    <path d="M11 20h2" fill="none"/>
+  </svg>
+  <span class="icon-name">funnel-chart</span>
+</div>
+
+<!-- Heat Map Icon -->
+<div class="icon-item" data-category="data" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="3" y="3" width="18" height="18" rx="2" fill="none"/>
+    <path d="M3 9h18M3 15h18M9 3v18M15 3v18" fill="none"/>
+    <circle cx="6" cy="6" r="1" fill="currentColor"/>
+    <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+    <circle cx="18" cy="18" r="1" fill="currentColor"/>
+  </svg>
+  <span class="icon-name">heat-map</span>
+</div>
+
+<!-- Gantt Chart Icon -->
+<div class="icon-item" data-category="data" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M4 4h16" fill="none"/>
+    <rect x="6" y="8" width="8" height="3" fill="none"/>
+    <rect x="10" y="14" width="8" height="3" fill="none"/>
+    <path d="M4 8h16M4 11h16M4 14h16M4 17h16M4 20h16" fill="none"/>
+  </svg>
+  <span class="icon-name">gantt-chart</span>
+</div>
+
+<!-- Timeline Icon -->
+<div class="icon-item" data-category="data" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <line x1="4" y1="12" x2="20" y2="12"/>
+    <circle cx="8" cy="12" r="2" fill="none"/>
+    <circle cx="16" cy="12" r="2" fill="none"/>
+    <path d="M8 6v4M16 14v4" fill="none"/>
+    <path d="M6 6h4M14 18h4" fill="none"/>
+  </svg>
+  <span class="icon-name">timeline</span>
+</div>
+
+<!-- Statistics Icon -->
+<div class="icon-item" data-category="data" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M4 4v16h16" fill="none"/>
+    <path d="M4 16l4-4 4 4 8-8" fill="none"/>
+    <circle cx="8" cy="12" r="1" fill="currentColor"/>
+    <circle cx="12" cy="16" r="1" fill="currentColor"/>
+    <circle cx="16" cy="8" r="1" fill="currentColor"/>
+  </svg>
+  <span class="icon-name">statistics</span>
+</div>
+
+<!-- Analytics Icon -->
+<div class="icon-item" data-category="data" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M4 4v16h16" fill="none"/>
+    <path d="M7 14l4-8 4 4 4-6" fill="none"/>
+    <circle cx="7" cy="14" r="1" fill="currentColor"/>
+    <circle cx="11" cy="6" r="1" fill="currentColor"/>
+    <circle cx="15" cy="10" r="1" fill="currentColor"/>
+    <circle cx="19" cy="4" r="1" fill="currentColor"/>
+  </svg>
+  <span class="icon-name">analytics</span>
+</div>
+
+<!-- Metrics Icon -->
+<div class="icon-item" data-category="data" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="3" y="3" width="18" height="18" rx="2" fill="none"/>
+    <path d="M8 12v5" fill="none"/>
+    <path d="M12 8v9" fill="none"/>
+    <path d="M16 15v2" fill="none"/>
+    <path d="M7 8h2M11 12h2M15 10h2" fill="none"/>
+  </svg>
+  <span class="icon-name">metrics</span>
+</div>
+
+<!-- Dashboard Icon -->
+<div class="icon-item" data-category="data" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="3" y="3" width="7" height="9" rx="1" fill="none"/>
+    <rect x="14" y="3" width="7" height="5" rx="1" fill="none"/>
+    <rect x="14" y="12" width="7" height="9" rx="1" fill="none"/>
+    <rect x="3" y="16" width="7" height="5" rx="1" fill="none"/>
+  </svg>
+  <span class="icon-name">dashboard</span>
+</div>
+
+<!-- Report Icon -->
+<div class="icon-item" data-category="data" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M14 3v4a1 1 0 001 1h4" fill="none"/>
+    <path d="M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z" fill="none"/>
+    <path d="M8 10h3M8 14h8M8 18h8" fill="none"/>
+  </svg>
+  <span class="icon-name">report</span>
+</div>
+
+
+<!-- LinkedIn Icon -->
+<div class="icon-item" data-category="social" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="2" y="2" width="20" height="20" rx="2" ry="2" fill="none"/>
+    <path d="M7 8.5v8.5M7 6.5v.01M17 16v-5c0-1.1-.9-2-2-2s-2 .9-2 2v5m4-8.5v.01M13 16v-5" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">linkedin</span>
+</div>
+
+<!-- Twitter/X Icon -->
+<div class="icon-item" data-category="social" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M4 4l7.2 10.8L4 20h3.6l5.4-7 5.4 7H22l-7.2-10.8L22 4h-3.6l-5.4 7-5.4-7z" fill="none"/>
+  </svg>
+  <span class="icon-name" style="color:crimson;">twitter</span>
+</div>
+
+<!-- Instagram Icon -->
+<div class="icon-item" data-category="social" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none"/>
+    <circle cx="12" cy="12" r="4" fill="none"/>
+    <circle cx="17" cy="7" r="1" fill="currentColor"/>
+  </svg>
+  <span class="icon-name">instagram</span>
+</div>
+
+<!-- Facebook Icon -->
+<div class="icon-item" data-category="social" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="none"/>
+  </svg>
+  <span class="icon-name">facebook</span>
+</div>
+
+<!-- Share Network Icon -->
+<div class="icon-item" data-category="social" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="18" cy="5" r="3" fill="none"/>
+    <circle cx="6" cy="12" r="3" fill="none"/>
+    <circle cx="18" cy="19" r="3" fill="none"/>
+    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+  </svg>
+  <span class="icon-name">share-network</span>
+</div>
+
+
+<!-- Thread Icon - Improved -->
+<div class="icon-item" data-category="communication" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M3 12h3a3 3 0 1 1 0 6h-3" fill="none"/>
+    <path d="M9 18h3a3 3 0 1 0 0-6H3" fill="none"/>
+    <path d="M15 12h3a3 3 0 1 1 0 6h-3" fill="none"/>
+    <line x1="3" y1="6" x2="21" y2="6"/>
+  </svg>
+  <span class="icon-name">thread</span>
+</div>
+
+<!-- Mention Icon - Improved -->
+<div class="icon-item" data-category="communication" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="4" fill="none"/>
+    <path d="M16 8v2a4 4 0 0 0 4 4h1" fill="none"/>
+    <path d="M12 16v4" fill="none"/>
+    <path d="M8 12c0-2.2 1.8-4 4-4" fill="none"/>
+  </svg>
+  <span class="icon-name">mention</span>
+</div>
+
+<!-- Group Chat Icon - Improved -->
+<div class="icon-item" data-category="communication" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="none"/>
+    <circle cx="9" cy="10" r="1" fill="currentColor"/>
+    <circle cx="12" cy="10" r="1" fill="currentColor"/>
+    <circle cx="15" cy="10" r="1" fill="currentColor"/>
+  </svg>
+  <span class="icon-name">group-chat</span>
+</div>
+
+<!-- Store Icon - Improved -->
+<div class="icon-item" data-category="ecommerce" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M3 21h18" fill="none"/>
+    <path d="M5 21V7L4 4h16l-1 3v14" fill="none"/>
+    <path d="M4 7h16" fill="none"/>
+    <path d="M8 7v14" fill="none"/>
+    <path d="M16 7v14" fill="none"/>
+    <path d="M12 7v4" fill="none"/>
+    <path d="M4 11h16" fill="none"/>
+  </svg>
+  <span class="icon-name">store</span>
+</div>
+
+<!-- Inventory Icon - Improved -->
+<div class="icon-item" data-category="ecommerce" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="4" y="4" width="16" height="5" rx="1" fill="none"/>
+    <rect x="4" y="9" width="16" height="5" rx="1" fill="none"/>
+    <rect x="4" y="14" width="16" height="5" rx="1" fill="none"/>
+    <path d="M8 6.5h8M8 11.5h8M8 16.5h8" fill="none"/>
+  </svg>
+  <span class="icon-name">inventory</span>
+</div>
+
+<!-- Barcode Icon - Improved -->
+<div class="icon-item" data-category="ecommerce" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M5 5v14M9 5v14M13 5v14M17 5v14" fill="none"/>
+    <path d="M7 5v14M11 5v14M15 5v14M19 5v14" fill="none" stroke-width="1"/>
+    <line x1="4" y1="8" x2="20" y2="8" stroke-width="1"/>
+    <line x1="4" y1="16" x2="20" y2="16" stroke-width="1"/>
+  </svg>
+  <span class="icon-name">barcode</span>
+</div>
+
+<!-- QR Code Icon - Improved -->
+<div class="icon-item" data-category="ecommerce" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <rect x="4" y="4" width="6" height="6" fill="none"/>
+    <rect x="14" y="4" width="6" height="6" fill="none"/>
+    <rect x="4" y="14" width="6" height="6" fill="none"/>
+    <path d="M14 14h6v2M14 18h2M18 18h2v2" fill="none"/>
+    <path d="M7 7h0.01M17 7h0.01M7 17h0.01" fill="none"/>
+  </svg>
+  <span class="icon-name">qr-code</span>
+</div>
+
+<!-- Delivery Truck Icon - Improved -->
+<div class="icon-item" data-category="ecommerce" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M16 16h4V9l-5-5H3v12h3" fill="none"/>
+    <circle cx="7" cy="16" r="2" fill="none"/>
+    <circle cx="17" cy="16" r="2" fill="none"/>
+    <path d="M5 10h9M3 6h13" fill="none"/>
+  </svg>
+  <span class="icon-name">delivery-truck</span>
+</div>
+
+<!-- Return/Refund Icon - Improved -->
+<div class="icon-item" data-category="ecommerce" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M4 10l2-2v4" fill="none"/>
+    <path d="M4 10c0 4.4 3.6 8 8 8s8-3.6 8-8-3.6-8-8-8" fill="none"/>
+    <path d="M9 9l3 3" fill="none"/>
+    <path d="M12 12l3-3" fill="none"/>
+  </svg>
+  <span class="icon-name">return-refund</span>
+</div>
+
+<!-- Recent Icon - Improved -->
+<div class="icon-item" data-category="time" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="9" fill="none"/>
+    <polyline points="12 7 12 12 15 15" fill="none"/>
+    <path d="M19 5l-3 3" fill="none"/>
+    <path d="M16 5h3v3" fill="none"/>
+  </svg>
+  <span class="icon-name">recent</span>
+</div>
+
+<!-- Duration Icon - Improved -->
+<div class="icon-item" data-category="time" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="9" fill="none"/>
+    <path d="M12 6v6l4 2" fill="none"/>
+    <path d="M18 12h2" fill="none"/>
+    <path d="M4 12h2" fill="none"/>
+  </svg>
+  <span class="icon-name">duration</span>
+</div>
+
+<!-- Direction Icon - Improved -->
+<div class="icon-item" data-category="navigation" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M12 3v18" fill="none"/>
+    <path d="M3 12h18" fill="none"/>
+    <path d="M12 3l3 3-3-3-3 3" fill="none"/>
+    <path d="M21 12l-3 3 3-3-3-3" fill="none"/>
+  </svg>
+  <span class="icon-name">direction</span>
+</div>
+
+<!-- Two-Factor Auth Icon - Improved -->
+<div class="icon-item" data-category="security" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none"/>
+    <circle cx="12" cy="12" r="3" fill="none"/>
+    <path d="M12 9v6" fill="none" transform="rotate(45, 12, 12)"/>
+  </svg>
+  <span class="icon-name">two-factor-auth</span>
+</div>
+
+<!-- Fingerprint Icon - Improved -->
+<div class="icon-item" data-category="security" style="display: flex;">
+ 
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path xmlns="http://www.w3.org/2000/svg" d="M6.89258 17.7897C6.9083 17.7633 6.92441 17.7369 6.9409 17.7107C8.14358 15.7988 8.8398 13.5379 8.8398 11.1034C8.8398 9.14189 10.4299 7.55176 12.3915 7.55176C14.353 7.55176 15.9431 9.14189 15.9431 11.1034C15.9431 12.0065 15.8816 12.8957 15.7626 13.7672M13.8825 19.8437C14.4257 18.7596 14.871 17.6179 15.2069 16.4309M18.6156 17.4359C19.1883 15.4236 19.4949 13.2993 19.4949 11.1033C19.4949 7.18026 16.3147 4 12.3916 4C11.0978 4 9.88477 4.34591 8.83997 4.9503M4.40039 14.9783C4.96924 13.8073 5.28831 12.4926 5.28831 11.1033C5.28831 9.8095 5.63422 8.59646 6.2386 7.55166M12.3915 11.1035C12.3915 14.2265 11.4958 17.1403 9.94727 19.6019" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>  </svg>
+
+  <span class="icon-name">fingerprint</span>
+</div>
+
+
+
+<!-- Certificate Icon (First Place Ribbon) -->
+<div class="icon-item" data-category="security" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="8" r="4" fill="none"/>
+    <path d="M9 11l-3 11 6-4 6 4-3-11" fill="none"/>
+    <path d="M12 6v-1" fill="none"/>
+    <path d="M14.5 8h1" fill="none"/>
+    <path d="M8.5 8h1" fill="none"/>
+  </svg>
+  <span class="icon-name">certificate</span>
+</div>
+
+<!-- Barcode Icon (UPS/Retail Style) -->
+<div class="icon-item" data-category="ecommerce" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: butt; stroke-linejoin: miter; stroke: rgb(33, 33, 33); cursor: pointer;">
+    <rect x="3" y="4" width="18" height="16" rx="1" fill="none"/>
+    <line x1="5" y1="6" x2="5" y2="18" stroke-width="1"/>
+    <line x1="7" y1="6" x2="7" y2="18" stroke-width="3"/>
+    <line x1="10" y1="6" x2="10" y2="18" stroke-width="2"/>
+    <line x1="13" y1="6" x2="13" y2="18" stroke-width="1"/>
+    <line x1="15" y1="6" x2="15" y2="18" stroke-width="3"/>
+    <line x1="18" y1="6" x2="18" y2="18" stroke-width="2"/>
+    <path d="M3 20h18M3 4h18" stroke-width="1"/>
+  </svg>
+  <span class="icon-name">barcode</span>
+</div>
+
+
+
+<!-- Recent Icon (Clock Style) -->
+<div class="icon-item" data-category="time" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <path d="M4 12a8 8 0 1 1 8 8" fill="none"/>
+    <path d="M12 12V7" fill="none"/>
+    <path d="M12 12L16 12" fill="none"/>
+    <polyline points="5 12 3 12 3 10" fill="none"/>
+  </svg>
+  <span class="icon-name">recent</span>
+</div>
+
+<!-- Return/Refund Icon (Improved) -->
+<div class="icon-item" data-category="ecommerce" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <g xmlns="http://www.w3.org/2000/svg">
+      <path fill="none" d="M0 0h24v24H0z"/>
+      <path d="M5.671 4.257c3.928-3.219 9.733-2.995 13.4.672 3.905 3.905 3.905 10.237 0 14.142-3.905 3.905-10.237 3.905-14.142 0A9.993 9.993 0 0 1 2.25 9.767l.077-.313 1.934.51a8 8 0 1 0 3.053-4.45l-.221.166 1.017 1.017-4.596 1.06 1.06-4.596 1.096 1.096zM13 6v2h2.5v2H10a.5.5 0 0 0-.09.992L10 11h4a2.5 2.5 0 1 1 0 5h-1v2h-2v-2H8.5v-2H14a.5.5 0 0 0 .09-.992L14 13h-4a2.5 2.5 0 1 1 0-5h1V6h2z"/>
+  </g>
+   
+  </svg>
+  <span class="icon-name">return-refund</span>
+</div>
+
+<!-- Mention Icon (@ Symbol) -->
+<div class="icon-item" data-category="communication" style="display: flex;">
+  <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="false" style="width: 24px; height: 24px; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(33, 33, 33); stroke-width: 2; cursor: pointer;">
+    <circle cx="12" cy="12" r="4" fill="none"/>
+    <path d="M16 12v1a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8" fill="none"/>
+  </svg>
+  <span class="icon-name">mention</span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           
+
         </div>
       </section>
     </div>
@@ -3515,65 +5606,224 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <script>
+
+      // function svgToPng(svgElement, callback) {
+
+      //     // Get the SVG data
+      //     const svgData = new XMLSerializer().serializeToString(svgElement);
+      //     const svgBlob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
+      //     const svgUrl = URL.createObjectURL(svgBlob);
+
+      //     // Create an Image object
+      //     const img = new Image();
+      //     img.onload = function() {
+      //         // Create canvas
+      //         const canvas = document.createElement('canvas');
+      //         // Set canvas size to match SVG size
+      //         canvas.width = svgElement.clientWidth || 24;  // Default to 24 if size not set
+      //         canvas.height = svgElement.clientHeight || 24;
+              
+      //         // Get canvas context and render image
+      //         const ctx = canvas.getContext('2d');
+      //         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+              
+      //         // Convert to PNG
+      //         const pngData = canvas.toDataURL('image/png');
+              
+      //         // Clean up
+      //         URL.revokeObjectURL(svgUrl);
+              
+      //         // Return the PNG data
+      //         callback(pngData);
+      //     };
+          
+      //     // Load the SVG into the Image object
+      //     img.src = svgUrl;
+      //   }
+
+      function svgToPng(svgElement, size = 24) {
+          return new Promise((resolve, reject) => {
+              try {
+                  // Get the SVG data with explicit size
+                  const svgData = new XMLSerializer().serializeToString(svgElement);
+                  const svgBlob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
+                  const svgUrl = URL.createObjectURL(svgBlob);
+
+                  // Create an Image object
+                  const img = new Image();
+                  
+                  img.onload = function() {
+                      try {
+                          // Create canvas with desired size
+                          const canvas = document.createElement('canvas');
+                          canvas.width = size;
+                          canvas.height = size;
+                          
+                          // Get canvas context and render image
+                          const ctx = canvas.getContext('2d');
+                          ctx.fillStyle = 'transparent';
+                          ctx.fillRect(0, 0, size, size);
+                          ctx.drawImage(img, 0, 0, size, size);
+                          
+                          // Convert to PNG
+                          const pngData = canvas.toDataURL('image/png');
+                          
+                          // Clean up
+                          URL.revokeObjectURL(svgUrl);
+                          
+                          resolve(pngData);
+                      } catch (error) {
+                          reject(error);
+                      }
+                  };
+                  
+                  img.onerror = reject;
+                  img.src = svgUrl;
+              } catch (error) {
+                  reject(error);
+              }
+          });
+      }
+
         // Simple SVG download function
-        function downloadSVG(svg, filename) {
-            // Get the SVG content
-            const svgContent = svg.outerHTML;
+        // function downloadSVG(svg, filename) {
+        //     // Get the SVG content
+        //     const svgContent = svg.outerHTML;
             
-            // Create blob and URL
-            const blob = new Blob([svgContent], { type: 'image/svg+xml' });
-            const url = URL.createObjectURL(blob);
+        //     // Create blob and URL
+        //     const blob = new Blob([svgContent], { type: 'image/svg+xml' });
+        //     const url = URL.createObjectURL(blob);
             
-            // Create download link
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = filename;
+        //     // Create download link
+        //     const link = document.createElement('a');
+        //     link.href = url;
+        //     link.download = filename;
             
-            // Trigger download
-            document.body.appendChild(link);
-            link.click();
+        //     // Trigger download
+        //     document.body.appendChild(link);
+        //     link.click();
             
-            // Cleanup
-            document.body.removeChild(link);
-            URL.revokeObjectURL(url);
+        //     // Cleanup
+        //     document.body.removeChild(link);
+        //     URL.revokeObjectURL(url);
+        // }
+
+        // Function to download individual icons
+        async function downloadIcon(svg, filename, format = 'svg') {
+            try {
+                let blob, url;
+                
+                if (format === 'svg') {
+                    // Handle SVG download
+                    const svgContent = svg.outerHTML;
+                    blob = new Blob([svgContent], { type: 'image/svg+xml' });
+                } else if (format === 'png') {
+                    // Handle PNG download
+                    const size = parseInt(document.getElementById('icon-size').value);
+                    const pngData = await svgToPng(svg, size);
+                    blob = await (await fetch(pngData)).blob();
+                }
+                
+                url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `${filename}.${format}`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+            } catch (error) {
+                console.error('Error downloading icon:', error);
+                alert('There was an error downloading the icon. Please try again.');
+            }
         }
+
+        // Function to download icon package
+        async function downloadIconPackage(icons) {
+            try {
+                const format = document.getElementById('file-format').value;
+                const zip = new JSZip();
+                const size = parseInt(document.getElementById('icon-size').value);
+                
+                // Add each icon to zip
+                for (const icon of icons) {
+                    const name = icon.closest('.icon-item').querySelector('.icon-name').textContent.trim();
+                    
+                    if (format === 'svg') {
+                        zip.file(`${name}.svg`, icon.outerHTML);
+                    } else if (format === 'png') {
+                        const pngData = await svgToPng(icon, size);
+                        const pngBlob = await (await fetch(pngData)).blob();
+                        zip.file(`${name}.png`, pngBlob);
+                    }
+                }
+                
+                // Generate and download zip
+                const blob = await zip.generateAsync({type: 'blob'});
+                const url = URL.createObjectURL(blob);
+                
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `icon-package-${format}.zip`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+            } catch (error) {
+                console.error('Error creating package:', error);
+                alert('There was an error creating the package. Please try again.');
+            }
+        }
+
 
         // Simple ZIP creation function
-        async function downloadIconPackage(icons) {
-            const zip = new JSZip();
+        // async function downloadIconPackage(icons) {
+        //     const zip = new JSZip();
             
-            // Add each icon to zip
-            icons.forEach((icon, index) => {
-                const name = icon.closest('.icon-item').querySelector('.icon-name').textContent.trim();
-                zip.file(`${name}.svg`, icon.outerHTML);
-            });
+        //     // Add each icon to zip
+        //     icons.forEach((icon, index) => {
+        //         const name = icon.closest('.icon-item').querySelector('.icon-name').textContent.trim();
+        //         zip.file(`${name}.svg`, icon.outerHTML);
+        //     });
             
-            // Generate and download zip
-            const blob = await zip.generateAsync({type: 'blob'});
-            const url = URL.createObjectURL(blob);
+        //     // Generate and download zip
+        //     const blob = await zip.generateAsync({type: 'blob'});
+        //     const url = URL.createObjectURL(blob);
             
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = 'icon-package.zip';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            URL.revokeObjectURL(url);
-        }
+        //     const link = document.createElement('a');
+        //     link.href = url;
+        //     link.download = 'icon-package.zip';
+        //     document.body.appendChild(link);
+        //     link.click();
+        //     document.body.removeChild(link);
+        //     URL.revokeObjectURL(url);
+        // }
 
-        // Add click handlers
+        // // Add click handlers
+        // document.querySelectorAll('.icon-item').forEach(item => {
+        //     const svg = item.querySelector('svg');
+        //     svg.style.cursor = 'pointer';
+            
+        //     svg.addEventListener('click', (e) => {
+        //         e.stopPropagation();
+        //         const name = item.querySelector('.icon-name').textContent.trim();
+        //         downloadSVG(svg, `${name}.svg`);
+        //     });
+        // });
+
+        // Add click handlers for individual icons
         document.querySelectorAll('.icon-item').forEach(item => {
             const svg = item.querySelector('svg');
             svg.style.cursor = 'pointer';
             
-            svg.addEventListener('click', (e) => {
+            svg.addEventListener('click', async (e) => {
                 e.stopPropagation();
                 const name = item.querySelector('.icon-name').textContent.trim();
-                downloadSVG(svg, `${name}.svg`);
+                const format = document.getElementById('file-format').value;
+                await downloadIcon(svg, name, format);
             });
         });
 
-        // Build Package button handler
         const buildPackageBtn = document.getElementById('buildPackageBtn');
         if (buildPackageBtn) {
             buildPackageBtn.addEventListener('click', async () => {
@@ -3584,6 +5834,19 @@
                 await downloadIconPackage(visibleIcons);
             });
         }
+
+
+        // Build Package button handler
+        // const buildPackageBtn = document.getElementById('buildPackageBtn');
+        // if (buildPackageBtn) {
+        //     buildPackageBtn.addEventListener('click', async () => {
+        //         const visibleIcons = Array.from(document.querySelectorAll('.icon-item'))
+        //             .filter(item => item.style.display !== 'none')
+        //             .map(item => item.querySelector('svg'));
+                
+        //         await downloadIconPackage(visibleIcons);
+        //     });
+        // }
     </script>
 
   </body>
