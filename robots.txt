@@ -1,3 +1,5 @@
 User-agent: *
-Disallow:
-Sitemap: https://myiconforge.netlify.app/sitemap.xml
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Sitemap: https://iconforge.net/sitemap.xml
