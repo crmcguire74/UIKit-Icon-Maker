@@ -427,6 +427,11 @@
         border-radius: 2px;
       }
 
+      .control-group label span {
+          color: var(--primary-color);
+          font-weight: normal;
+          margin-left: 0.5rem;
+      }
       /* Icon Category Filter Buttons */
 
       /* Icon Category Filter Buttons */
@@ -492,6 +497,10 @@
         padding: 2rem;
         border-radius: 20px;
         /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); */
+      }
+
+      .icon-name {
+        text-transform: capitalize;
       }
 
       .flex-center {
@@ -817,7 +826,7 @@
 
           <!-- Icon Size Control -->
           <div class="control-group">
-            <label for="icon-size">Size</label>
+            <label for="icon-size">Size (<span id="size-value">24px</span>)</label>
             <input type="range" id="icon-size" min="16" max="128" value="24" />
           </div>
 
@@ -1069,20 +1078,6 @@
         </div>
 
           <!-- Back Arrow Icon -->
-          <div class="icon-item">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              data-icon-fill="false"
-            >
-              <path d="M19 12H5" data-stroke="primary" data-fill="none"></path>
-              <polyline points="12 19 5 12 12 5" data-stroke="primary" data-fill="none"></polyline>
-            </svg>
-            <span class="icon-name">back arrow</span>
-          </div>
-
-          <!-- Back Arrow Icon -->
           <div class="icon-item" data-category="navigation">
             <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
               <path d="M19 12H5" data-stroke="primary" data-fill="none"></path>
@@ -1092,7 +1087,7 @@
           </div>
 
           <!-- Bar Chart Icon -->
-          <div class="icon-item" data-category="chartsAndGraphs">
+          <div class="icon-item" data-category="chartsAndGraphs business">
             <svg
               class="icon"
               viewBox="0 0 24 24"
@@ -1106,15 +1101,6 @@
             <span class="icon-name">bar chart</span>
           </div>
 
-          <!-- Bar Chart Icon -->
-          <div class="icon-item" data-category="business">
-            <svg class="icon" viewBox="0 0 24 24" stroke-width="2">
-              <line x1="12" y1="20" x2="12" y2="10" data-stroke="primary" data-fill="none" />
-              <line x1="18" y1="20" x2="18" y2="4"  data-stroke="primary" data-fill="none" />
-              <line x1="6" y1="20" x2="6" y2="16"  data-stroke="primary" data-fill="none" />
-            </svg>
-            <span class="icon-name">bar chart</span>
-          </div>
 
           <!-- Battery Icon -->
           <div class="icon-item" data-category="status">
@@ -5794,7 +5780,21 @@
                 this.iconWeight = document.getElementById("icon-weight");
                 this.iconPreview = document.querySelector(".icon-preview");
                 this.categoryButtons = document.querySelectorAll(".category-button");
+                this.sizeValueDisplay = document.getElementById("size-value");
 
+                this.themeColors = {
+                  light: {
+                      primary: '#212121',
+                      secondary: '#757575',
+                      background: '#f1f1f1'
+                  },
+                  dark: {
+                      primary: '#f1f1f1',
+                      secondary: '#a0a0a0',
+                      background: '#2a2a3e'
+                  }
+                };
+                  
                 this.setupEventListeners();
                 this.initializeUI();
             }
@@ -5838,19 +5838,48 @@
                     this.updateTheme();
                     this.updateIcons();
                 });
+            
+                this.iconSize.addEventListener("input", (e) => {
+                    this.updateSizeDisplay(e.target.value);
+                });
             }
 
             updateTheme() {
                 const isDarkMode = this.themeSwitch.value === "dark";
                 document.body.classList.toggle("dark-mode", isDarkMode);
+                
+                // Store current colors before theme switch
+                const currentPrimary = this.primaryColor.value;
+                const currentSecondary = this.secondaryColor.value;
+                
+                // Update colors based on theme if they match theme defaults
+                const themeColors = this.themeColors[isDarkMode ? 'dark' : 'light'];
+                const oppositeThemeColors = this.themeColors[isDarkMode ? 'light' : 'dark'];
+                
+                // Only update if the color matches the opposite theme's default
+                if (currentPrimary === oppositeThemeColors.primary) {
+                    this.primaryColor.value = themeColors.primary;
+                }
+                if (currentSecondary === oppositeThemeColors.secondary) {
+                    this.secondaryColor.value = themeColors.secondary;
+                }
+                
+                // Store theme preference
+                localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+                
+                // Update icons with new theme colors
+                this.updateIcons();
             }
 
+
+            // MODIFY this method to include theme colors
             applyIconStyles(icon, style, primary, secondary, weight, theme) {
                 try {
                     const elements = icon.querySelectorAll('*');
-                    
-                    // Get background color based on theme
-                    const bgColor = theme === 'dark' ? '#2a2a3e' : '#f1f1f1';
+                    // ADD THIS LINE to get theme colors
+                    const themeColors = this.themeColors[theme];
+                    // MODIFY this line to use theme colors
+                    const bgColor = themeColors.background;
                     
                     elements.forEach(el => {
                         try {
@@ -5864,7 +5893,7 @@
                                     break;
                                     
                                 case 'filled':
-                                    // For filled style, handle background-colored strokes
+                                    // MODIFY these lines to include background handling
                                     el.style.stroke = strokeAttr === 'background' ? bgColor :
                                                     strokeAttr === 'primary' ? primary :
                                                     strokeAttr === 'secondary' ? secondary :
@@ -5872,6 +5901,7 @@
                                                     
                                     el.style.fill = fillAttr === 'primary' ? primary :
                                                   fillAttr === 'secondary' ? secondary :
+                                                  fillAttr === 'background' ? bgColor :
                                                   fillAttr === 'none' ? 'none' : 'none';
                                     break;
                                     
@@ -5881,7 +5911,6 @@
                                     break;
                             }
                             
-                            // Apply stroke width only if stroke isn't none
                             if (el.style.stroke !== 'none') {
                                 el.style.strokeWidth = weight;
                             }
@@ -5893,6 +5922,54 @@
                     console.error('Error in applyIconStyles:', error);
                 }
             }
+            // applyIconStyles(icon, style, primary, secondary, weight, theme) {
+            //     try {
+            //         const elements = icon.querySelectorAll('*');
+                    
+            //         // Get background color based on theme
+            //         const bgColor = theme === 'dark' ? '#2a2a3e' : '#f1f1f1';
+                  
+            //         elements.forEach(el => {
+            //             try {
+            //                 const strokeAttr = el.getAttribute('data-stroke')?.toLowerCase();
+            //                 const fillAttr = el.getAttribute('data-fill')?.toLowerCase();
+                            
+            //                 switch(style) {
+            //                     case 'outline':
+            //                         el.style.stroke = primary;
+            //                         el.style.fill = 'none';
+            //                         break;
+                                    
+            //                     case 'filled':
+            //                         // For filled style, handle background-colored strokes
+            //                         el.style.stroke = strokeAttr === 'background' ? bgColor :
+            //                                         strokeAttr === 'primary' ? primary :
+            //                                         strokeAttr === 'secondary' ? secondary :
+            //                                         strokeAttr === 'none' ? 'none' : bgColor;
+                                                    
+            //                         el.style.fill = fillAttr === 'primary' ? primary :
+            //                                       fillAttr === 'secondary' ? secondary :
+            //                                       fillAttr === 'none' ? 'none' : 'none';
+            //                         break;
+                                    
+            //                     case 'duo-tone':
+            //                         el.style.stroke = primary;
+            //                         el.style.fill = secondary;
+            //                         break;
+            //                 }
+                            
+            //                 // Apply stroke width only if stroke isn't none
+            //                 if (el.style.stroke !== 'none') {
+            //                     el.style.strokeWidth = weight;
+            //                 }
+            //             } catch (elementError) {
+            //                 console.error('Error applying styles to element:', elementError);
+            //             }
+            //         });
+            //     } catch (error) {
+            //         console.error('Error in applyIconStyles:', error);
+            //     }
+            // }
 
             updateIcons() {
                 try {
@@ -5949,14 +6026,42 @@
                 });
             }
 
+            // filterIcons() {
+            //     const icons = this.iconPreview.querySelectorAll(".icon-item");
+            //     icons.forEach((icon) => {
+            //         const shouldShow =
+            //             this.selectedCategories.has("all") ||
+            //             this.selectedCategories.has(icon.dataset.category);
+            //         icon.style.display = shouldShow ? "flex" : "none";
+            //     });
+            // }
+
             filterIcons() {
-                const icons = this.iconPreview.querySelectorAll(".icon-item");
-                icons.forEach((icon) => {
-                    const shouldShow =
-                        this.selectedCategories.has("all") ||
-                        this.selectedCategories.has(icon.dataset.category);
-                    icon.style.display = shouldShow ? "flex" : "none";
-                });
+                  const icons = this.iconPreview.querySelectorAll(".icon-item");
+                  icons.forEach((icon) => {
+                      // Safely get categories, defaulting to empty string if not set
+                      const categoriesString = icon.dataset.category || '';
+                      
+                      // Get categories as an array, handling both space and comma separation
+                      const iconCategories = categoriesString
+                          .split(/[\s,]+/)
+                          .map(cat => cat.trim())
+                          .filter(cat => cat); // Remove empty strings
+
+                      const shouldShow =
+                          this.selectedCategories.has("all") ||
+                          iconCategories.some(category => 
+                              this.selectedCategories.has(category)
+                          );
+                          
+                      icon.style.display = shouldShow ? "flex" : "none";
+                  });
+              }
+            
+            updateSizeDisplay(size) {
+                if (this.sizeValueDisplay) {
+                    this.sizeValueDisplay.textContent = `${size}px`;
+                }
             }
 
             initializeUI() {
@@ -5967,6 +6072,9 @@
                 this.updateIcons();
                 this.updateCategoryButtons();
                 this.filterIcons();
+
+                this.updateSizeDisplay(this.iconSize.value); // Initialize size display
+
             }
         }
      
