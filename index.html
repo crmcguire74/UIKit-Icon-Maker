@@ -24,14 +24,14 @@
     <meta property="og:title" content="Icon Forge | Custom SVG and PNG Icon Pack Generator & Editor">
     <meta property="og:description" content="Create and customize professional icon packs instantly. 1000+ editable icons, real-time preview, bulk download.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://iconforge.net/">
-    <meta property="og:image" content="https://iconforge.net/images/IconForgePreview.png" />
+    <meta property="og:url" content="/">
+    <meta property="og:image" content="/images/IconForgePreview.png" />
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Icon Forge | Custom SVG and PNG Icon Pack Generator">
     <meta name="twitter:description" content="Create and customize professional icon packs instantly. 1000+ editable icons.">
-    <meta name="twitter:image" content="https://iconforge.net/images/IconForgePreview.png">
+    <meta name="twitter:image" content="/images/IconForgePreview.png">
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://iconforge.net/">
+    <link rel="canonical" href="/">
 
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -45,17 +45,93 @@
 
     <title>Icon Forge | Custom Icon Pack Generator & Editor for Applications | Free & Premium UI Icons</title>
 
+    <script src="/config.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.config.baseUrl) {
+                // Update meta tags that need absolute URLs
+                document.querySelector('meta[property="og:url"]').content = config.getUrl('/');
+                document.querySelector('meta[property="og:image"]').content = config.getUrl('/images/IconForgePreview.png');
+                document.querySelector('meta[name="twitter:image"]').content = config.getUrl('/images/IconForgePreview.png');
+                document.querySelector('link[rel="canonical"]').href = config.getUrl('/');
+            }
+        });
+    </script>
+
+  
     <!-- Schema Markup -->
     <script type="application/ld+json">
-        { "@context": "https://schema.org", "@type": "WebApplication", "name": "Icon Forge", "applicationCategory": "DesignApplication", "operatingSystem": "Any", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }, "description": "Create and customize professional SVG icon packs instantly. 1000+ editable icons with real-time preview and bulk download capabilities.", "browserRequirements": "Requires modern web browser with JavaScript enabled", "softwareVersion": "1.0", "creator": { "@type": "Organization", "name": "Icon Forge", "url": "https://iconforge.net", "founder": { "@type": "Person", "name": "Christopher R McGuire" } }, "featureList": [ "Custom SVG icon generation", "Real-time preview", "Bulk download", "Color customization", "Size adjustment", "Style variants" ] }
+        { "@context": "https://schema.org", "@type": "WebApplication", "name": "Icon Forge", "applicationCategory": "DesignApplication", "operatingSystem": "Any", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }, "description": "Create and customize professional SVG icon packs instantly. 1000+ editable icons with real-time preview and bulk download capabilities.", "browserRequirements": "Requires modern web browser with JavaScript enabled", "softwareVersion": "1.0", "creator": { "@type": "Organization", "name": "Icon Forge", "url": "/", "founder": { "@type": "Person", "name": "Christopher R McGuire" } }, "featureList": [ "Custom SVG icon generation", "Real-time preview", "Bulk download", "Color customization", "Size adjustment", "Style variants" ] }
     </script>
 
     <script type="application/ld+json">
-        { "@context": "https://schema.org", "@type": "Organization", "name": "Icon Forge", "url": "https://iconforge.net", "logo": "https://iconforge.net/logo.png", "sameAs": [ "https://twitter.com/iconforge", "https://github.com/iconforge" ] }
+        { "@context": "https://schema.org", "@type": "Organization", "name": "Icon Forge", "url": "/", "logo": "/logo.png", "sameAs": [ "https://twitter.com/iconforge", "https://github.com/iconforge" ] }
     </script>
 
     <script type="application/ld+json">
-        { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://iconforge.net" }, { "@type": "ListItem", "position": 2, "name": "Icon Generator", "item": "https://iconforge.net/generator" }] }
+        { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "/" }, { "@type": "ListItem", "position": 2, "name": "Icon Generator", "item": "/generator" }] }
+    </script>
+
+    <!-- Add this right after the schema markup scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Make sure config and its baseUrl exist
+            if (window.config && window.config.baseUrl) {
+                // Update meta tags
+                const metaTags = {
+                    'meta[property="og:url"]': '/',
+                    'meta[property="og:image"]': '/images/IconForgePreview.png',
+                    'meta[name="twitter:image"]': '/images/IconForgePreview.png',
+                    'link[rel="canonical"]': '/'
+                };
+    
+                // Update meta tags safely
+                Object.entries(metaTags).forEach(([selector, path]) => {
+                    const element = document.querySelector(selector);
+                    if (element) {
+                        if (element.hasAttribute('content')) {
+                            element.content = config.getUrl(path);
+                        } else if (element.hasAttribute('href')) {
+                            element.href = config.getUrl(path);
+                        }
+                    }
+                });
+    
+                // Update JSON-LD schema URLs
+                const schemas = document.querySelectorAll('script[type="application/ld+json"]');
+                schemas.forEach(schema => {
+                    try {
+                        const data = JSON.parse(schema.innerHTML);
+                        
+                        // Update Organization URL
+                        if (data.url) {
+                            data.url = config.getUrl(data.url);
+                        }
+                        // Update Organization logo
+                        if (data.logo) {
+                            data.logo = config.getUrl(data.logo);
+                        }
+                        // Update creator URL
+                        if (data.creator && data.creator.url) {
+                            data.creator.url = config.getUrl(data.creator.url);
+                        }
+                        // Update breadcrumb items
+                        if (data.itemListElement) {
+                            data.itemListElement.forEach(item => {
+                                if (item.item && item.item.startsWith('/')) {
+                                    item.item = config.getUrl(item.item);
+                                }
+                            });
+                        }
+                        
+                        schema.innerHTML = JSON.stringify(data, null, 2);
+                    } catch (error) {
+                        console.error('Error updating schema:', error);
+                    }
+                });
+            }
+        });
     </script>
 
     <style>
@@ -178,6 +254,14 @@
             
             color: var(--highlight-color);
         }
+
+        .menu .selected {
+                color: var(--primary-color);
+                text-decoration: underline;
+                margin-left: 25px;
+                font-weight: 600;
+        }
+
         /* Main Content */
         
         .main-content {
@@ -593,11 +677,22 @@
                 <path d="M9.6 188V82.8H47.6V188H9.6ZM9.6 74V42H47.6V74H9.6ZM118.827 190C109.493 190 101.227 188.533 94.0266 185.6C86.9599 182.667 80.9599 178.667 76.0266 173.6C71.0932 168.4 67.3599 162.533 64.8266 156C62.2932 149.467 61.0266 142.6 61.0266 135.4C61.0266 125.8 63.2266 116.867 67.6266 108.6C72.1599 100.2 78.6932 93.4667 87.2266 88.4C95.8932 83.3333 106.427 80.8 118.827 80.8C131.493 80.8 142.16 83.4667 150.827 88.8C159.493 94.1333 165.96 101 170.227 109.4L133.227 120.6C131.493 118.067 129.36 116.133 126.827 114.8C124.427 113.467 121.693 112.8 118.627 112.8C115.16 112.8 112.027 113.733 109.227 115.6C106.427 117.333 104.16 119.867 102.427 123.2C100.827 126.533 100.027 130.6 100.027 135.4C100.027 140.067 100.827 144.133 102.427 147.6C104.16 150.933 106.427 153.533 109.227 155.4C112.027 157.133 115.16 158 118.627 158C120.76 158 122.693 157.733 124.427 157.2C126.16 156.533 127.76 155.6 129.227 154.4C130.827 153.2 132.16 151.8 133.227 150.2L170.227 161.4C167.427 167 163.56 171.933 158.627 176.2C153.827 180.467 148.093 183.867 141.427 186.4C134.893 188.8 127.36 190 118.827 190ZM467.744 188H429.744V128.8C429.744 123.6 428.544 119.867 426.144 117.6C423.877 115.2 421.21 114 418.144 114C416.01 114 413.744 114.667 411.344 116C408.944 117.2 406.744 118.933 404.744 121.2C402.744 123.467 401.144 126.067 399.944 129V188H361.944V82.8H396.144V98.4C398.677 94.5333 401.877 91.3333 405.744 88.8C409.61 86.1333 414.077 84.1333 419.144 82.8C424.21 81.4667 429.744 80.8 435.744 80.8C442.944 80.8 448.677 82.0667 452.944 84.6C457.21 87.1333 460.41 90.4 462.544 94.4C464.677 98.4 466.077 102.6 466.744 107C467.41 111.267 467.744 115.2 467.744 118.8V188ZM538.484 188V123.6H525.484V95H538.484V83.6C538.484 74.8 540.084 67.1333 543.284 60.6C546.484 54.0667 550.951 49 556.684 45.4C562.551 41.8 569.351 40 577.084 40C581.618 40 586.284 40.5333 591.084 41.6C595.884 42.5333 600.951 44 606.284 46L599.884 74.8C597.751 74 595.351 73.3333 592.684 72.8C590.018 72.2667 587.684 72 585.684 72C582.618 72 580.284 72.8667 578.684 74.6C577.218 76.2 576.484 78.7333 576.484 82.2V95H599.484V123.6H576.484V188H538.484ZM663.353 190C654.02 190 645.753 188.533 638.553 185.6C631.353 182.667 625.286 178.667 620.353 173.6C615.553 168.4 611.886 162.533 609.353 156C606.953 149.467 605.753 142.6 605.753 135.4C605.753 128.2 606.953 121.333 609.353 114.8C611.886 108.133 615.553 102.267 620.353 97.2C625.286 92.1333 631.353 88.1333 638.553 85.2C645.753 82.2667 654.02 80.8 663.353 80.8C672.82 80.8 681.086 82.2667 688.153 85.2C695.353 88.1333 701.353 92.1333 706.153 97.2C711.086 102.267 714.753 108.133 717.153 114.8C719.686 121.333 720.953 128.2 720.953 135.4C720.953 142.6 719.686 149.467 717.153 156C714.753 162.533 711.086 168.4 706.153 173.6C701.353 178.667 695.353 182.667 688.153 185.6C681.086 188.533 672.82 190 663.353 190ZM644.753 135.4C644.753 140.067 645.553 144.133 647.153 147.6C648.753 150.933 650.953 153.533 653.753 155.4C656.553 157.133 659.753 158 663.353 158C666.953 158 670.153 157.133 672.953 155.4C675.753 153.533 677.953 150.933 679.553 147.6C681.153 144.133 681.953 140.067 681.953 135.4C681.953 130.733 681.153 126.733 679.553 123.4C677.953 119.933 675.753 117.333 672.953 115.6C670.153 113.733 666.953 112.8 663.353 112.8C659.753 112.8 656.553 113.733 653.753 115.6C650.953 117.333 648.753 119.933 647.153 123.4C645.553 126.733 644.753 130.733 644.753 135.4ZM805.805 115.2C798.471 115.2 791.805 116 785.805 117.6C779.805 119.2 775.338 121.867 772.405 125.6V188H734.405V82.8H769.205V102.8C772.938 95.7333 777.605 90.3333 783.205 86.6C788.805 82.7333 794.738 80.8 801.005 80.8C802.471 80.8 803.471 80.8 804.005 80.8C804.671 80.8 805.271 80.8667 805.805 81V115.2ZM858.008 188C851.208 188 844.941 186.667 839.208 184C833.608 181.333 828.808 177.6 824.808 172.8C820.808 168 817.674 162.4 815.408 156C813.274 149.6 812.208 142.667 812.208 135.2C812.208 127.333 813.408 120.133 815.808 113.6C818.208 106.933 821.541 101.133 825.808 96.2C830.208 91.2667 835.408 87.4667 841.408 84.8C847.408 82.1333 854.008 80.8 861.208 80.8C868.674 80.8 875.274 82.3333 881.008 85.4C886.874 88.3333 891.474 92.6667 894.808 98.4V82.8H927.808V178.4C927.808 189.333 925.141 198.867 919.808 207C914.474 215.133 907.008 221.4 897.408 225.8C887.808 230.333 876.608 232.6 863.808 232.6C852.741 232.6 843.008 230.867 834.608 227.4C826.341 223.933 819.008 218.933 812.608 212.4L832.608 191.6C836.474 195.2 841.074 198.2 846.408 200.6C851.874 203.133 857.674 204.4 863.808 204.4C868.474 204.4 872.741 203.533 876.608 201.8C880.608 200.067 883.808 197.267 886.208 193.4C888.608 189.667 889.808 184.667 889.808 178.4V171.6C886.874 177.067 882.474 181.2 876.608 184C870.874 186.667 864.674 188 858.008 188ZM871.608 158C873.474 158 875.208 157.8 876.808 157.4C878.541 156.867 880.141 156.2 881.608 155.4C883.074 154.467 884.474 153.333 885.808 152C887.274 150.533 888.608 148.933 889.808 147.2V128.4C888.608 125.2 886.941 122.467 884.808 120.2C882.674 117.8 880.341 116 877.808 114.8C875.274 113.467 872.674 112.8 870.008 112.8C867.341 112.8 864.808 113.4 862.408 114.6C860.141 115.8 858.141 117.533 856.408 119.8C854.674 121.933 853.341 124.4 852.408 127.2C851.474 130 851.008 133 851.008 136.2C851.008 139.4 851.474 142.333 852.408 145C853.474 147.667 854.941 150 856.808 152C858.674 153.867 860.874 155.333 863.408 156.4C865.941 157.467 868.674 158 871.608 158ZM998.9 190C989.7 190 981.5 188.6 974.3 185.8C967.1 182.867 961.033 178.933 956.1 174C951.3 169.067 947.633 163.4 945.1 157C942.567 150.6 941.3 143.867 941.3 136.8C941.3 126.667 943.5 117.4 947.9 109C952.3 100.467 958.767 93.6667 967.3 88.6C975.833 83.4 986.367 80.8 998.9 80.8C1011.43 80.8 1021.97 83.3333 1030.5 88.4C1039.03 93.4667 1045.5 100.133 1049.9 108.4C1054.3 116.667 1056.5 125.667 1056.5 135.4C1056.5 137.4 1056.37 139.467 1056.1 141.6C1055.97 143.6 1055.77 145.4 1055.5 147H981.7C981.967 150.733 982.967 153.8 984.7 156.2C986.567 158.467 988.833 160.133 991.5 161.2C994.3 162.267 997.167 162.8 1000.1 162.8C1004.23 162.8 1008.1 161.867 1011.7 160C1015.43 158.133 1017.9 155.533 1019.1 152.2L1051.3 161.4C1048.5 167 1044.57 171.933 1039.5 176.2C1034.57 180.467 1028.7 183.867 1021.9 186.4C1015.1 188.8 1007.43 190 998.9 190ZM980.9 124.2H1015.7C1015.3 120.733 1014.3 117.8 1012.7 115.4C1011.23 113 1009.23 111.133 1006.7 109.8C1004.3 108.467 1001.5 107.8 998.3 107.8C995.1 107.8 992.233 108.467 989.7 109.8C987.3 111.133 985.3 113 983.7 115.4C982.233 117.8 981.3 120.733 980.9 124.2Z" fill="#1788D9" />
             </svg>
         </div>
+        <!-- <nav class="menu">
+            <span class="selected">Home</span>
+            <a href="blog/blogDashboard.html">Blog</a>
+            <a href="#KeyFeaturesSection">Key Features</a>
+            <a href="mailto:Christopher.R.McGuire@gmail.com">Contact</a>
+        </nav> -->
+
+
+
         <nav class="menu">
-            <!-- <a href="#">Home</a> -->
+            <span class="selected">Home</span>
+            <a href="#" onclick="window.location.href = config.getUrl('/blog/blogDashboard.html'); return false;">Blog</a>
             <a href="#KeyFeaturesSection">Key Features</a>
             <a href="mailto:Christopher.R.McGuire@gmail.com">Contact</a>
         </nav>
+
     </header>
 
     <!-- Main Content Section -->
@@ -4595,6 +4690,7 @@
             });
         }
     </script>
+
 
 </body>
 
