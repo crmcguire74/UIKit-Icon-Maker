@@ -1605,6 +1605,9 @@
       @media screen and (max-width: 480px) {
         /* Further adjust layout for small mobile screens */
 
+        main.container {        
+          padding: 0 0rem;
+        }
         .hero-text h1 {
           font-size: 13vw;
           /* position: relative;
@@ -1630,6 +1633,19 @@
         }
         .menu .selected {
           color: var(--primary-color);
+        }
+
+        .author-bio h3 {
+          font-size: 0.9rem;
+        }
+
+        .author-bio p {
+          font-size: .7rem;;
+        }
+
+        footer {
+          font-size: .5rem;
+          padding: 0 02rem;
         }
       }
 
@@ -1671,7 +1687,7 @@
           onclick="window.location.href = config.getUrl('/blog/blogDashboard.html')"
           >Blog</a
         >
-        <a href="#KeyFeaturesSection">Key Features</a>
+        <!-- <a href="#KeyFeaturesSection">Key Features</a> -->
         <a href="mailto:Christopher.R.McGuire@gmail.com">Contact</a>
       </nav>
     </header>
