@@ -1,5 +1,12 @@
 User-agent: *
-Allow: /
 Disallow: /admin/
 Disallow: /private/
+Disallow: /tmp/
+Disallow: /junk/
+Disallow: /cgi-bin/
+
+User-agent: BadBot
+Disallow: /
+
 Sitemap: https://iconforge.net/sitemap.xml
+
