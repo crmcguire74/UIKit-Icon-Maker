@@ -1,165 +1,212 @@
-// Configuration settings
-const config = {
+// configurationuration settings
+const configuration = {
   baseUrl: window.location.origin,
   getUrl: function (path) {
-    return this.baseUrl + path;
+    return this.baseUrl + (path.startsWith("/") ? path : "/" + path);
   },
 };
 
-// DOM Elements
-const progressBar = document.querySelector(".progress-bar");
-const scrollIndicator = document.querySelector(
-  ".scroll-indicator-arrow, .scroll-indicator-mouse"
-);
+// Post Data Management
+class PostManager {
+  constructor() {
+    this.postData = this.loadPostData();
+  }
 
-// Scroll Progress Handler
-function updateProgressBar() {
-  const winScroll =
-    document.body.scrollTop || document.documentElement.scrollTop;
-  const height =
-    document.documentElement.scrollHeight -
-    document.documentElement.clientHeight;
-  const scrolled = (winScroll / height) * 100;
-  progressBar.style.width = scrolled + "%";
-}
-
-// Smooth Scroll Handler
-function smoothScroll(targetPosition) {
-  window.scrollTo({
-    top: targetPosition,
-    behavior: "smooth",
-  });
-}
-
-// Table of Contents Link Handler
-function handleTocClick(e) {
-  const links = document.querySelectorAll(".toc-link");
-  links.forEach((link) => {
-    if (link === e.target) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
+  loadPostData() {
+    const postDataElement = document.getElementById("postData");
+    if (!postDataElement) {
+      console.error("Post data not found");
+      return null;
     }
-  });
-}
+    try {
+      return JSON.parse(postDataElement.textContent);
+    } catch (error) {
+      console.error("Error parsing post data:", error);
+      return null;
+    }
+  }
 
-// Initialize Functionality
-function initializePage() {
-  // Add scroll event listener for progress bar
-  window.addEventListener("scroll", updateProgressBar);
+  updateMetaTags() {
+    if (!this.postData) return;
 
-  // Add click handler for scroll indicator
-  if (scrollIndicator) {
-    scrollIndicator.addEventListener("click", () => {
-      smoothScroll(window.innerHeight);
+    const metaUpdates = {
+      'meta[property="og:title"]': this.postData.title,
+      'meta[property="og:description"]': this.postData.description,
+      'meta[property="og:url"]': configuration.getUrl(
+        `/blog/articles/${this.postData.slug}.html`
+      ),
+      'meta[property="og:image"]': configuration.getUrl(this.postData.image),
+      'meta[name="twitter:title"]': this.postData.title,
+      'meta[name="twitter:description"]': this.postData.description,
+      'meta[name="twitter:image"]': configuration.getUrl(this.postData.image),
+      'link[rel="canonical"]': configuration.getUrl(
+        `/blog/articles/${this.postData.slug}.html`
+      ),
+    };
+
+    Object.entries(metaUpdates).forEach(([selector, value]) => {
+      const element = document.querySelector(selector);
+      if (element) {
+        if (element.hasAttribute("content")) {
+          element.setAttribute("content", value);
+        } else if (element.hasAttribute("href")) {
+          element.setAttribute("href", value);
+        }
+      }
     });
   }
 
-  // Add click handlers for ToC links
-  const tocLinks = document.querySelectorAll(".toc-link");
-  tocLinks.forEach((link) => {
-    link.addEventListener("click", handleTocClick);
-  });
+  updateSchema() {
+    if (!this.postData) return;
 
-  // Handle URL configuration for links
-  document.addEventListener("DOMContentLoaded", function () {
-    if (window.config && window.config.baseUrl) {
-      // Update meta tags
-      const metaTags = {
-        'meta[property="og:url"]':
-          "/blog/articles/User_Interface_Design_for_Web_Applications.html",
-        'meta[property="og:image"]': "/images/IconForgePreview.png",
-        'meta[name="twitter:image"]': "/images/IconForgePreview.png",
-        'link[rel="canonical"]':
-          "/blog/articles/User_Interface_Design_for_Web_Applications.html",
-      };
+    const blogPostingSchema = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": configuration.getUrl(
+          `/blog/articles/${this.postData.slug}.html`
+        ),
+      },
+      headline: this.postData.title,
+      description: this.postData.description,
+      image: configuration.getUrl(this.postData.image),
+      author: {
+        "@type": "Person",
+        name: this.postData.author,
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Icon Forge",
+        logo: {
+          "@type": "ImageObject",
+          url: configuration.getUrl("/images/logo.svg"),
+        },
+      },
+      datePublished: this.postData.datePublished,
+      dateModified: this.postData.dateModified,
+    };
 
-      // Update meta tags safely
-      Object.entries(metaTags).forEach(([selector, path]) => {
-        const element = document.querySelector(selector);
-        if (element) {
-          if (element.hasAttribute("content")) {
-            element.content = config.getUrl(path);
-          } else if (element.hasAttribute("href")) {
-            element.href = config.getUrl(path);
-          }
-        }
-      });
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: this.postData.breadcrumbs.map((crumb, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: crumb.name,
+        item: configuration.getUrl(crumb.path),
+      })),
+    };
 
-      // Update JSON-LD schema URLs
-      const schemas = document.querySelectorAll(
-        'script[type="application/ld+json"]'
-      );
-      schemas.forEach((schema) => {
-        try {
-          const data = JSON.parse(schema.innerHTML);
+    // Update or create schema scripts
+    this.updateSchemaScript("blogPosting", blogPostingSchema);
+    this.updateSchemaScript("breadcrumbs", breadcrumbSchema);
+  }
 
-          // Helper function to ensure correct URL format
-          const formatUrl = (url) => {
-            if (url && !url.startsWith("http")) {
-              return config.getUrl(url.startsWith("/") ? url : "/" + url);
-            }
-            return url;
-          };
+  updateSchemaScript(id, schema) {
+    let script = document.querySelector(`script[data-schema="${id}"]`);
+    if (!script) {
+      script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.setAttribute("data-schema", id);
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(schema, null, 2);
+  }
+}
 
-          // Update various URLs based on schema type
-          if (data["@type"] === "BlogPosting") {
-            if (data.publisher?.url) {
-              data.publisher.url = formatUrl(data.publisher.url);
-            }
-            if (data.publisher?.logo) {
-              data.publisher.logo = formatUrl(
-                data.publisher.logo.replace("../", "/")
-              );
-            }
-            if (data.mainEntityOfPage?.["@id"]) {
-              data.mainEntityOfPage["@id"] = formatUrl(
-                data.mainEntityOfPage["@id"]
-              );
-            }
-          } else {
-            // Handle Organization and BreadcrumbList schemas
-            if (data.url) {
-              data.url = formatUrl(data.url);
-            }
-            if (data.logo) {
-              data.logo = formatUrl(data.logo.replace("../", "/"));
-            }
-            if (data.itemListElement) {
-              data.itemListElement.forEach((item) => {
-                if (item.item) {
-                  item.item = formatUrl(item.item);
-                }
-              });
-            }
-          }
+// UI Components
+class UIManager {
+  constructor() {
+    this.progressBar = document.querySelector(".progress-bar");
+    this.scrollIndicator = document.querySelector(".scroll-indicator-arrow");
+    this.initializeEventListeners();
+  }
 
-          schema.innerHTML = JSON.stringify(data, null, 2);
-        } catch (error) {
-          console.error("Error updating schema:", error);
+  initializeEventListeners() {
+    // Progress bar
+    window.addEventListener("scroll", () => this.updateProgressBar());
+
+    // Scroll indicator
+    if (this.scrollIndicator) {
+      this.scrollIndicator.addEventListener("click", (e) => {
+        e.preventDefault();
+        const firstContent = document.querySelector("#keytakeaways");
+        if (firstContent) {
+          const yOffset = -50; // Adjust this value to control the final scroll position
+          const y =
+            firstContent.getBoundingClientRect().top +
+            window.pageYOffset +
+            yOffset;
+          window.scrollTo({
+            top: y,
+            behavior: "smooth",
+          });
         }
       });
     }
-  });
+
+    // TOC links
+    const tocLinks = document.querySelectorAll(".toc-link");
+    tocLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        this.handleTocClick(e);
+        const targetId = link.getAttribute("href").substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    });
+  }
+
+  updateProgressBar() {
+    if (!this.progressBar) return;
+
+    const winScroll = document.documentElement.scrollTop;
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    this.progressBar.style.width = `${scrolled}%`;
+  }
+
+  handleTocClick(e) {
+    const links = document.querySelectorAll(".toc-link");
+    links.forEach((link) => {
+      link.classList.toggle("active", link === e.target);
+    });
+  }
 }
 
-// Optional Dark Mode Toggle (if needed)
-function toggleDarkMode() {
-  document.body.classList.toggle("dark-mode");
-  const isDarkMode = document.body.classList.contains("dark-mode");
-  localStorage.setItem("darkMode", isDarkMode);
-}
+// Dark Mode Management
+class DarkModeManager {
+  constructor() {
+    this.checkDarkModePreference();
+  }
 
-// Check for saved dark mode preference
-function checkDarkModePreference() {
-  const savedDarkMode = localStorage.getItem("darkMode");
-  if (savedDarkMode === "true") {
-    document.body.classList.add("dark-mode");
+  toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    const isDarkMode = document.body.classList.contains("dark-mode");
+    localStorage.setItem("darkMode", isDarkMode);
+  }
+
+  checkDarkModePreference() {
+    const savedDarkMode = localStorage.getItem("darkMode");
+    if (savedDarkMode === "true") {
+      document.body.classList.add("dark-mode");
+    }
   }
 }
 
 // Initialize everything when DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
-  initializePage();
-  checkDarkModePreference();
+  const postManager = new PostManager();
+  const uiManager = new UIManager();
+  const darkModeManager = new DarkModeManager();
+
+  // Update meta tags and schema
+  postManager.updateMetaTags();
+  postManager.updateSchema();
 });
