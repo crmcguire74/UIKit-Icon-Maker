@@ -28,6 +28,13 @@
   <changefreq>monthly</changefreq>
   <priority>0.5</priority>
 </url>
+
+<url>
+  <loc>https://iconforge.net/blog/articles/Custom_Icons_and_User_Interface_Design_Tips.html</loc>
+  <lastmod>2024-11-12</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
     
   <url>
     <loc>https://iconforge.net/contact</loc>
