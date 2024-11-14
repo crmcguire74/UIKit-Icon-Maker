@@ -589,6 +589,53 @@ body.dark-mode .video-container iframe {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
 }
 
+..email-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .email-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 10px;
+        }
+
+        .name {
+            margin: 0;
+            color: black;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .icon {
+            width: 32px;
+            height: 32px;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            cursor: pointer;
+        }
+
+        .icon polygon,
+        .icon line {
+            transition: stroke 0.3s ease;
+            stroke: black;
+            fill: #ffffff;
+            stroke-width: 2;
+        }
+
+        .email-link:hover .name,
+        .email-link:focus .name {
+            color: #007bff;
+        }
+
+        .email-link:hover .icon polygon,
+        .email-link:hover .icon line,
+        .email-link:focus .icon polygon,
+        .email-link:focus .icon line {
+            stroke: #007bff;
+        }
+
 /* Media Queries */
 @media (min-width: 1024px) {
   .blog-content {

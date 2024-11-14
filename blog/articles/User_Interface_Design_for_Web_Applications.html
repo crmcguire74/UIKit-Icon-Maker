@@ -135,16 +135,14 @@
   <!-- <body class="loaded dark-mode"> -->
 
   <body>
-    body>
+    
     <!-- Header Section -->
     <header class="header">
       <div class="logo">
         <img src="../../images/logo.svg" alt="Logo" class="logoImage" />
       </div>
       <nav class="menu">
-        <a href="../../index.html">Home</a>
-        <a href="../blogDashboard.html">Blog</a>
-        <a href="mailto:Christopher.R.McGuire@gmail.com">Contact</a>
+        <a href="../../index.html" style="margin-right:15px">Home</a> &gt; <a href="../blogDashboard.html" style="margin-right:15px;">Blog</a> &gt; <span style="margin-left:10px;">User Interface Design for Web Applications</span>
       </nav>
     </header>
 
@@ -1415,7 +1413,15 @@
               />
             </div>
             <div>
-              <h3>Christopher R McGuire</h3>
+              <div class="email-container">
+                <a href="mailto:Christopher.R.McGuire@gmail.com" class="email-link">
+                    <h3 class="name">Christopher R McGuire</h3>
+                    <svg class="icon" viewBox="0 0 24 24" stroke-width="2" data-icon-detailed="true">
+                        <polygon points="22 2 15 22 11 13 2 9 22 2" data-stroke="primary"></polygon>
+                        <line x1="22" y1="2" x2="11" y2="13" data-stroke="primary"></line>
+                    </svg>
+                </a>
+            </div>
               <p>
                 Senior VP and Head of Application Design and Development with
                 over 25 years of UX, UI experience.
