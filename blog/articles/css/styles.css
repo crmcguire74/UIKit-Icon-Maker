@@ -69,6 +69,15 @@ header {
   width: 200px;
 }
 
+a {
+  text-decoration: none;
+  color: #13c0ed;
+}
+
+a :hover {
+  text-decoration: underline;
+}
+
 /* Navigation Styles */
 nav a {
   color: var(--text-color);
