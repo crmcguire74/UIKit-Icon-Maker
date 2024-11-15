@@ -71,11 +71,11 @@ header {
 
 a {
   text-decoration: none;
-  color: #13c0ed;
+  color: #169bbc;
 }
 
 a :hover {
-  text-decoration: underline;
+  color: #d98b17;
 }
 
 /* Navigation Styles */
@@ -96,6 +96,8 @@ nav a:hover {
   text-decoration: none;
   margin-left: 25px;
   font-weight: 600;
+  overflow:hidden;
+  text-wrap: nowrap;
 }
 
 .menu a:hover {
@@ -274,6 +276,14 @@ main.container {
   60% {
     transform: translateX(-50%) translateY(-10px);
   }
+}
+
+ul li {
+  margin-left: 20px;
+}
+
+ol li {
+  margin-left: 20px;
 }
 
 /* Blog Layout */
