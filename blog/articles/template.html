@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
@@ -16,13 +18,42 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MJKLFQ719J"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
 
-    gtag('config', 'G-MJKLFQ719J');
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-MJKLFQ719J");
   </script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script id="postData" type="application/json">
+        {
+          "title": "[TITLE]",
+          "description": "[DESCRIPTION]",
+          "author": "Christopher R McGuire",
+          "datePublished": "[PUBLISHED DATE]",
+          "dateModified": "[MODIFIED DATE]",
+          "image": "https://iconforge.net/blog/images/IconForgePreview.png",
+          "slug": "[WEB_PAGE_NAME]",
+          "category": "UI Design",
+          "breadcrumbs": [
+            {
+              "name": "Home",
+              "path": "/"
+            },
+            {
+              "name": "Blog",
+              "path": "/blog/blogDashboard.html"
+            },
+            {
+              "name": "[TITLE]",
+              "path": "/blog/articles/[WEB_PAGE_NAME].html"
+            }
+          ]
+        }
+      </script>
+
 
   <!-- SEO Meta Tags - Replace content for each blog post -->
   <meta name="description" content="[YOUR BLOG DESCRIPTION]" />
@@ -35,13 +66,13 @@
   <meta property="og:description" content="[YOUR BLOG DESCRIPTION]" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="[YOUR BLOG URL]" />
-  <meta property="og:image" content="[YOUR PREVIEW IMAGE URL]" />
+  <meta property="og:image" content="https://iconforge.net/blog/images/IconForgeBlogPreview.png" />
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="[YOUR BLOG TITLE]" />
   <meta name="twitter:description" content="[YOUR BLOG DESCRIPTION]" />
-  <meta name="twitter:image" content="[YOUR PREVIEW IMAGE URL]" />
+  <meta name="twitter:image" content="https://iconforge.net/blog/images/IconForgeBlogPreview.png" />
 
   <!-- Robots and Canonical -->
   <meta name="robots" content="index, follow" />
