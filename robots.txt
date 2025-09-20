@@ -9,4 +9,3 @@ User-agent: BadBot
 Disallow: /
 
 Sitemap: https://iconforge.net/sitemap.xml
-
