@@ -2,626 +2,811 @@
 <html lang="en">
 
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MJKLFQ719J"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MJKLFQ719J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-        gtag("config", "G-MJKLFQ719J");
+    gtag("config", "G-MJKLFQ719J");
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Discover essential best practices for User Interface Design for
+      Web Applications to create intuitive, user-friendly experiences
+      that boost engagement and conversion rates." />
+  <meta name="keywords"
+    content="UI, web apps, web applications, user-friendly, User Interface, UI Design, User Interface Design, Web App Design, Best Practices, application design, app design" />
+  <meta name="author" content="Christopher R McGuire" />
+  <meta property="og:title" content="Icon Forge: Application Design and Development Blog" />
+  <meta property="og:description" content="Discover essential best practices for User Interface Design for
+      Web Applications to create intuitive, user-friendly experiences
+      that boost engagement and conversion rates." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/blogDashboard.html" />
+  <meta property="og:image" content="../images/IconForgePreview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Icon Forge: Application Design and Development Blog" />
+  <meta name="twitter:description" content="Discover essential best practices for User Interface Design for
+      Web Applications to create intuitive, user-friendly experiences
+      that boost engagement and conversion rates." />
+  <meta name="twitter:image" content="../images/IconForgePreview.png" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="/blog/blogDashboard.html" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+  <!-- <link rel="manifest" href="/site.webmanifest"> -->
+
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+
+  <title>Icon Forge: Application Design and Development Blog</title>
+
+  <script src="../config.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.config.baseUrl) {
+        // Update meta tags that need absolute URLs
+        document.querySelector('meta[property="og:url"]').content =
+          config.getUrl("/");
+        document.querySelector('meta[property="og:image"]').content =
+          config.getUrl("/images/IconForgePreview.png");
+        document.querySelector('meta[name="twitter:image"]').content =
+          config.getUrl("/images/IconForgePreview.png");
+        document.querySelector('link[rel="canonical"]').href =
+          config.getUrl("/");
+      }
+    });
+  </script>
+
+  <!-- Schema Markup -->
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Icon Forge",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Create and customize professional SVG icon packs instantly. 1000+ editable icons with real-time preview and bulk download capabilities.",
+        "browserRequirements": "Requires modern web browser with JavaScript enabled",
+        "softwareVersion": "1.0",
+        "creator": {
+          "@type": "Organization",
+          "name": "Icon Forge",
+          "url": "/blog/blogDashboard.html",
+          "founder": { "@type": "Person", "name": "Christopher R McGuire" }
+        },
+        "featureList": [
+          "Custom SVG icon generation",
+          "Real-time preview",
+          "Bulk download",
+          "Color customization",
+          "Size adjustment",
+          "Style variants"
+        ]
+      }
     </script>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Icon Forge Blog: UI/UX & Web Application Design</title>
-    <meta name="description"
-        content="Discover essential best practices for User Interface Design for Web Applications to create intuitive, user-friendly experiences that boost engagement and conversion rates." />
-    <meta name="keywords"
-        content="UI, web apps, web applications, user-friendly, User Interface, UI Design, User Interface Design, Web App Design, Best Practices, application design, app design" />
-    <meta name="author" content="Christopher R McGuire" />
-
-    <link rel="canonical" href="https://iconforge.net/blog/" />
-    <meta property="og:title" content="Icon Forge Blog: UI/UX & Web Application Design" />
-    <meta property="og:description"
-        content="Discover essential best practices for User Interface Design for Web Applications to create intuitive, user-friendly experiences that boost engagement and conversion rates." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://iconforge.net/blog/" />
-    <meta property="og:image" content="https://iconforge.net/images/IconForgePreview.png" />
-    <meta name="robots" content="index, follow" />
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet" />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
-
-        :root {
-            --primary-color: #1788d9;
-            --secondary-color: #d98b17;
-            --tertiary-color: #e6f0ff;
-            --fillspace-color: #f1f1f1;
-            --highlight-color: #50aef1;
-            --dark-color: #212121;
-            --light-color: #f1f1f1;
-            --text-color: #1a1a2e;
-            --background-start: #f0f8ff;
-            --background-end: #e6f0ff;
-            --gradient-middle: #eaf4ff;
-            /* Dark theme variables */
-            --dark-background-start: #1a1a2e;
-            --dark-background-end: #15152d;
-            --dark-gradient-middle: #1d1d35;
-            --dark-text-color: #f1f1f1;
-            --dark-fillspace-color: #2a2a3e;
-            --light-text-color: #2a2a3e;
-        }
-
-        /* Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Poppins", sans-serif;
-            background: linear-gradient(135deg, var(--background-start) 0%, var(--gradient-middle) 50%, var(--background-end) 100%);
-            color: var(--text-color);
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-
-        nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            margin-left: 2.5rem;
-            font-weight: 600;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-
-        /* Dark Theme Styles */
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background: linear-gradient(135deg, var(--dark-background-start) 0%, var(--dark-gradient-middle) 50%, var(--dark-background-end) 100%);
-            color: var(--dark-text-color);
-        }
-
-        body.dark-mode .right-block {
-            background-color: rgba(26, 26, 46, 0.95);
-            border-color: #2a2a3e;
-        }
-
-        body.dark-mode h1 {
-            color: #f1f1f1;
-        }
-
-        body.dark-mode .description {
-            color: #f1f1f1;
-        }
-
-        body.dark-mode .icon-preview {
-            background-color: rgba(26, 26, 46, 0.7);
-        }
-
-        body.dark-mode .control-group label {
-            color: var(--light-color);
-        }
-
-        body.dark-mode .category-button {
-            background-color: var(--dark-fillspace-color);
-            color: var(--dark-text-color);
-        }
-
-        body.dark-mode .icon-item .icon-name {
-            color: var(--dark-text-color);
-        }
-
-        body.dark-mode .feature-card {
-            color: var(--light-text-color);
-        }
-
-        /* Header Styles */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 20px;
-            padding-right: 7%;
-            padding-bottom: 20px;
-            padding-left: 5%;
-        }
-
-        body.dark-mode {
-            background: #1a1a2e !important;
-            color: #f1f1f1 !important;
-        }
-
-        .logo {
-            /* font-size: 24px; */
-            font-size: 40px;
-            color: var(--primary-color);
-            font-family: "Raleway";
-            font-weight: 900;
-            font-variant: normal;
-            position: relative;
-            top: 20px;
-        }
-
-        .logoImage {
-            width: 200px;
-        }
-
-        .menu a {
-            text-decoration: none;
-            margin-left: 25px;
-            font-weight: 600;
-        }
-
-        .menu a:hover {
-            /* text-decoration: underline; */
-            color: var(--highlight-color);
-        }
-
-        .menu .selected {
-            color: var(--primary-color);
-            text-decoration: underline;
-            margin-left: 25px;
-            font-weight: 600;
-        }
-
-        /* Main Content */
-        .main-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            padding-top: 20px;
-            padding-right: 5%;
-            padding-bottom: 20px;
-            padding-left: 5%;
-            margin-bottom: 10rem;
-        }
-
-        /* Right Content Block */
-        .right-block {
-            flex: 1 1 55%;
-            padding: 3.5rem;
-            max-width: 60%;
-            background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 30px;
-            border: 1px solid #ddd;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .right-block h3 {
-            /*margin-bottom: 2rem;*/
-            font-size: 1.5rem;
-            font-family: "Raleway";
-            font-weight: 800;
-        }
-
-        /* Left Content Block */
-        .left-block {
-            flex: 1 1 40%;
-            max-width: 35%;
-            padding: 10px;
-            padding-bottom: 50px;
-        }
-
-        /* Hero Styles and Left Panel */
-        .hero-text {
-            flex: 1;
-        }
-
-        .hero-text h1 {
-            font-size: 3vw;
-            font-family: "Raleway";
-            font-weight: 900;
-            line-height: 1.2;
-            margin-bottom: 4rem;
-            color: #212121;
-            letter-spacing: 0px;
-            text-align: left;
-            position: relative;
-            top: 30px;
-        }
-
-        .description {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            margin-top: 2rem;
-            color: #4a4a6a;
-            line-height: 1.8;
-            text-align: left;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1.4rem 3.5rem;
-            border-radius: 60px;
-            text-decoration: none;
-            font-weight: 500;
-            margin-top: 3rem;
-            margin-bottom: 3rem;
-            font-size: 1.1rem;
-            line-height: 0.9rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(77, 51, 5, 0.4);
-            border: none;
-            /* Add this */
-            cursor: pointer;
-            /* Add this */
-        }
-
-        .cta-button:hover {
-            background-color: var(--highlight-color);
-            color: #ffffff;
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(255, 198, 100, 0.5);
-        }
-
-        /* Icon Customization Tools */
-        .controls {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem;
-            margin-top: 2rem;
-            margin-bottom: 3.5rem;
-        }
-
-        .control-group label {
-            display: block;
-            margin-bottom: 0.75rem;
-            font-weight: 700;
-            color: #2a2a3e;
-            font-size: 1rem;
-            min-width: 140px;
-        }
-
-        .control-group select {
-            width: 100%;
-            padding: 0.8rem;
-            border: 2px solid #d0d0e0;
-            border-radius: 1.2rem;
-            background-color: white;
-            transition: border-color 0.3s ease box-shadow 0.3s ease;
-        }
-
-        .control-group select:hover {
-            border-color: var(--highlight-color);
-        }
-
-        .control-group input[type="color"] {
-            width: 100%;
-            border-radius: 0.4rem;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .control-group input[type="range"] {
-            width: 100%;
-            margin-top: 0.5rem;
-            -webkit-appearance: none;
-            background: transparent;
-        }
-
-        .control-group input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            height: 18px;
-            width: 18px;
-            border-radius: 50%;
-            background: var(--primary-color);
-            cursor: pointer;
-            margin-top: -7px;
-            box-shadow: 0 2px 6px rgba(0, 102, 255, 0.3);
-        }
-
-        .control-group input[type="range"]::-webkit-slider-runnable-track {
-            width: 100%;
-            height: 4px;
-            background: #e0e0e0;
-            border-radius: 2px;
-        }
-
-        .control-group label span {
-            color: var(--primary-color);
-            font-weight: normal;
-            margin-left: 0.5rem;
-        }
-
-        /* Icon Category Filter Buttons */
-        /* Icon Category Filter Buttons */
-        .category-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            align-items: center;
-            /* Add this to align buttons vertically */
-        }
-
-        .category-button {
-            background-color: white;
-            /* or use #f0f4f8 for light blue, or #f0f0f0 for light gray */
-            border: 2px solid var(--primary-color);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--text-color);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .category-button:hover,
-        .category-button.active {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        /* Modify ALL button to align better */
-        .category-button[data-category="all"] {
-            padding: 0.5rem 1.5rem;
-            /* Reduced vertical padding to match others */
-            font-weight: 700;
-        }
-
-        .category-button[data-category="all"].active {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .icon-categories {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .icon-categories button {
-            border: 1px solid #cccccc;
-            transition: all 0.3s ease;
-        }
-
-        /* Preview of Customized Icon Pack */
-        .icon-preview {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-            background-color: rgba(230, 240, 255, 0.7);
-            padding: 2rem;
-            border-radius: 20px;
-            /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); */
-        }
-
-        .icon-name {
-            text-transform: capitalize;
-        }
-
-        .flex-center {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .flex-column {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .icon-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-        }
-
-        .icon-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        /* icon-container svg {
-            width: 24px;
-            height: 24px;
-            transition: all 0.3s ease;
-        } */
-        .icon-item svg {
-            /* stroke: var(--primary-color); */
-            /* fill: none; */
-            width: 24px;
-            height: 24px;
-            transition: all 0.3s ease;
-            stroke: var(--dark-color);
-            fill: var(--light-color);
-        }
-
-        .icon-item svg {
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-
-        .icon-item svg:hover {
-            transform: scale(1.1);
-        }
-
-        .icon-item svg:active {
-            transform: scale(0.95);
-        }
-
-        .icon:hover {
-            transform: scale(1.1);
-        }
-
-        /* Key Features Section */
-        .key-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 4rem;
-            margin-top: 1rem;
-            padding-top: 20px;
-            padding-right: 10%;
-            padding-bottom: 20px;
-            padding-left: 10%;
-            margin-bottom: 100px;
-        }
-
-        .key-features-header {
-            font-weight: 800;
-            font-family: "Raleway";
-            font-size: 2.5rem;
-            padding-top: 20px;
-            padding-right: 10%;
-            padding-bottom: 20px;
-            padding-left: 10%;
-        }
-
-        .feature-card {
-            background-color: #ffffff;
-            padding: 3.5rem;
-            border-radius: 24px;
-            text-align: left;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0, 08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
-        }
-
-        .feature-card h3 {
-            margin-bottom: 3rem;
-            font-size: 1.6rem;
-            color: var(--primary-color);
-            font-family: "Raleway";
-            font-weight: 900;
-            height: 5rem;
-        }
-
-        footer {
-            margin-bottom: 2rem;
-            margin-left: 2rem;
-        }
-
-        @media screen and (max-width: 768px) {
-            .main-content {
-                flex-direction: column;
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Icon Forge",
+        "url": "/blog/blogDashboard.html",
+        "logo": "../logo.png",
+        "sameAs": [
+          "https://twitter.com/iconforge",
+          "https://github.com/iconforge"
+        ]
+      }
+    </script>
+
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "/" },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "/blog/blogDashboard.html"
+          }
+        ]
+      }
+    </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.config && window.config.baseUrl) {
+        // Update meta tags
+        const metaTags = {
+          'meta[property="og:url"]': "/blog/blogDashboard.html",
+          'meta[property="og:image"]': "/images/IconForgePreview.png",
+          'meta[name="twitter:image"]': "/images/IconForgePreview.png",
+          'link[rel="canonical"]': "/blog/blogDashboard.html",
+        };
+
+        // Update meta tags safely
+        Object.entries(metaTags).forEach(([selector, path]) => {
+          const element = document.querySelector(selector);
+          if (element) {
+            if (element.hasAttribute("content")) {
+              element.content = config.getUrl(path);
+            } else if (element.hasAttribute("href")) {
+              element.href = config.getUrl(path);
+            }
+          }
+        });
+
+        // Update JSON-LD schema URLs
+        const schemas = document.querySelectorAll(
+          'script[type="application/ld+json"]'
+        );
+        schemas.forEach((schema) => {
+          try {
+            const data = JSON.parse(schema.innerHTML);
+
+            // Helper function to ensure correct URL format
+            const formatUrl = (url) => {
+              if (url && !url.startsWith("http")) {
+                return config.getUrl(url.startsWith("/") ? url : "/" + url);
+              }
+              return url;
+            };
+
+            // Update Organization URL
+            if (data.url) {
+              data.url = formatUrl(data.url);
+            }
+            // Update Organization logo
+            if (data.logo) {
+              data.logo = formatUrl(data.logo.replace("../", "/"));
+            }
+            // Update creator URL
+            if (data.creator && data.creator.url) {
+              data.creator.url = formatUrl(data.creator.url);
+            }
+            // Update breadcrumb items
+            if (data.itemListElement) {
+              data.itemListElement.forEach((item) => {
+                if (item.item) {
+                  item.item = formatUrl(item.item);
+                }
+              });
             }
 
-            .hero-text h1 {
-                font-size: 3vw;
-                position: relative;
-                top: -20px;
-                margin-bottom: 0.6rem;
-            }
+            schema.innerHTML = JSON.stringify(data, null, 2);
+          } catch (error) {
+            console.error("Error updating schema:", error);
+          }
+        });
+      }
+    });
+  </script>
+  <!-- Schema Markup -->
+  <!-- <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Icon Forge",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Create and customize professional SVG icon packs instantly. 1000+ editable icons with real-time preview and bulk download capabilities.",
+        "browserRequirements": "Requires modern web browser with JavaScript enabled",
+        "softwareVersion": "1.0",
+        "creator": {
+          "@type": "Organization",
+          "name": "Icon Forge",
+          "url": "https://iconforge.net",
+          "founder": { "@type": "Person", "name": "Christopher R McGuire" }
+        },
+        "featureList": [
+          "Custom SVG icon generation",
+          "Real-time preview",
+          "Bulk download",
+          "Color customization",
+          "Size adjustment",
+          "Style variants"
+        ]
+      }
+    </script>
 
-            .hero-text h2 {
-                font-size: 5vw;
-            }
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Icon Forge",
+        "url": "https://iconforge.net",
+        "logo": "https://iconforge.net/logo.png",
+        "sameAs": [
+          "https://twitter.com/iconforge",
+          "https://github.com/iconforge"
+        ]
+      }
+    </script>
 
-            .left-block,
-            .right-block {
-                max-width: 100%;
-                flex: 1 1 100%;
-                padding: 20px;
-            }
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://iconforge.net"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Icon Generator",
+            "item": "https://iconforge.net/generator"
+          }
+        ]
+      }
+    </script> -->
 
-            .feature-card {
-                flex: 1 1 calc(50% - 20px);
-            }
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
-            .logo {
-                width: 40%;
-            }
+    :root {
+      --primary-color: #1788d9;
+      --secondary-color: #d98b17;
+      --tertiary-color: #e6f0ff;
+      --fillspace-color: #f1f1f1;
+      --highlight-color: #50aef1;
+      --dark-color: #212121;
+      --light-color: #f1f1f1;
+      --text-color: #1a1a2e;
+      --background-start: #f0f8ff;
+      --background-end: #e6f0ff;
+      --gradient-middle: #eaf4ff;
+      /* Dark theme variables */
 
-            .logoImage {
-                width: 200px;
-            }
+      --dark-background-start: #1a1a2e;
+      --dark-background-end: #15152d;
+      --dark-gradient-middle: #1d1d35;
+      --dark-text-color: #f1f1f1;
+      --dark-fillspace-color: #2a2a3e;
+      --light-text-color: #2a2a3e;
+    }
 
-            .menu {
-                font-size: 0.8rem;
-            }
+    /* Global Styles */
 
-            h1 {
-                font-size: 2.5rem;
-            }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-            .icon-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-            }
+    html {
+      scroll-behavior: smooth;
+      max-width: 100%;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
 
-            .cta-button {
-                font-size: 1.3rem;
-                line-height: 1rem;
-            }
-        }
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg,
+          var(--background-start) 0%,
+          var(--gradient-middle) 50%,
+          var(--background-end) 100%);
+      color: var(--text-color);
+      line-height: 1.6;
+      min-height: 100vh;
+      margin-bottom: 2vw;
+    }
 
-        @media screen and (max-width: 480px) {
-            /* Further adjust layout for small mobile screens */
-            .hero-text h1 {
-                font-size: 13vw;
-                /* position: relative;
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      margin-left: 2.5rem;
+      font-weight: 600;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+
+    /* Dark Theme Styles */
+    /* Dark Mode Styles */
+
+    body.dark-mode {
+      background: linear-gradient(135deg,
+          var(--dark-background-start) 0%,
+          var(--dark-gradient-middle) 50%,
+          var(--dark-background-end) 100%);
+      color: var(--dark-text-color);
+    }
+
+    body.dark-mode h1 {
+      color: #f1f1f1;
+    }
+
+    body.dark-mode .description {
+      color: #f1f1f1;
+    }
+
+    body.dark-mode .icon-preview {
+      background-color: rgba(26, 26, 46, 0.7);
+    }
+
+    body.dark-mode .control-group label {
+      color: var(--light-color);
+    }
+
+    body.dark-mode .category-button {
+      background-color: var(--dark-fillspace-color);
+      color: var(--dark-text-color);
+    }
+
+    body.dark-mode .icon-item .icon-name {
+      color: var(--dark-text-color);
+    }
+
+    /* Header Styles */
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 20px;
+      padding-right: 7%;
+      padding-bottom: 20px;
+      padding-left: 5%;
+    }
+
+    body.dark-mode {
+      background: #1a1a2e !important;
+      color: #f1f1f1 !important;
+    }
+
+    .logo {
+      /* font-size: 24px; */
+
+      font-size: 40px;
+      color: var(--primary-color);
+      font-family: "Raleway";
+      font-weight: 900;
+      font-variant: normal;
+      position: relative;
+      top: 20px;
+    }
+
+    .logoImage {
+      width: 200px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 600;
+    }
+
+    .menu a:hover {
+      /* text-decoration: underline; */
+
+      color: var(--highlight-color);
+    }
+
+    .menu .selected {
+      color: var(--primary-color);
+      text-decoration: underline;
+      margin-left: 25px;
+      font-weight: 600;
+    }
+
+    /* Main Content */
+
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-top: 20px;
+      padding-right: 5%;
+      padding-bottom: 20px;
+      padding-left: 5%;
+      margin-bottom: 10rem;
+    }
+
+    /* Hero Styles and Left Panel */
+
+    .hero {
+      margin-bottom: 0;
+      position: relative;
+      background: #3586ff;
+      padding-top: 8vw;
+      padding-bottom: 25vw;
+      display: grid;
+      justify-content: center;
+      align-content: center;
+      font-family: "Raleway", sans-serif;
+      font-weight: 600;
+      overflow: hidden;
+    }
+
+    .hero h1 {
+      font-size: 5vw;
+      color: white;
+      margin-bottom: 1.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      text-align: center;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero p {
+      font-size: 3vw;
+      color: rgba(255, 255, 255, 0.9);
+      /* max-width: 600px; */
+
+      margin-bottom: 2rem;
+      padding-left: 6vw;
+      padding-right: 6vw;
+      text-align: center;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .wave-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+    }
+
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 200' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='wave-gradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23edf5ff'/%3E%3Cstop offset='50%25' style='stop-color:%23eaf4ff'/%3E%3Cstop offset='100%25' style='stop-color:%23e8f3ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M0,100 C150,20 350,180 500,100 C650,20 850,180 1000,100 L1000,200 L0,200 Z' fill='url(%23wave-gradient)'/%3E%3C/svg%3E");
+      background-size: 1000px 200px;
+    }
+
+    .wave.wave1 {
+      animation: wave 30s linear infinite;
+      z-index: 1000;
+      opacity: 1;
+      animation-delay: 0s;
+      bottom: 0;
+    }
+
+    .wave.wave2 {
+      animation: wave2 15s linear infinite;
+      z-index: 999;
+      opacity: 0.5;
+      animation-delay: -5s;
+      bottom: 20px;
+    }
+
+    .wave.wave3 {
+      animation: wave 30s linear infinite;
+      z-index: 998;
+      opacity: 0.2;
+      animation-delay: -2s;
+      bottom: 30px;
+    }
+
+    .wave.wave4 {
+      animation: wave2 5s linear infinite;
+      z-index: 997;
+      opacity: 0.7;
+      animation-delay: -5s;
+      bottom: 40px;
+    }
+
+    @keyframes wave {
+      0% {
+        background-position-x: 0;
+      }
+
+      100% {
+        background-position-x: 1000px;
+      }
+    }
+
+    @keyframes wave2 {
+      0% {
+        background-position-x: 0;
+      }
+
+      100% {
+        background-position-x: -1000px;
+      }
+    }
+
+    main.container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      margin-bottom: 5vw;
+    }
+
+    .articles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      grid-auto-rows: 1fr;
+      gap: 3rem;
+      padding: 2rem 0;
+    }
+
+    .article-card {
+      background: rgba(255, 255, 255, 0.9);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--card-shadow);
+      border: 1px solid rgba(59, 130, 246, 0.1);
+      position: relative;
+      display: flex;
+      /* Add this */
+
+      flex-direction: column;
+      /* Add this */
+    }
+
+    .article-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #3b82f6, #1e40af);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s ease;
+    }
+
+    .article-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .article-card:hover {
+      transform: translateY(-12px) scale(1.03);
+      box-shadow: var(--hover-shadow);
+      border-color: rgba(59, 130, 246, 0.3);
+    }
+
+    .article-content {
+      padding: 2rem;
+      display: flex;
+      /* Add this */
+
+      flex-direction: column;
+      /* Add this */
+
+      height: 100%;
+      /* Add this */
+    }
+
+    .article-text {
+      flex-grow: 1;
+      /* Add this to push the button down */
+    }
+
+    .article-meta {
+      font-size: 0.975rem;
+      color: var(--secondary-color);
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .article-title {
+      font-size: 1.75rem;
+      color: var(--primary-color);
+      margin-bottom: 1.25rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .article-excerpt {
+      color: var(--text);
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      background: var(--secondary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);
+      margin-top: auto;
+      /* Add this */
+
+      width: fit-content;
+      /* Add this */
+    }
+
+    .read-more:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px -1px rgba(59, 130, 246, 0.3);
+    }
+
+    .scroll-indicator-arrow {
+      position: relative;
+      bottom: -20px;
+      /* Positioned above the waves */
+
+      left: 100%;
+      transform: translateX(-50%);
+      animation: bounce 2s infinite;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .scroll-arrow {
+      width: 40px;
+      height: 40px;
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      position: relative;
+      animation: fade 2s infinite;
+    }
+
+    .scroll-arrow::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 12px;
+      height: 12px;
+      border-left: 2px solid rgba(255, 255, 255, 0.9);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.9);
+      transform: translate(-50%, -50%) rotate(-45deg);
+      margin-top: -6px;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateX(-50%) translateY(0);
+      }
+
+      40% {
+        transform: translateX(-50%) translateY(-20px);
+      }
+
+      60% {
+        transform: translateX(-50%) translateY(-10px);
+      }
+    }
+
+    footer {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      .main-content {
+        flex-direction: column;
+      }
+
+      .hero-text h1 {
+        font-size: 11vw;
+        position: relative;
+        top: -20px;
+        margin-bottom: 0.6rem;
+      }
+
+      .hero-text h2 {
+        font-size: 5vw;
+      }
+
+      .logo {
+        width: 40%;
+      }
+
+      .logoImage {
+        width: 200px;
+      }
+
+      .menu {
+        font-size: 0.8rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .icon-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      /* Further adjust layout for small mobile screens */
+
+      .hero-text h1 {
+        font-size: 13vw;
+        /* position: relative;
           top: -20px; */
-                margin-bottom: 1rem;
-            }
 
-            .hero-text h2 {
-                font-size: 8vw;
-            }
+        margin-bottom: 1rem;
+      }
 
-            .icon-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-            }
+      .hero-text h2 {
+        font-size: 8vw;
+      }
 
-            .feature-card,
-            .cta-button {
-                width: 100%;
-            }
+      .icon-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      }
 
-            .description {
-                margin-bottom: 0;
-            }
+      .description {
+        margin-bottom: 0;
+      }
 
-            .logo {
-                width: 40%;
-            }
+      .logo {
+        width: 40%;
+      }
 
-            .logoImage {
-                width: 200px;
-            }
+      .logoImage {
+        width: 200px;
+      }
 
-            .menu {
-                font-size: 0.8rem;
-            }
+      .menu {
+        font-size: 0.8rem;
+      }
 
-            .cta-button {
-                font-size: 0.9rem;
-                justify-content: right;
-                line-height: 0.8rem;
-            }
+      .menu .selected {
+        color: var(--primary-color);
+      }
 
-            footer {
-                font-size: 0.5rem;
-                padding: 0 02rem;
-            }
-        }
-    </style>
+      main.container {
+        padding: 0 0;
+      }
+
+      .article-card {
+        margin: 0 2rem;
+      }
+
+      footer {
+        font-size: 0.5rem;
+        padding: 0 02rem;
+      }
+    }
+  </style>
 </head>
+
+<!-- <body class="loaded dark-mode"> -->
 
 <body>
   <!-- Header Section -->
