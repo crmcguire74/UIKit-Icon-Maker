@@ -1,81 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <!-- Main URL/Homepage -->
-  <url>
-    <loc>https://iconforge.net/</loc>
-    <lastmod>2024-11-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://iconforge.net/blog</loc>
-    <lastmod>2024-11-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-<url>
-  <loc>https://iconforge.net/blog/blogDashboard.html</loc>
-  <lastmod>2024-11-11</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
-
-<url>
-  <loc>https://iconforge.net/blog/articles/User_Interface_Design_for_Web_Applications.html</loc>
-  <lastmod>2024-11-10</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-
-<url>
-  <loc>https://iconforge.net/blog/articles/Custom_Icons_and_User_Interface_Design_Tips.html</loc>
-  <lastmod>2024-11-12</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-    
-<url>
-  <loc>https://iconforge.net/blog/articles/Hidden_ROI_of_UXUI_Design_in_Internal_Business_Applications.html</loc>
-  <lastmod>2024-11-12</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-
-<url>
-  <loc>https://iconforge.net/blog/articles/Mastering_UIUX_Design_in_Modern_Application_Development.html</loc>
-  <lastmod>2024-11-14</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-
-<url>
-  <loc>https://iconforge.net/blog/articles/Designing_Application_Icons.html</loc>
-  <lastmod>2024-11-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-
-  <url>
-    <loc>https://iconforge.net/contact</loc>
-    <lastmod>2024-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-    
-    <!-- Content Sections (Accessible via Scroll/Navigation) -->
     <url>
-        <loc>https://iconforge.net/#IconCustomization</loc>
-        <lastmod>2024-01-31</lastmod>
+        <loc>https://iconforge.net/</loc>
+        <lastmod>2024-11-11</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://iconforge.net/blog</loc>
+        <lastmod>2024-11-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://iconforge.net/#KeyFeaturesSection</loc>
-        <lastmod>2024-01-31</lastmod>
+        <loc>https://iconforge.net/blog/articles/user_interface_design_for_web_applications</loc>
+        <lastmod>2024-11-10</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://iconforge.net/blog/articles/custom_icons_and_user_interface_design_tips</loc>
+        <lastmod>2024-11-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://iconforge.net/blog/articles/hidden_roi_of_uxui_design_in_internal_business_applications</loc>
+        <lastmod>2024-11-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://iconforge.net/blog/articles/mastering_uiux_design_in_modern_application_development</loc>
+        <lastmod>2024-11-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://iconforge.net/blog/articles/designing_application_icons</loc>
+        <lastmod>2024-11-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://iconforge.net/contact</loc>
+        <lastmod>2024-11-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://iconforge.net/privacy</loc>
+        <lastmod>2024-11-16</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
 </urlset>
